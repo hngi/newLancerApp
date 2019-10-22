@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Desktop</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico|Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/desktop(bio).css">
+</head>
+<body>
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-md-2  nav-left nav-left-toggle">
+                    <aside class="d-flex flex-column justify-content-around text-center"> 
+                            <p class="nav-lancer">Lan<span style="color:#00F9FF">c</span>ers</p>
+                            <p><i class="fa fa-home" aria-hidden="true"></i>Dashboard</p>
+                            <p><i class="fa fa-users" aria-hidden="true"> </i>Client</p>
+                            <p><i class="fa fa-lightbulb-o" aria-hidden="true"></i>Project</p>
+                            <div class="under-project">
+                                    <p>Status</p>
+                                    <p>Overview</p>
+                                    <p>Collaborators</p>
+                                    <p>Task</p>
+                                    <p>Documents</p>
+                            </div>
+                            <p><i class="fa fa-file-text-o" aria-hidden="true"></i></i>Invoice</p>
+                            <p><i class="fa fa-handshake-o"></i>Contract</p>
+                     
+                    <p> <i class="fa fa-area-chart" aria-hidden="true"></i> Proposals</p>
+                        </aside>
+            </div>
+            <div class="col-md" style="margin:0px;padding:0px;">
+                <div class="d-flex justify-contect-around nav-main">
+                        <div class="menu">
+                                <i class="fa fa-bars"></i>
+                        </div>
+                    <div class="search-container search-adjust">
+                        <input type="search" name="search" id="search" placeholder ="Search" class="fal fa-search search">
+                    </div>
+                    <div>
+                        <img class="icon" src="https://res.cloudinary.com/laplace/image/upload/v1570739214/ugrqpvvqkpw6g4xjluco.png" alt="help">
+                    </div>
+                    <div >
+                        <img class="icon" src="https://res.cloudinary.com/laplace/image/upload/v1570738202/s1zgdvui4w4h6dnfeyk9.svg" alt="notification">
+                    </div style='border-right:1px soid black'>
+                    <div>
+                        <img class="icon" src="https://res.cloudinary.com/laplace/image/upload/v1570738859/ku004v0cyp1fmou8h5ju.png" alt="">
+                    </div>
+                    <div class="initial">
+                            <p >AU</p>
+                    </div>
+
+                </div>
+                <main style="height:60%;">
+                    <p class="card-name">David Speedo</p>
+                    <div  class="container card">
+                        <p class="container-card-name"><span>David Speedo</span></p>
+                        <div class="image">
+                                <img  class="picure"src="  https://res.cloudinary.com/laplace/image/upload/v1570700444/ydam9rmkxc8jxbn8ldbu.svg"> 
+                                <p class="address">
+                                    <br>
+                                        Product Deigner <br>
+                                        Completed: <b>120 Projects</b><br>
+                                        Phone Number: +23470380000000<br>
+                                        Email: davidspeedo@gmail.com<br>
+                                        website: www.designguru.com <br>
+                                        <a href="#"> <i class="fa fa-instagram"  aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#"> <i class="fa fa-facebook"    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true" ></i></a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#"><i class="fa fa-youtube"aria-hidden="true" ></i></a>
+                                    </p> 
+                        </div> 
+                        <p class="content">      
+                                It is a long established fact that a reader will be distracted by the    readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' willuncover many web sites still in their infancy.
+                                <p class="toggle-show" >
+                                    <br>
+                                    <br>
+                                        Product Designer </br>
+                                        Completed: <b>120 Projects</b></br>
+                                        <span class="phone">Phone Number:</br> +23470380000000
+                                        Email: davidspeedo@gmail.com</br>
+                                    website: www.designguru.com</br> </span>
+                                        <a href="#"> <i class="fa fa-instagram"  aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#"> <i class="fa fa-facebook"    aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true" ></i></a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#"><i class="fa fa-youtube"aria-hidden="true" ></i></a>
+                                </p> 
+                        </p>
+                    <div>
+                      
+
+                    </div>
+                </div>
+                <div class="add">
+                        <i class="btn-circle btn-lg">+</i>
+                </div>
+
+    ​
+
+    
+                </main>                
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.fa-bars').click(function(){
+                $('.nav-lancer').toggle();
+                $('.search-adjust').css({
+                    'margin-left':'20px'
+                });
+                $(this).css({
+                    'position':'fixed',
+                    'top':'35px',
+                    'left':'10px'
+                });
+                $('.nav-left-toggle').css({
+                    'position':'fixed',
+                    'top':'50px',
+                    'left':'0',
+                    'z-index':'100',
+                    'background-color':'rgba(0,0,0,0.7)',
+                    'font-size':'14px',
+                    'height':'80%',
+                    'width':'30%',
+                });
+                $('.nav-left-toggle').toggle();
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

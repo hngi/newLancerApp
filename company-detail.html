@@ -1,0 +1,251 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Company Detail page</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Ubuntu&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles/company-detail.css">
+</head>
+<body>
+
+
+    <div class="d-flex" id="wrapper">
+
+            <!-- Sidebar -->
+            <div class="border-right sidebar-color" id="sidebar-wrapper">
+              <div class="sidebar-heading text-center"> 
+                    <a href="#"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570751514/dozknh7rkkoctxyfa4jg.png" alt="home" srcset=""></a> 
+                 </div>
+                         
+       
+              <div class="list-group list-group-flush sidebar-color">
+                <a href="#" class="list-group-item list-group-item-action sidebar-color"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570751514/ii7dmm0hogkgg8bzdixl.svg" alt="" srcset="">  Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action sidebar-color "><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570752048/ckovrwndzipuxe20i3su.svg" alt=""> Client </a>
+                <a href="#pageSubmenu" data-toggle="collapse" 
+                aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action sidebar-color"> <img src="https://res.cloudinary.com/mirakul1/image/upload/v1570751264/ngyckbfltqisobrjgrqu.svg" alt=""> Projects</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+                <a href="#" class="list-group-item list-group-item-action sidebar-color"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570752046/tvzdi92ldvlfbplgleth.svg " alt=""> Invoice</a>
+                <a href="#" class="list-group-item list-group-item-action sidebar-color"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570751514/uvkncqgv0sf94ji1b3pj.svg" alt=""> Contracts</a>
+                <a href="#" class="list-group-item list-group-item-action sidebar-color"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570752046/hthsctaqgn7xi7wshks8.svg" alt="">  Proposal</a>
+              </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+      
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+      
+              <nav class="navbar navbar-expand-lg navbar-light mr-auto ml-auto  border-bottom">
+                <button class="btn" id="menu-toggle"><i class="fas fa-sliders-h"></i></button>    
+                <div>
+                    <form class="form-inline abs-center-x">
+                        <input class="form-control mr-sm-2 mr-auto ml-auto searchBox" type="search" placeholder="Search" aria-label="Search">
+                      </form> 
+                </div> 
+       
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+      
+          
+
+                      
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570751693/e1tm9z6lqtnfefbftgga.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570750951/iau2jvhrp3ww4uppx3yf.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="https://res.cloudinary.com/mirakul1/image/upload/v1570751264/z0yhs8mzqf991m3u0c3i.svg" alt=""></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link user-avatar" href="#">AU</a>
+                    </li>
+
+                
+                  </ul>
+                </div>
+              </nav>
+
+              <h3 class="companyHeader">Company</h3>
+      
+              <div class="form-container">
+
+              <div id="form-wrapper">
+                <div id="logoDiv"><img id="logo" alt="logo" src="https://res.cloudinary.com/mirakul1/image/upload/v1570751878/rbquu6xlv2w4muswlryv.svg"></div>
+              <form id="form">
+                <h4 id="companyInfoH4">Company Information</h4>
+          
+                <div class="innerWrapper"><label for="companyName">Company Name</label><input id="companyName" type="text" name="companyName" placeholder="Foodie"></div>
+          
+                <div class="innerWrapper"><label for="businessType">Business Type</label><input id="businessType" type="text" name="businessType" placeholder="Private"></div>
+          
+                <div class="twoColumns innerWrapper">
+                  <div id="stateDiv">
+                    <label for="state">State</label>
+                    <select name="state" id="state">
+                                  <option value="">Lagos</option>
+                                  <option value="">Abuja</option>
+                              </select>
+                  </div>
+          
+                  <div id="countryDiv">
+                    <label for="country">Country</label>
+                    <select name="country" id="country">
+                                  <option value="">Nigeria</option>
+                                  <option value="">Kenya</option>
+                              </select>
+                  </div>
+                </div>
+          
+                <div class="twoColumns innerWrapper">
+                  <div id="companyPhoneNumberDiv">
+                    <label for="companyPhoneNumber">Company's Phone Number</label>
+                    <input id="companyPhoneNumber"  type="tel" name="companyPhoneNumber" placeholder="+23479089000000">
+                  </div>
+          
+                  <div id="companyEmailDiv">
+                    <label for="companyEmail">Company Email</label>
+                    <input id="companyEmail" type="email" name="companyEmail" placeholder="foodie@gmail.com">
+                  </div>
+                </div>
+          
+                      <h4>Personal Information</h4>
+                  <div class="personal_info">
+                  <div id="contactPersonDiv " class="innerWrapper">
+                    <label for="contactPerson">Contact Person</label>
+                    <input id="contactPerson" type="text" name="contactPerson" placeholder="Simbi Emmanuel">
+                  </div>
+          
+                  <div class="twoColumns innerWrapper">
+                    <div id="designationDiv">
+                      <label for="designation">Designation</label>
+                      <select name="designation" id="designation">
+                        <option>Project Manager</option>
+                        <option>Supervisor</option>
+                      </select>
+                    </div>
+                    <div id="personCountryDiv">
+                      <label for="personCountry">Contact Phone Number</label>
+                      <input id="personCountry" type="tel" name="personCountry" placeholder="+23470389000000">
+                    </div>
+                  </div>
+                </div>
+                  <div class="twoColumns innerWrapper">
+                     <div class="innerWrap">
+                       <label for="designation2Div">Designation</label>
+                      <div id="designation2Div">
+                          <i class="fa fa-clone"></i>
+                          <input id="productRequirement" type="text" name="productRequirement"  placeholder="Product Requirement" i>
+                          <i class="fa fa-times"></i>
+                      </div> 
+                    </div>
+
+                    <div class="innerWrap " >
+                        <label for="newContact" style="visibility: hidden">New Contact</label>
+                        <div id="newContactDiv">
+                            <i class="fa fa-plus"></i>
+                          <button class="btn newContactbtn"> Add New Contact</button>                        
+                        </div>
+                    </div>
+               
+                </div>        
+
+                      
+                      <!--<div id="designation_2" style="margin-top: 5px;">
+                        <div><label for="designation2Div">Designation</label> </div>
+                        <div >
+                        <select name="productRequirement" id="country" >
+                                      <option value="">Product Requirement</option>
+                                      <option value="">Product Requirement2</option>
+                        </select>
+                        </div>
+                    </div>-->
+
+              </form>
+            </div>
+            </div>
+            </div>  
+            <!-- /#page-content-wrapper -->
+      
+          </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+
+
+
+
+        $(document).on('click','.newContactbtn', function(e){
+          e.preventDefault();
+          $('.personal_info').append(`
+          <div class="addNewContact">
+          <button class="btn removeDesignation" style="float:right"><i class="fa fa-times"></i></button>
+          <div id="contactPersonDiv " class="innerWrapper">
+                    <label for="contactPerson">Contact Person</label>
+                    <input id="contactPerson" type="text" name="contactPerson" placeholder="Simbi Emmanuel">
+                  </div>
+          
+                  <div class="twoColumns innerWrapper">
+                    <div id="designationDiv">
+                      <label for="designation">Designation</label>
+                      <input type="text" name="designation" id="designation" placeholder="Project Manager">
+                    </div>
+                    <div id="personCountryDiv">
+                      <label for="personCountry">Country</label>
+                      <input id="personCountry" type="text" name="personCountry" placeholder="+23470389000000">
+                    </div>
+                  </div>
+                </div>
+          `)
+
+
+      }) ;
+
+      $(document).on('click','.removeDesignation', function(e){
+          e.preventDefault();
+          $(this).parent().remove()
+  
+
+
+      }) ;
+
+
+
+
+    </script>
+
+</body>
+
+</html>

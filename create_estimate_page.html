@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/create_estimate_page.css">
+    <title>Create Estimate</title>
+</head>
+<body class="container">
+   <!-- <div id="estimate">
+        <header>
+            <span class = "c-estimate shift">Estimates</span>
+            <ul>
+                <li class="login"><a  href="signin.html">Login</a></li>
+                <li class = "signup" ><a class = "signup" href="signup.html">Signup</a></li>
+            </ul>
+
+        </header>
+        <section id="new_user">
+            <div>
+                <a class="btn est" id="est_content" href="#">Create Estimate</a> <br>
+                <h2><p class = "pad">Estimates helps you place value to your work and time!</p></h2>
+                <p class = "pad"><h5 class = "pad">Craeate and estimate and easily convert it to your invoice and send to your client</h5></p>
+            </div>
+        </section>
+    </div>_-->
+    
+    <!-- FOR ACTUAL INPT-->
+   <!-- <div id="Create_estimate" class="hidden">-->
+        <div id="container">
+
+                <div>
+                    
+                    <button class="close"  id="close"><img id="clear" src="https://res.cloudinary.com/celx/image/upload/v1570718446/vhmdnd4sf3f5w3burj4m.svg" alt=""></button>
+                </div>
+                <div>
+                    <p class="nav c-estimate" id="cre">Create Estimate</p>
+                </div>
+                <div>
+                   <input class="nav disabled" id="ext" type="button" value="NEXT">
+                    
+                </div>
+
+            </div>
+    
+
+
+    
+       <section>
+           <h1>What project are you estimating?</h1>
+           <div class="cree">
+               <div class="lists">
+                   <div class="box">
+                        <h3 class="first-head"><h3>A previously created project</h3></p>
+                        <p class="contents">Find estimate for the previously created project, by
+                            doing so the estimate gets populated with some of the data
+                        </p>
+                   </div>
+                  
+                   <div class="contents dropdown">
+                           <select class="dropbtn" name="" onmouseout="verifyPath()" id="projectSelect">
+                               <option>Select Project</option>
+                               <option>Glacier Fintech App</option>
+                               <option> AB Technology Solutions Branding</option>
+                           </select>  
+                           <i class="fa fa-caret-down"></i>
+                           
+                   </div>
+               </div>
+           </div>
+   
+   
+           <div id="cree"  class="cree">
+                   <div class="lists glacier">
+                       <div class="box">
+                            <h3 class="first-head">A new project</h3>
+                            <p class="contents">Create a new estimate and set up a new project <br />
+                                based on the information 
+                            </p>
+                       </div>
+                      
+                       <div class="contents project">
+                           <input class="l-proj" type="text" onmouseout="verifyPath()" placeholder= "Project Name" name="" id="createProject">
+                           <br>
+                           <span class="req">Required</span></div>
+       
+                   </div>
+               </div>
+               <button class="a-next disabled"><a href="#">NEXT</a></button>
+       </section>
+    </div>
+    </div>
+
+    <script>
+    let est_content = document.querySelector('#est_content');
+    let estimate_page = document.querySelector('#Create_estimate');
+
+    let hide = () => {
+       // estimate_page.classList.add('hidden');
+       document.querySelector('#Create_estimate').classList.remove('hidden');
+       document.querySelector('#estimate').classList.add('hidden');
+       
+    }
+
+    est_content.addEventListener('click', hide );
+
+
+    document.querySelector('#close').addEventListener('click', () => {
+        document.querySelector('#estimate').classList.remove('hidden');
+        document.querySelector('#Create_estimate').classList.add('hidden');
+
+    });
+
+        //createProject = '';
+    
+    
+    
+
+    function verifyPath(){
+        let createProject = document.getElementById('createProject').value;
+        let projectSelect = document.getElementById('projectSelect');
+
+        let ele = projectSelect.selectedIndex;
+
+        if ( createProject !== "" || ele !== 0 ){
+            document.querySelector('.a-next').style.background = '#0ABAB5';
+            document.querySelector('.next').style.background = '#0ABAB5';
+            
+            document.querySelector('.a-next').classList.remove('disabled');
+            document.querySelector('.next').classList.remove('disabled');
+        } else {
+            //console.log('here works');
+            document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.next').classList.add('disabled');
+            document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.a-next').classList.add('disabled');
+        }
+        
+    }
+    </script>
+    
+</body>
+</html>
