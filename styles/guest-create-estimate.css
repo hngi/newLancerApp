@@ -6,7 +6,7 @@
             }
             
         body {
-			margin-top: 0px;
+    margin-top: 0px;
         }
 
             ul {
@@ -102,6 +102,7 @@
     padding-left: 47px;
     color: white;
 }
+
  .a-next {
     background: rgba(207, 204, 204, 0.4);
     width: 220px;
@@ -326,73 +327,6 @@ option, select{
 }
 
 
-@media (max-width: 992px) 
-{
-.h1, h1 {
-    font-size: 2rem !important;
-    margin-top: 3% !important;
-}
-.text-center h1 {
-    margin-left: 17.2%;
-}
-button {
-    width: 120px;
-    height: 100%;
-}
-#container p {
-    font-size: 19.5px;
-    margin-top: 9px;
-}
-div > #ext{
-    font-size: 20px;
-}
-.a-next {
-    width: 180px;
-    height: 60px;
-    padding: 5px 20px;
-    font-size: 20px;
-    margin-top: 60px;
-}
-.h5, h5 {
-    font-size: 1.05rem;
-}
-p.card-text {
-    font-size: .8rem;
-}
-  .card
-  {
-    min-height: 34vh;
-}
-.card-body:hover {
-    border: 3px solid black;
-}
-.dropbtn, .project {
-     margin-top: 1vh; 
-    height: 40px;
-    padding: 10px;
-    width: 100%;
-}
-.project {
-    border: 1.5px solid rgba(145, 145, 145, 0.4);
-    overflow: hidden;
-}
-.l-proj {
-    font-size: 14px;
-    width: 100%;
-    margin-bottom: 2rem;
-}
-.l-proj::placeholder {
-    line-height: 10px;
-}
-.box {
-    margin-top: 3%;
-}
-option, select{
-    font-size: 14px;
-}
-#container .navM img {
-    height: 20px;
-}
 
 @media (max-width: 767px) 
 {
