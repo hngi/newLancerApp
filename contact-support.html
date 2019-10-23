@@ -1,669 +1,89 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <head>
+    <title>Contact Support</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/contact-support.css">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/v1571417665/icons8-estimates-16_adktgw.png" type="image/x-icon">
+  </head>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="WGunC9tB64PqsYVl6JztiByrSn2ZZwzHtubLcpiw">
-
-    <title>Lancers - </title>
-
-    
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400&display=swap" rel="stylesheet">
- 
-
-    <!-- Styles -->
-    
-
-
-   
-
-      <style>
-  /*Main page style by message*/
-
-  @import  url(http://fonts.googleapis.com/css?family=Open+Sans);
-
-  :root{
-      --primary-color: #091429;
-      --secondary-color: #0ABAB5;
-      --dark-color: #262626;
-      --light-color: #B1B1B1;
-  }
-
-
-    /****************************/
-    /*------- main styles ------*/
-  /****************************/
-
-
-  .text-primary{
-      color: var(--primary-color) !important;
-  }
-  .text-secondary{
-      color: var(--secondary-color) !important;
-  }
-  .text-dark{
-      color: var(--dark-color) !important;
-  }
-  .text-light{
-      color: var(--light-color) !important;
-  }
-  .bg-primary{
-      background-color: var(--primary-color) !important;
-  }
-  .bg-secondary{
-      background-color: var(--secondary-color) !important;
-  }
-  .bg-light{
-      background-color: var(--light-color) !important;
-  }
-  .bg-dark{
-      background-color: var(--dark-color) !important;
-  }
-  .btn{
-      border: none !important;
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-      transition: all ease-in-out .5s;
-  }
-  .btn::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 25%;
-      height: 100%;
-      width: 40%;
-      background-color: #000;
-      border-radius: 50%;
-      opacity: 0;
-      pointer-events: none;
-      transition: all ease-in-out 1s;
-      transform: scale(5, 5);
-  }
-  .btn:active::after {
-      padding: 0;
-      margin: 0;
-      opacity: .2;
-      transition: 0s;
-      transform: scale(0, 0);
-  }
-  .btn-primary{
-      background-color: var(--primary-color) !important;
-  }
-  .btn-secondary{
-      background-color: var(--secondary-color) !important;
-  }
-  .btn-primary-outline{
-      background-color: transparent !important;
-      color: var(--primary-color)  !important;
-      border: 1px solid var(--primary-color)  !important;
-  }
-  .btn-secondary-outline{
-      background-color: transparent !important;
-      color: var(--secondary-color)  !important;
-      border: 2px solid var(--secondary-color)  !important;
-  }
-  .btn-primary:hover, .btn-secondary:hover, .btn-primary-outline:hover, .btn-secondary-secondary:hover{
-      border-color: inherit !important;
-      opacity: 0.8 !important;
-  }
-
-  /*------Nav bar---------*/
-  a,
-  a:hover,
-  a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-  .navbar {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    background-color: #fff;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 10px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  .navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
-  }
-  .navbar-nav .nav-item .nav-link:hover{
-    transition: 0.25s;
-    background-color: #ecf3ff;
-  }
-  .line {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
-  }
-
-  .wrapper #content{
-
-  }
-  /* ---------------------------------------------------
-      SIDEBAR STYLE
-  ----------------------------------------------------- */
-  .wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-    perspective: 1500px;
-  }
-  #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: var(--primary-color);
-    color: #fff;
-    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-    transform-origin: bottom left;
-  }
-  #sidebar.active {
-    margin-left: -250px;
-    transform: rotateY(100deg);
-  }
-  #sidebar .sidebar-header {
-    padding: 20px;
-    background: var(--primary-color);
-  }
-  #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--primary-color);
-  }
-  #sidebar ul p {
-    color: #fff;
-    padding: 10px;
-  }
-  #sidebar ul li a {
-    padding: 10px;
-    font-size: 1em;
-    font-weight: 600;
-    display: block;
-    transition: 0.4;
-  }
-  #sidebar ul li a:hover {
-    color: #ffffff;
-    background: rgba(19, 41, 82, 1);
-  }
-  #sidebar ul li a img {
-      margin-top: -4px !important;
-      margin-left: 4px;
-      margin-right: 4px;
-  }
-  #sidebar.active ul li a span {
-      vertical-align: text-bottom !important;
-  }
-  #sidebar ul li.active > a,
-  a[aria-expanded="true"] {
-    color: #fff;
-    background: rgba(19, 41, 82, 1);
-  }
-  a[data-toggle="collapse"] {
-    position: relative;
-  }
-  .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-  }
-  ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: rgba(19, 41, 82, 1);;
-  }
-  ul.CTAs {
-    padding: 20px;
-  }
-  ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
-  a.download {
-    background: #fff;
-    color: #7386D5;
-  }
-  a.article,
-  a.article:hover {
-    background: rgba(19, 41, 82, 1) !important;
-    color: #fff !important;
-  }
-  /* ---------------------------------------------------
-      CONTENT STYLE
-  ----------------------------------------------------- */
-  #content {
-    width: 100%;
-    min-height: 100vh;
-    transition: all 0.3s;
-  }
-  #sidebarCollapse {
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
-    cursor: pointer;
-  }
-  #sidebarCollapse span {
-    width: 80%;
-    height: 2px;
-    margin: 0 auto;
-    display: block;
-    background: #555;
-    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
-    transition-delay: 0.2s;
-  }
-  #sidebarCollapse span:first-of-type {
-    transform: rotate(45deg) translate(2px, 2px);
-  }
-  #sidebarCollapse span:nth-of-type(2) {
-    opacity: 0;
-  }
-  #sidebarCollapse span:last-of-type {
-    transform: rotate(-45deg) translate(1px, -1px);
-  }
-  #sidebarCollapse.active span {
-    transform: none;
-    opacity: 1;
-    margin: 5px auto;
-  }
-  /* ---------------------------------------------------
-      MEDIAQUERIES
-  ----------------------------------------------------- */
-  @media (max-width: 768px) {
-    #sidebar {
-      margin-left: -250px;
-      transform: rotateY(90deg);
-    }
-    #sidebar.active {
-      margin-left: 0;
-      transform: none;
-    }
-    #sidebarCollapse span:first-of-type,
-    #sidebarCollapse span:nth-of-type(2),
-    #sidebarCollapse span:last-of-type {
-      transform: none;
-      opacity: 1;
-      margin: 5px auto;
-    }
-    #sidebarCollapse.active span {
-      margin: 0 auto;
-    }
-    #sidebarCollapse.active span:first-of-type {
-      transform: rotate(45deg) translate(2px, 2px);
-    }
-    #sidebarCollapse.active span:nth-of-type(2) {
-      opacity: 0;
-    }
-    #sidebarCollapse.active span:last-of-type {
-      transform: rotate(-45deg) translate(1px, -1px);
-    }
-  }
-
-  /* ---------------------------------------------------
-      Table
-  ----------------------------------------------------- */
-  table.project-table{
-    border-collapse:separate;
-    border-spacing: 0 1em;
-  }
-
-  table.project-table tbody tr{
-    padding-bottom: 10px !important;
-  }
-
-  table.project-table tbody tr td span.text-small{
-    font-size: 8px;
-  }
-
-  table.project-table tbody tr td, table.project-table thead tr th {
-      max-width: 200px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-  }
-
-  .dropleft .dropdown-toggle::before{
-    display: none;
-  }
-
-  /*------------floating button---------*/
-  #add-something{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 12;
-  }
-  .create-invoice {
-      width: 13rem;
-      height: 3.5rem;
-      background: #0ABAB5;
-      color: white;
-      border: none;
-      font-size: 16px;
-      text-align: center;
-      margin-left: 0px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-  }
-
-  .container {
-      width: 100%;
-      padding-right: 20px;
-      padding-left: 20px;
-      margin: 0px;
-  }
-
-  /*Contact body styling*/
-   .body_content {
-    grid-column: 2 / -1;
-    text-align: center;
-  }
-  .contact_image {
-    height: 60vh;
-    width: 45vw;
-    align-self: center;
-  }
-  .body_content>h4 {
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-  .contact-form {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 60px 15vw;
-    font-family: inherit;
-  }
-  .form-label{
-    font-size: 0.8rem;
-    align-self: flex-start;
-    font-weight: bold;
-    color: #575757;
-  }
-  .inpt {
-    height: 30px;
-    margin: 10px 0 40px 0;
-    font-size: 1rem;
-    border: 1px solid #000000;
-  }
-  .txt-area {
-    margin: 10px 0 40px 0;
-    font-size: 1rem;
-    font-family: 'Ubuntu', sans-serif;
-    border: 1px solid #000000;
-  }
-  .contact-form-btn {
-    width: 155px;
-    padding: 10px 20px;
-    font-size: 18px;
-    align-self: center;
-    color: #ffffff;
-    background-color: #091429;
-    border: 1px solid #091429;
-    font-family: inherit;
-  }
-  .contact-form-btn:hover {
-    background-color: #032566;
-    border: 1px solid #032566;
-    cursor: pointer;
-    font-family: inherit;
-  }
-
-  /*media query*/
-  @media(max-width: 600px){
-    .main-cont {
-       grid-template-columns: repeat(4, 1fr);
-    }
-    .header {
-      grid-column: auto;
-    }
-    .header>h4 {
-      margin: 0 10px;
-    }
-    .contact_image {
-      width: 80vw;
-    }
-    .inpt, .txt-area {
-      margin: 10px 0 40px 0;
-    }
-  }
-  </style>
-
-
-</head>
-<body>
-
-    
-    
-    
-               
-    
-
-
-    
-<div class="wrapper">
-    <!-- Side Nav -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-
-            <a href="https://dev.lancers.app/dashboard"><img src="https://lancer-app.000webhostapp.com/images/svg/Lancers.svg" height="35" width="auto" class="img img-responsive"></a>
-
-        </div>
-        <ul class="list-unstyled components">
-            <li class=" ">
-                <a href="https://dev.lancers.app/dashboard">
-                    <img src="https://lancer-app.000webhostapp.com/images/svg/home.svg" height="20" width="auto"> <span> Dashboard</span></a>
-            </li>
-            <li class=" ">
-                <a href="https://dev.lancers.app/clients">
-                    <img src="https://lancer-app.000webhostapp.com/images/svg/customer.svg" height="20" width="auto"> <span> Client</span>
-                </a>
-            </li>
-
-            <li class="">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="https://lancer-app.000webhostapp.com/images/svg/lightbulb.svg" height="20" width="auto"> <span> Projects</span></a>
-                <ul class="collapse list-unstyled " id="homeSubmenu">
-                    <li>
-                        <a href="https://dev.lancers.app/project/status" class="pl-4"><i class="fas fa-dot-circle"></i> Status</a>
-                    </li>
-
-                    <li>
-                        <a href="https://dev.lancers.app/project/overview" class="pl-4"><i class="fas fa-dot-circle"></i> Overview</a>
-                    </li>
-                    <li>
-                        <a href="https://dev.lancers.app/project/collabrators" class="pl-4 "><i class="fas fa-dot-circle"></i> Collabrators</a>
-                    </li>
-                    <li>
-                        <a href="https://dev.lancers.app/project/task" class="pl-4"><i class="fas fa-dot-circle"></i> Task</a>
-                    </li>
-                    <li>
-                        <a href="https://dev.lancers.app/project/documents" class="pl-4"><i class="fas fa-dot-circle"></i> Documents</a>
-                    </li>
-
-                </ul>
-            </li>
-            <li class="">
-                <a href="https://dev.lancers.app/invoices">
-                    <img src="https://lancer-app.000webhostapp.com/images/svg/approve-invoice.svg" height="20" width="auto"> <span> Invoice</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://dev.lancers.app/contracts">
-                    <img src="https://lancer-app.000webhostapp.com/images/svg/policy.svg" height="20" width="auto"> <span> Contract</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://dev.lancers.app/proposals">
-                    <img src="https://lancer-app.000webhostapp.com/images/svg/approval.svg" height="20" width="auto"> <span> Proposals</span>
-                </a>
-            </li>
-                     <li class="">
-                <a href="https://dev.lancers.app/dashboard/profile/settings">
-                    <img src="https://lancer-app.000webhostapp.com/images/svg/approval.svg" height="20" width="auto"> <span> Settings</span>
-                </a>
-            </li>
-        </ul>
-
-    </nav>
-
-
-
-    <!-- Page Content Holder -->
-    <div id="content">
-        <!-- <Topnav /> -->
-        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-            <div class="container-fluid">
-                <button type="button" id="sidebarCollapse" class="navbar-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <form class="form-inline my-2 ml-4">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text border-right-0 bg-white" id="basic-addon1"><i class="fas fa-search"></i></span>
-                        </div>
-                        <input class="form-control border border-left-0 searchBox" type="text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
-                    </div>
-                </form>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-auto">
-                    
-                        <li class="nav-item active">
-                            <a class="nav-link p-3" href="https://dev.lancers.app/contact"><img src="https://lancer-app.000webhostapp.com/images/svg/help.svg" height="25" width="auto"> <span class="d-lg-none d-xl-none"> You need help?</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link border-left p-3" href="#"><img src="https://lancer-app.000webhostapp.com/images/svg/alarm-clock.svg" height="25" width="auto"> <span class="d-lg-none d-xl-none"> Reminder</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link border-left p-3" href="/notifications"><img src="https://lancer-app.000webhostapp.com/images/svg/notification.svg" height="25" width="auto"> <span class="d-lg-none d-xl-none"> Notification</span></a>
-                        </li>
-                        
-
-                    <li class="nav-item">
-                     <a class="nav-link border-left p-3" href="/dashboard/profile">
-                                                            <img id="image_selecter" src="https://dev.lancers.app/images/user-default.jpg" style="width: 30px; height: 30px; border-radius: 10%; pointer: finger;" alt="Profile Image">
-                                        </a>
-                    </li>
-                        <li class="nav-item">
-                            <a class="nav-link p-3 border-left" href="https://dev.lancers.app/logout" ><i class="fas fa-sign-out-alt"></i> <span class="d-lg-none d-xl-none"> Logout</span></a>
-                        </li>
-                    </ul>
-                </div>
+  <body>
+    <div class="main-cont">
+      <div class="header">
+        <h3>Contact Support</h3>
+        <div class="header-items">
+          <div>
+            <a href="#"><img src="https://res.cloudinary.com/slarin/image/upload/v1570685957/contact-support/help_pvv3ie.svg" class="header-icon"></a>
+            <a href="#"><p>Support</p></a>
+          </div>
+          <div>
+            <a href="#"><img src="https://res.cloudinary.com/slarin/image/upload/v1570685957/contact-support/notification_1_ddc0vh.svg" class="header-icon"></a>
+          </div>
+          <div class="dropdown">
+            <a href="#"><img src="https://res.cloudinary.com/slarin/image/upload/v1570685959/contact-support/avatar_ofgo0e.svg" class="avatar-sm"></a>
+            <p>Juliet</p>
+            <img src="https://res.cloudinary.com/slarin/image/upload/v1570685957/contact-support/Vectordown-caret_fla9dn.svg" class="caret-down" onclick="drop()"></i>
+            <div class="dropdown-menu" id="dd-menu">
+              <a href="#" class="menu-item">Action</a>
+              <a href="#" class="menu-item">Another action</a>
+              <a href="#" class="menu-item">Something else here</a>
             </div>
-        </nav>
+          </div>
+        </div>
+      </div>
 
-            <section class="">
-        <div class="container-fluid mt-5">
-            <h4 class="mt-0 text-primary">CONTACT SUPPORT</h4>
-            <div class="body_content container mt-5">
-                        <img src="https://res.cloudinary.com/slarin/image/upload/v1570685956/contact-support/Contact_us_1_rm3q98.png" alt="contact help" class="contact_image">
-                        <h4>Read the frequently asked questions<br>or send us a message</h4>
-                        <br>
+      <div class="sidebar">
+        <div class="sidebar-content">
+          <img class="logo-img" src="https://res.cloudinary.com/slarin/image/upload/v1570685957/contact-support/lancers_zump2v.svg">
+          <table class="nav-table">
+            <tr>
+              <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570685957/contact-support/home_ytnlm7.svg" class="icon"></td><td class="nav-txt"><a href="#">Dashboard</a></td>
+            </tr>
+            <tr>
+              <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570685955/contact-support/customer_bpnu4k.svg" class="icon"></td><td class="nav-txt"><a href="#">Clients</a></td>
+            </tr>
+            <tr>
+              <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570685955/contact-support/budget_1_bosmd2.svg" class="icon"></td><td class="nav-txt"><a href="#">Estimates</a></td>
+            </tr>
+            <tr>
+              <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570685955/contact-support/Group_khqbxt.svg" class="icon"></td><td class="nav-txt"><a href="#">Projects</a></td>
+            </tr>
+            <tr>
+              <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570685955/contact-support/Group-invoices_i80pqb.svg" class="icon"></td><td class="nav-txt"><a href="#">Invoices</a></td>
+            </tr>
+            <tr>
+              <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570685957/contact-support/policy_jn93r8.svg" class="icon"></td><td class="nav-txt"><a href="#">Contracts</a></td>
+            </tr>
+            <tr>
+              <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570685958/contact-support/approval_ylo1xp.svg" class="icon"></td><td class="nav-txt"><a href="#">Proposals</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
 
-        
-         @if ($errors->any())
-    <div class="alert alert-danger" style="color:red;max-width: 60%;">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+      <div class="content">
+        <img src="https://res.cloudinary.com/slarin/image/upload/v1570685956/contact-support/Contact_us_1_rm3q98.png" alt="contact help" class="hero-img">
+        <h4>Read the frequently asked questions<br>or send us a message</h4>
+
+        <form class="contact-form">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" class="inpt">
+          <label for="message" class="form-label">Message</label>
+          <textarea rows="15" class="txt-area"></textarea>
+          <button class="contact-form-btn">Send</button>
+        </form>
+      </div>
+
     </div>
-@endif
-       <span style='color:green;'> {{empty(Session::get('success')) ? "":Session::get('success')}}</span>
-                
-                        <form class="contact-form action="/process_contact_form" method="post">
-                          @csrf <!-- {{ csrf_field() }} -->
-                          <label for="subject" class="form-label">Subject</label>
-                          <input type="text" class="inpt">
-                          <label for="message" class="form-label">Message</label>
-                          <textarea rows="15" class="txt-area"></textarea>
-                          <button class="contact-form-btn">Send</button>
-                        </form>
-                </div>
-    </section>
-    </div>
-
-</div>
-
-
-<!-- Inject other content after wrapper div -->
-
-
-
-    
-
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 
     <script>
-      $("#image_selecter").on("click", function() {
-        $("#picture").trigger("click");
-      });
-
-
-     function image1(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#image_selecter')
-                    .attr('src', e.target.result)
-                    .width(100)
-                    .height(100);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-   var upload_button = document.getElementById("picture_upload");
-   upload_button.style.display = "block";
-    }
-
+      function drop() {
+        let x = document.getElementById('dd-menu');
+        x.classList.toggle('active');
+      }
     </script>
+  </body>
 
-   
-
-       <script>
-        let selectStatus = document.querySelector('#select-filter');
-        selectStatus.addEventListener('change', function(){
-            // this.form.action = "/projects?status="+selectStatus.value;
-            // this.form.submit();
-            if(selectStatus.value == 'all') window.location.href="/projects";
-            else window.location.href="/projects?filter="+selectStatus.value;
-        }, false)
-    </script>
-
-</body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-            $(this).toggleClass('active');
-        });
-    });
-</script>
 </html>
