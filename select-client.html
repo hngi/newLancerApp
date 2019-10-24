@@ -296,8 +296,8 @@
 
         <div class="cli-box" style="color: #919191">
           <div class="sub-box">
-            <p class="txt" onmouseout="verifyPath()" id="createClient">An already existing Client</p>
-            <select name="" class="select-project" style="color: #919191">
+            <p class="txt" id="createClient">An already existing Client</p>
+            <select name="" class="select-project" onmouseout="verifyPath()" style="color: #919191">
               <option value="">Select Project</option>
               <option value="">Demo</option>
             </select>
@@ -318,26 +318,11 @@
 </div>
 
 <script>
-    let client_content = document.querySelector('#client_content');
-    let client_page = document.querySelector('#Create_client');
-    let hide = () => {
-       document.querySelector('#Create_client').classList.remove('hidden');
-       document.querySelector('#client').classList.add('hidden');
-       
-    }
-    client_content.addEventListener('click', hide );
-    document.querySelector('#close').addEventListener('click', () => {
-        document.querySelector('#client').classList.remove('hidden');
-        document.querySelector('#Create_client').classList.add('hidden');
-    });
     
-    
-    
-    function verifyPath(){
-        let createProject = document.getElementById('createClient').value;
-        let projectSelect = document.getElementById('clientSelect');
-        let ele = clientSelect.selectedIndex;
-        if ( createClient !== "" || ele !== 0 ){
+   function verifyPath(){
+        let createClient = document.getElementById('createClient').value;
+         
+        if ( createClient !== "" ){
             document.querySelector('.a-next').style.background = '#0ABAB5';
             document.querySelector('.next').style.background = '#0ABAB5';
             
