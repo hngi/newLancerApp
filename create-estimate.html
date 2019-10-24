@@ -21,7 +21,7 @@
         <p class="nav cEstimate" id="cre">Create Estimate</p>
     </div>
     <div>
-       <input class="navM disabled" id="ext" type="button" value="NEXT">
+       <input class="next disabled" id="ext" type="button" value="NEXT">
     </div>
   </div>
 
@@ -41,7 +41,7 @@
                 <p class="card-text">Find estimate for a previously created project, by doing so the estimate gets populated with some of the data.</p>
 
                 <div class="dropdown mr-1">
-                   <select class="dropbtn" name="" onmouseout="verifyPath()" id="projectSelect">
+                   <select class="dropbtn" name="" id="projectSelect">
                        <option value="select" selected="disabled">Select Project</option>
                        <a href=""><option value="app" class="dropdown-item">Glacier Fintech App</option></a>
                        <a href=""><option value="branding" class="dropdown-item">AB Technology Solutions Branding</option></a>
@@ -61,7 +61,7 @@
               </p>
             
              <div class="project">
-                 <input class="l-proj" type="text" onmouseout="verifyPath()" value="Glacier Fintech App" name="" id="createProject">
+                 <input class="l-proj" type="text" oninput="verifyPath()" value="Glacier Fintech App" name="" id="createProject">
                  <br>
                  <span class="req">Required</span>
              </div>
@@ -82,34 +82,25 @@
     <script>
     let est_content = document.querySelector('#est_content');
     let estimate_page = document.querySelector('#Create_estimate');
-
     let hide = () => {
        // estimate_page.classList.add('hidden');
        document.querySelector('#Create_estimate').classList.remove('hidden');
        document.querySelector('#estimate').classList.add('hidden');
        
     }
-
     est_content.addEventListener('click', hide );
-
-
     document.querySelector('#close').addEventListener('click', () => {
         document.querySelector('#estimate').classList.remove('hidden');
         document.querySelector('#Create_estimate').classList.add('hidden');
-
     });
-
         //createProject = '';
     
     
     
-
     function verifyPath(){
         let createProject = document.getElementById('createProject').value;
         let projectSelect = document.getElementById('projectSelect');
-
         let ele = projectSelect.selectedIndex;
-
         if ( createProject !== "" || ele !== 0 ){
             document.querySelector('.a-next').style.background = '#0ABAB5';
             document.querySelector('.next').style.background = '#0ABAB5';
