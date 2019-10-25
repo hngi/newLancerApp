@@ -604,10 +604,10 @@
                             <li class="nav-item">
                                 <a class="nav-link border-left p-2" href="notification.html"><img src="https://lancer-app.000webhostapp.com/images/svg/notification.svg" height="25" width="auto"> <span class="d-lg-none d-xl-none"> Notification</span></a>
                             </li>
-                            <li class="nav-item mx-1 user-nav dropdown">
+                            <li class="nav-item mx-1 user-nav dropdown mx-2">
                                 <a class="nav-link border-left p-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false"><span class="border rounded-circle p-1 font-weight-bold">AU</span></a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu" data-toggle="popover" data-placement="left"">
                 <a class="dropdown-item" href="#"><img src="https://res.cloudinary.com/nxcloud/image/upload/v1571411201/Temmyjoy/Group_1_mvokcv.svg" alt="">&nbsp; My Profile</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#"><img src="https://res.cloudinary.com/nxcloud/image/upload/v1571411202/Temmyjoy/Group_m59pib.svg" alt="">&nbsp; Settings</a>
@@ -957,7 +957,39 @@ $('.table-responsive').on('hide.bs.dropdown', function () {
      $('.table-responsive').css( "overflow", "auto" );
 })
            
-});
+            const searchBox = document.querySelector('.searchBox');
+            const status = document.querySelector('.status');
+            const filterNames =()=>{
+                const titles = document.querySelectorAll('.titles');
+                const searchBoxValue = searchBox.value.toLowerCase();
+            
+                titles.forEach(title=>{
+                    if(!title.textContent.toLowerCase().includes(searchBoxValue)){
+                        title.parentElement.style.display = "none"
+                    }else{
+                        title.parentElement.style.display = "";
+                    }
+                })
+            }
+            const filterStatus =()=>{
+                const statusText = document.querySelectorAll('.alert-primary')
+                
+                statusText.forEach(text => {
+                    if(status.value !== 'All'){
+                        if(status.value === text.textContent){
+                            text.parentElement.parentElement.style.display = ""
+                        }else{
+                            text.parentElement.parentElement.style.display = "none"
+                        }
+                     }else{
+                        text.parentElement.parentElement.style.display = ""
+                     }
+                })  
+            }
+            searchBox.addEventListener('keyup', filterNames);
+            status.addEventListener('change', filterStatus);
+               
+        });
     </script>
 </body>
 
