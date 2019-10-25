@@ -121,6 +121,7 @@
 
  .form-group label {
      font-weight: lighter;
+     font-size: 16px;
  }
 
  .form-group span input {
@@ -130,9 +131,18 @@
  .form-group input {
      margin-bottom: 15px;
      width: 90%;
-     padding: 0 10px;
+     padding: 2px 10px 2px 10px;
  }
-    
+
+ .contact-info{
+     margin-bottom:30px;
+     margin-top:15px;
+ }
+  .client-info{
+      font-weight: bold;
+      font-size: 39px;
+    line-height: 48px;
+  }
  .country {
      height: 29px;
      overflow: hidden;
@@ -173,24 +183,85 @@
   }
  }
 
+ @media screen and (min-width: 500px){
+   .my-container{
+       height: 40px;
+
+   }
+
+   main .content {
+    border: 1px solid #E5E5E5;
+    padding: 20px;
+}
+.ko-next{
+    font-size: 20px;
+}
+.text-center{
+    font-size: 25px;
+}
+.form-group label {
+    font-weight: lighter;
+    font-size: 14px;
+}
+.header-content{
+    padding:5px;
+}
+ }
+
+
+ @media screen and (min-width: 320px){
+   .client-info h2{
+       font-size:20px;
+   }
+   .content{
+       padding: 0px 25px;
+       margin:0;
+   }
+   .header_content .ko-next {
+    width: 130%;
+    height: 100%;
+    font-size: 20px;
+    background-color: #0ABAB5;
+    border: 1px solid #E5E5E5;
+    font-weight: lighter;
+    color: #E5E5E5;
+}
+main {
+    clear: both;
+    width: 90%;
+    margin: 0 auto;
+    padding: 23px 0;
+}
+main .content {
+    border: .5px solid #E5E5E5;
+    padding: 12px;
+}
+ }
+
 </style>
 </head>
 
 <body>
     <div class="container-fluid">
+         <div class="container-fluid my-container">
+             <header class="header ">
+               <div class="header_content col-xs-2 header_control"> <button class="col-xs-6">&times;</button>
+                 <button class="col-xs-6">&lt;</button></div>
+               <div class="header_content client col-xs-8"> <article class="text-center">Client</article></div>
 
-    <header class="header ">
-        <div class="header_content col-xs-2 header_control"> <button class="col-xs-6">&times;</button>
-           <button class="col-xs-6">&lt;</button></div>
-        <div class="header_content client col-xs-8"> <article class="text-center"> Client </article>
-        </div>
-        <div class="header_content col-xs-2"> <button class="ko-next">Next</button> </div>
-    </header>
+               <div class="header_content col-xs-2"> <button class="ko-next">Next</button></div>
+             </header>
+    </div>
+
+
+
+
 
     <main>
-        <h2>Client Information</h2>
-        <section class="content">
-            <h4>Business Information</h4>
+        <h2 class="client-info">Client Information</h2>
+          <section class="content">
+
+        <h4>Business Information</h4>
             <div class="form-group">
                 <label for="company_name">Company name</label>
                 <input type="text" name="company_name" id="Cname" placeholder="e.g Sunshine Studio">
@@ -250,24 +321,22 @@
             </span>
             </div>
 
-            <h5>Contact Information</h5>
+            <h4 class="contact-info">Contact Information</h4>
             <div class="form-group">
                 <label for="company_name">Contact name</label>
                 <input type="text" name="contact_name" id="Contact-name" placeholder="e.g Ben Davies">
                 <label for="company_name">Contact email</label>
-                <input type="email" name="email" id="email" placeholder="e.g email@domain.com">
-                <label for="company_name">Contact name</label>
-                <input type="text" name="contact_name" id="Contact-name" placeholder="e.g Ben Davies">
-                <label for="company_name">Contact email</label>
-                <input type="email" name="email" id="email" placeholder="e.g email@domain.com">
+                <input type="email" name="email" id="email" placeholder="e.g email@domain.com">    
             </div>
+            </div>
+
             <h5>Add other contacts &nbsp; +</h5>
         </section>
 
         <section>
         <button class="ko-button"> Next</button>
         </section>
-    </main>
+      </main>
     </div>
 </body>
 </html>
