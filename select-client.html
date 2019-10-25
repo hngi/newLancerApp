@@ -6,24 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link
-  href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap"
-  rel="stylesheet"
-/>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet"/>
   <style>
     body {
       box-sizing: border-box;
       margin: 0px;
       font-family: ubuntu;
     }
-
     .con-div {
       background-color: #FFFFFF;
       width: 100%;
       margin: auto;
     }
-
     .top-divs {
       display: flex;
       margin: 0 auto;
@@ -31,25 +30,21 @@
       background-color: #FFFFFF;
       font-family: Roboto;
     }
-
     .ctrl-div {
       width: 8%;
       text-align: center;
       border: 1px solid #919191;
     }
-
     .ctrl-btn {
       width: 100%;
       background-color: #FFFFFF;
       border: none;
     }
-
     .inv-div {
       width: 60%;
       text-align: center;
       border: 1px solid #919191;
     }
-
     #inv-btn {
       width: 100%;
       border: none;
@@ -58,13 +53,11 @@
       font-size: 28px;
       background-color: #FFFFFF;
     }
-
     .send-div {
       width: 32%;
       text-align: center;
       border: 1px solid #919191;
     }
-
     #send-btn {
       width: 100%;
       border: none;
@@ -73,46 +66,39 @@
       font-size: 28px;
       background-color:  rgba(196, 196, 196, 0.4);
     }
-
     .cli-info {
       width:75%;
-      height:80vh;
+      height:70vh;
       background-color:#FFFFFF;
       margin: auto
     }
-
     .cli-box {
       display: flex;
       justify-content:space-around;
     }
-
     .sub-box {
       width: 30%;
       padding: 2em 1em;
-      margin: 2em;
+      margin: 1em;
       background-color:#FFF;
       text-align:center;
       border: 1px solid #919191;
       border-radius: 2px
     }
-
     .select-project {
       width: 90%;
       padding: 1em;
       border: 1px solid #919191;
     }
-
     .cli-text {
       padding-top: 1.5em;
     }
-
     .my-icon {
       width: 100%;
       margin: 0.6em 0;
       color: #c4c4c4;
       background-color: #FFFFFF;
     }
-
     .what-cli {
       padding: 1.5em 1em;
       margin: 0;
@@ -120,60 +106,120 @@
       font-weight: bold;
       color: #323232;
     }
-
     .txt {
       margin: 2em 0;
     }
     .column-1 {
-            width: 5%;
-            border-right: 2px solid rgb(223, 223, 223);
-            padding: 1em;
-            text-align: center;
-            color: black;
-            text-decoration: none;
-        }
-        .column-2 {
-            width: 75%;
-            text-align: center;
-            align-items: center;
-            padding: 0.8em;
-            color: black;
-            text-decoration: none;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .column-3 {
-            width: 15%;
-            border-left: 2px solid rgb(223, 223, 223);
-            padding: 0.8em;
-            text-align: center;
-            background-color: rgba(196, 196, 196, 0.4);
-            color: white;
-            text-decoration: none;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
+      width: 5%;
+      border-right: 2px solid rgb(223, 223, 223);
+      padding: 1em;
+      text-align: center;
+      color: black;
+      text-decoration: none;
+    }
+    .column-2 {
+      width: 75%;
+      text-align: center;
+      align-items: center;
+      padding: 0.8em;
+      color: black;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .column-3 {
+      width: 15%;
+      border-left: 2px solid rgb(223, 223, 223);
+      padding: 0.8em;
+      text-align: center;
+      background-color: rgba(196, 196, 196, 0.4);
+      color: white;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .disabled {
+      cursor: not-allowed !important;
+    }
+    div>#ext {
+      background: rgba(207, 204, 204, 0.4);
+      font-size: 24px;
+      font-weight: bold;
+      justify-content: center;
+      border: none;
+      color: white;
+      width: 100%;
+      height: 75px;
+      outline: none;
+    }
+    .next a {
+      color: #ffffff;
+    }
+    .next {
+      width: 10px;
+      background: rgba(196, 196, 196, 0.4);
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      padding-right: 98px;
+      padding-left: 47px;
+      color: white;
+    }
+    .a-next {
+      background: rgba(207, 204, 204, 0.4);
+      width: 220px;
+      height: 55px;
+      padding: 5px 20px;
+      margin: 0 auto;
+      font-size: 24px;
+      font-weight: bold;
+      clear: both;
+      border: none;
+      color: white;
+      border: none !important;
+    }
+    .a-next a {
+      color: white;
+    }
+    button {
+      width: 120px;
+      background: rgba(207, 204, 204, 0.4);
+      border: none;
+      height: 100%;
+    }
+       
     @media screen and (max-width: 500px) {
       .cli-box {
         display: block;
       }
-
       .sub-box {
         width: 90%;
         margin: 2em 0em;
       }
-
       option {
         width: 80%;
       }
-
       .what-cli {
         font-size: 1.3em;
       }
     }
-    @media (max-width: 575.98px) {
-            .column-1 {
+    @media screen and (min-width: 0px) and (max-width: 500px) {
+      .cli-box {
+        display: block;
+      }
+      .sub-box {
+        width: 90%;
+        margin: 4em 0em;
+      }
+      option {
+        width: 80%;
+      }
+      .what-cli {
+        font-size: 1.3em;
+      }
+    }
+    @media screen and (min-width: 0px) and (max-width: 575.98px) {
+            .column-1{
                 width: 15%;
                 padding: 0;
             }
@@ -201,10 +247,22 @@
                 height: 15px;
                 width: 10px;
             }
+             .column-2 {
+                width: 65%;
+                padding-top: 0.9em;
+                font-size: 2.0em;
+                text-align: center;
+            }
+            .column-3 {
+                width: 25%;
+                padding-top: 1.0em;
+                font-size: 1.8em;
+                text-align: center;
+            }
         }
         @media (min-width: 768px) and (max-width: 991.98px) {
             .column-1 {
-                width: 9%;
+                width: 5%;
             }
         }
   </style>
@@ -214,20 +272,20 @@
     <div class="max-con">
       <header style="border-bottom: 2px solid rgb(223, 223, 223);">
         <nav style="display: flex; ">
-            <a href="#" class="column-1">
+            <a href="index.html" class="column-1" class="close navM">
                 <img
                     src="https://res.cloudinary.com/mide358/image/upload/v1570621469/clear_24px_rasbwc.png"
-                    alt="navIcon"
-                />
+                    alt="navIcon"/>
             </a>
             <a href="#" class="column-1">
                 <img
                     src="https://res.cloudinary.com/mide358/image/upload/c_scale,h_27,w_13/v1570621434/Vector_ag4hnv.png"
-                    alt="navIcon"
-                />
+                    alt="navIcon"/>
             </a>
             <div class="column-2">client</div>
-            <a href="#" class="column-3">NEXT</a>
+            <div>
+            <input class="next disabled" id="ext" type="button" value="NEXT">
+            </div>
         </nav>
     </header>
 
@@ -238,8 +296,8 @@
 
         <div class="cli-box" style="color: #919191">
           <div class="sub-box">
-            <p class="txt">An already existing Client</p>
-            <select name="" class="select-project" style="color: #919191">
+            <p class="txt" id="createClient">An already existing Client</p>
+            <select name="" class="select-project" onchange="verifyPath()" style="color: #919191">
               <option value="">Select Project</option>
               <option value="">Demo</option>
             </select>
@@ -251,6 +309,34 @@
       </div>
     </div>
 
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-12">
+      <button class="a-next disabled"><a href="#">NEXT</a></button>
+    </div>
   </div>
+</div>
+
+<script>
+    
+   function verifyPath(){
+        let createClient = document.getElementById('createClient').value;
+         
+        if ( createClient !== "" ){
+            document.querySelector('.a-next').style.background = '#0ABAB5';
+            document.querySelector('.next').style.background = '#0ABAB5';
+            
+            document.querySelector('.a-next').classList.remove('disabled');
+            document.querySelector('.next').classList.remove('disabled');
+        } else {
+            //console.log('here works');
+            document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.next').classList.add('disabled');
+            document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.a-next').classList.add('disabled');
+        }
+        
+    }
+    </script>
 </body>
 </html>

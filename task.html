@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Lancer - Task</title>
-    <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png"
+        type="image/x-icon">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -195,203 +197,341 @@
             margin: 40px 0;
         }
 
-        
+        .modal-save, .modal-close{
+            background-color: var(--secondary-color) !important;
+        }
+/* ---------------------------------------------------
+            CONTENT STYLE
+        ----------------------------------------------------- */
+        #content {
+          width: 100%;
+          min-height: 100vh;
+          transition: all 0.3s;
+        }
+        #sidebarCollapse {
+          width: 40px;
+          height: 40px;
+          background: #f5f5f5;
+          cursor: pointer;
+         
+        }
+        #sidebarCollapse span {
+          width: 80%;
+          height: 2px;
+          margin: 0 auto;
+          display: block;
+          background: #555;
+          transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+          transition-delay: 0.2s;
+        }
+        #sidebarCollapse span:first-of-type {
+          transform: rotate(45deg) translate(2px, 2px);
+        }
+        #sidebarCollapse span:nth-of-type(2) {
+          opacity: 0;
+        }
+        #sidebarCollapse span:last-of-type {
+          transform: rotate(-45deg) translate(1px, -1px);
+        }
+        #sidebarCollapse.active span {
+          transform: none;
+          opacity: 1;
+          margin: 5px auto;
+        }
+        .alert.alert-primary.py-0.px-2.small.m-0.pending{
+            color: #F67A06;
+            font-weight: bold;
+            background-color: rgba(201, 133, 70,0.3);
+            border-color: rgba(201, 133, 70,0.3);
+        }
+        .py-0{
+           
+            padding: 5px 15px !important;
+            border-radius: 0;
+            border: none
+        }
+        .alert.alert-primary.py-0.px-2.small.m-0.active{
+            color: #179615;
+            font-weight: bold;
+            background-color: #C4C4C4;
+            border-color:  #C4C4C4;
+        }
+        .container-fluid .input-group{
+            margin-left: 400px;
+            width: 350px;
+        }
+      
+        .container-fluid .mydrop-down {
+            width: 300px;
+        }
+
         /* ---------------------------------------------------
             SIDEBAR STYLE
         ----------------------------------------------------- */
         .wrapper {
-            display: flex;
-            width: 100%;
-            align-items: stretch;
-            perspective: 1500px;
+          display: flex;
+          width: 100%;
+          align-items: stretch;
+          perspective: 1500px;
         }
-
         #sidebar {
-            min-width: 250px;
-            max-width: 250px;
-            background: var(--primary-color);
-            color: #fff;
-            transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-            transform-origin: bottom left;
+          min-width: 220px;
+          max-width: 220px;
+          background: var(--primary-color);
+          color: #fff;
+          transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+          transform-origin: bottom left;
         }
-
         #sidebar.active {
-            margin-left: -250px;
-            transform: rotateY(100deg);
+          margin-left: -250px;
+          transform: rotateY(100deg);
         }
-
         #sidebar .sidebar-header {
-            padding: 20px;
-            background: var(--primary-color);
+          padding: 20px;
+          background: var(--primary-color);
         }
-
         #sidebar ul.components {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--primary-color);
+          padding: 20px 0;
+          border-bottom: 1px solid var(--primary-color);
         }
-
         #sidebar ul p {
-            color: #fff;
-            padding: 10px;
+          color: #fff;
+          padding: 10px;
         }
-
         #sidebar ul li a {
-            padding: 10px;
-            font-size: 1em;
-            font-weight: 600;
-            display: block;
-            transition: 0.4;
+          padding: 1.2rem 0rem;
+          padding-left: 40px;
+          font-size: 1em;
+          font-weight: 600;
+          display: block;
+          transition: 0.4;
         }
-
         #sidebar ul li a:hover {
-            color: #ffffff;
-            background: rgba(19, 41, 82, 1);
+          color: #ffffff;
+          background: rgba(19, 41, 82, 1);
         }
-
         #sidebar ul li a img {
             margin-top: -4px !important;
             margin-left: 4px;
             margin-right: 4px;
         }
-
         #sidebar.active ul li a span {
             vertical-align: text-bottom !important;
         }
-
-        #sidebar ul li.active>a,
+        #sidebar ul li.active > a,
         a[aria-expanded="true"] {
-            color: #fff;
-            background: rgba(19, 41, 82, 1);
+          color: #fff;
+          background: rgba(19, 41, 82, 1);
         }
-
         a[data-toggle="collapse"] {
-            position: relative;
+          position: relative;
         }
-
         .dropdown-toggle::after {
-            display: block;
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
         }
-
         ul ul a {
-            font-size: 0.9em !important;
-            padding-left: 30px !important;
-            background: rgba(19, 41, 82, 1);
-            ;
+          font-size: 0.9em !important;
+          padding-left: 30px !important;
+          background: rgba(19, 41, 82, 1);;
         }
-
         ul.CTAs {
-            padding: 20px;
+          padding: 20px;
         }
-
         ul.CTAs a {
-            text-align: center;
-            font-size: 0.9em !important;
-            display: block;
-            border-radius: 5px;
-            margin-bottom: 5px;
+          text-align: center;
+          font-size: 0.9em !important;
+          display: block;
+          border-radius: 5px;
+          margin-bottom: 5px;
         }
-
         a.download {
-            background: #fff;
-            color: #7386D5;
+          background: #fff;
+          color: #7386D5;
         }
-
         a.article,
         a.article:hover {
-            background: rgba(19, 41, 82, 1) !important;
-            color: #fff !important;
+          background: rgba(19, 41, 82, 1) !important;
+          color: #fff !important;
         }
-
         /* ---------------------------------------------------
-            CONTENT STYLE
+            MEDIAQUERIES
         ----------------------------------------------------- */
-        #content {
-            width: 100%;
-            min-height: 100vh;
-            transition: all 0.3s;
-        }
-
-        #sidebarCollapse {
+        @media (max-width: 616px) {
+          #sidebar {
+            margin-left: -220px;
+            transform: rotateY(90deg);
+          }
+          #sidebarCollapse {
             width: 40px;
             height: 40px;
             background: #f5f5f5;
             cursor: pointer;
-        }
-
-        #sidebarCollapse span {
-            width: 80%;
-            height: 2px;
-            margin: 0 auto;
-            display: block;
-            background: #555;
-            transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
-            transition-delay: 0.2s;
-        }
-
-        #sidebarCollapse span:first-of-type {
-            transform: rotate(45deg) translate(2px, 2px);
-        }
-
-        #sidebarCollapse span:nth-of-type(2) {
-            opacity: 0;
-        }
-
-        #sidebarCollapse span:last-of-type {
-            transform: rotate(-45deg) translate(1px, -1px);
-        }
-
-        #sidebarCollapse.active span {
+            display:block;
+          }
+          #sidebar.active {
+            margin-left: 0;
+            transform: none;
+          }
+          #sidebarCollapse span:first-of-type,
+          #sidebarCollapse span:nth-of-type(2),
+          #sidebarCollapse span:last-of-type {
             transform: none;
             opacity: 1;
             margin: 5px auto;
+          }
+          #sidebarCollapse.active span {
+            margin: 0 auto;
+          }
+          #sidebarCollapse.active span:first-of-type {
+            transform: rotate(45deg) translate(2px, 2px);
+          }
+          #sidebarCollapse.active span:nth-of-type(2) {
+            opacity: 0;
+          }
+          #sidebarCollapse.active span:last-of-type {
+            transform: rotate(-45deg) translate(1px, -1px);
+          }
+          .container-fluid .input-group{
+            margin-left: -20px;
+            width: 220px;
+            }
+          .container-fluid .mydrop-down {
+            width: 100%;
+            }
+          .container-fluid .mydrop-down {
+            width: 100%;
+            }
+            .container-fluid{
+                margin-left: 40px;
+            }
         }
-
-        /* ---------------------------------------------------
-            MEDIAQUERIES
-        ----------------------------------------------------- */
-        @media (max-width: 768px) {
+        @media (max-width: 533px) {
             #sidebar {
-                margin-left: -250px;
-                transform: rotateY(90deg);
+              margin-left: -220px;
+              transform: rotateY(90deg);
             }
-
+  
+            #sidebarCollapse {
+              width: 40px;
+              height: 40px;
+              background: #f5f5f5;
+              cursor: pointer;
+              display:block;
+            }
+  
             #sidebar.active {
-                margin-left: 0;
-                transform: none;
+              margin-left: 0;
+              transform: none;
             }
-
             #sidebarCollapse span:first-of-type,
             #sidebarCollapse span:nth-of-type(2),
             #sidebarCollapse span:last-of-type {
-                transform: none;
-                opacity: 1;
-                margin: 5px auto;
+              transform: none;
+              opacity: 1;
+              margin: 5px auto;
             }
-
             #sidebarCollapse.active span {
-                margin: 0 auto;
+              margin: 0 auto;
             }
-
             #sidebarCollapse.active span:first-of-type {
-                transform: rotate(45deg) translate(2px, 2px);
+              transform: rotate(45deg) translate(2px, 2px);
             }
-
             #sidebarCollapse.active span:nth-of-type(2) {
-                opacity: 0;
+              opacity: 0;
             }
-
             #sidebarCollapse.active span:last-of-type {
-                transform: rotate(-45deg) translate(1px, -1px);
+              transform: rotate(-45deg) translate(1px, -1px);
             }
-        }
+  
+            .container-fluid .input-group{
+              margin-left: -100px;
+              width: 100px;
+              padding-left: -200px;
+              }
+  
+            .container-fluid .mydrop-down {
+              width: 100%;
+              }
+  
+              .container-fluid{
+                  margin-left: -40px;
+              }
+          }
+          @media (max-width: 1024px) {
+            #sidebar {
+              margin-left: -220px;
+              transform: rotateY(90deg);
+            }
+  
+            #sidebarCollapse {
+              width: 40px;
+              height: 40px;
+              background: #f5f5f5;
+              cursor: pointer;
+              display:block;
+            }
+  
+            #sidebar.active {
+              margin-left: 0;
+              transform: none;
+            }
+            #sidebarCollapse span:first-of-type,
+            #sidebarCollapse span:nth-of-type(2),
+            #sidebarCollapse span:last-of-type {
+              transform: none;
+              opacity: 1;
+              margin: 5px auto;
+            }
+            #sidebarCollapse.active span {
+              margin: 0 auto;
+            }
+            #sidebarCollapse.active span:first-of-type {
+              transform: rotate(45deg) translate(2px, 2px);
+            }
+            #sidebarCollapse.active span:nth-of-type(2) {
+              opacity: 0;
+            }
+            #sidebarCollapse.active span:last-of-type {
+              transform: rotate(-45deg) translate(1px, -1px);
+            }
+  
+            #content .container-fluid{
+                margin-left: 0px;
+               
+                }
+            .container-fluid .input-group{
+              margin-left: 60px;
+              width: 150px;
+              }
+  
+            .container-fluid .mydrop-down {
+              width: 100%;
+              }
+  
+            .container-fluid .mydrop-down {
+              width: 100%;
+              }
+              /* .table-responsive .dropdown-menu {
+            position: relative !important; 
+            white-space: nowrap;
+            transform: none
+        } */
+          }
 
         /* ---------------------------------------------------
             Table
         ----------------------------------------------------- */
+    
+        
+        /* .table-responsive .dropdown-menu {
+            position: static !important; 
+            white-space: nowrap;
+            overflow: hidden;
+        } */
         table.project-table {
             border-collapse: separate;
             border-spacing: 0 1em;
@@ -408,7 +548,7 @@
         table.project-table tbody tr td,
         table.project-table thead tr th {
             max-width: 200px;
-            overflow: hidden;
+            /* remove the css property and value you have here before */
             text-overflow: ellipsis;
             white-space: nowrap;
         }
@@ -506,32 +646,45 @@
                         <span></span>
                         <span></span>
                     </button>
-                    
+
                     <form class="form-inline my-2 ml-4">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text border-right-0 bg-white" id="basic-addon1"><i class="fas fa-search"></i></span>
+                                <span class="input-group-text border-right-0 bg-white" id="basic-addon1"><i
+                                        class="fas fa-search"></i></span>
                             </div>
-                            <input class="form-control border border-left-0 searchBox" type="text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                            <input class="form-control border border-left-0 searchBox" type="text" placeholder="Search"
+                                aria-label="Search" aria-describedby="basic-addon1">
                         </div>
                     </form>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link p-3" href="#"><img src="https://lancer-app.000webhostapp.com/images/svg/help.svg" height="25" width="auto"> <span class="d-lg-none d-xl-none"> You need help?</span></a>
+                                <a class="nav-link p-3" href="#"><img
+                                        src="https://lancer-app.000webhostapp.com/images/svg/help.svg" height="25"
+                                        width="auto"> <span class="d-lg-none d-xl-none"> You need help?</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link border-left p-3" href="#"><img src="https://lancer-app.000webhostapp.com/images/svg/alarm-clock.svg" height="25" width="auto"> <span class="d-lg-none d-xl-none"> Reminder</span></a>
+                                <a class="nav-link border-left p-3" href="#"><img
+                                        src="https://lancer-app.000webhostapp.com/images/svg/alarm-clock.svg"
+                                        height="25" width="auto"> <span class="d-lg-none d-xl-none"> Reminder</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link border-left p-3" href="#"><img src="https://lancer-app.000webhostapp.com/images/svg/notification.svg" height="25" width="auto"> <span class="d-lg-none d-xl-none"> Notification</span></a>
+                                <a class="nav-link border-left p-3" href="#"><img
+                                        src="https://lancer-app.000webhostapp.com/images/svg/notification.svg"
+                                        height="25" width="auto"> <span class="d-lg-none d-xl-none">
+                                        Notification</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link border-left p-3" href="#"><span class="border rounded-circle p-1 font-weight-bold">AU</span> <span class="d-lg-none d-xl-none"> Hello John</span></a>
+                                <a class="nav-link border-left p-3" href="#"><span
+                                        class="border rounded-circle p-1 font-weight-bold">AU</span> <span
+                                        class="d-lg-none d-xl-none"> Hello John</span></a>
                             </li>
                         </ul>
                     </div>
@@ -564,6 +717,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     <tr class="py-2">
                                         <td scope="row" class="rounded-left border border-right-0">
                                             <span class="text-small text-muted mr-2">
@@ -604,47 +758,8 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="py-2">
-                                        <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span>
-                                            <span class="">5/09/2019</span>
-                                        </td>
-                                        <td class="border-top border-bottom">Foodie</td>
-                                        <td class="border-top border-bottom">
-                                            <span class="alert alert-primary py-0 px-2 small m-0">Completed</span>
-                                        </td>
-                                        <td class="border-top border-bottom text-left">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">
-                                            <div style="position: relative; left: 0; top: 0;">
-                                                <img src="https://res.cloudinary.com/memz/image/upload/v1570714781/download_2_yhhlsm.jpg"
-                                                    width="30px" height="30px" class="woman1" />
-                                                <img src="https://res.cloudinary.com/memz/image/upload/v1570714759/download_3_aym7zh.jpg"
-                                                    width="30px" height="30px" class="woman2" />
-                                                <img src="https://res.cloudinary.com/memz/image/upload/v1570714722/download_4_hqdpcn.jpg"
-                                                    width="30px" height="30px" class="woman3" />
-                                            </div>
-                                        </td>
-
-                                        <td class="rounded-right border border-left-0">
-                                            <div class="dropdown dropleft">
-                                                <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button"
-                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item text-success" href="#"><i
-                                                            class="fas fa-binoculars"></i> View</a>
-                                                    <a class="dropdown-item text-secondary" href="#"><i
-                                                            class="fas fa-edit"></i> Edit</a>
-                                                    <a class="dropdown-item text-danger" href="#"><i
-                                                            class="fas fa-trash-alt"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    
+                                    
                                     <tr class="py-2">
                                         <td scope="row" class="rounded-left border border-right-0">
                                             <span class="text-small text-muted mr-2">
@@ -684,6 +799,7 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr class="py-2">
                                         <td scope="row" class="rounded-left border border-right-0">
                                             <span class="text-small text-muted mr-2">
@@ -721,6 +837,7 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr class="py-2">
                                         <td scope="row" class="rounded-left border border-right-0">
                                             <span class="text-small text-muted mr-2">
@@ -761,6 +878,7 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr class="py-2">
                                         <td scope="row" class="rounded-left border border-right-0">
                                             <span class="text-small text-muted mr-2">
@@ -773,8 +891,8 @@
                                             <span class="alert alert-primary py-0 px-2 small m-0">Completed</span>
                                         </td>
                                         <td class="border-top border-bottom text-left">₦200,000</td>
-                                        <td class="border-top border-bottom text-right" style="display: flex;">
-                                            <div style="position: relative; left: 20; right: 20; top: 0;">
+                                        <td class="border-top border-bottom text-right">
+                                            <div style="position: relative; left: 0; top: 0;">
                                                 <img src="https://res.cloudinary.com/memz/image/upload/v1570714781/download_2_yhhlsm.jpg"
                                                     width="30px" height="30px" class="woman1" />
                                                 <img src="https://res.cloudinary.com/memz/image/upload/v1570714759/download_3_aym7zh.jpg"
@@ -783,7 +901,6 @@
                                                     width="30px" height="30px" class="woman3" />
                                             </div>
                                         </td>
-
                                         <td class="rounded-right border border-left-0">
                                             <div class="dropdown dropleft">
                                                 <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button"
@@ -799,9 +916,12 @@
                                                     <a class="dropdown-item text-danger" href="#"><i
                                                             class="fas fa-trash-alt"></i> Delete</a>
                                                 </div>
+                                                
+                                                
                                             </div>
                                         </td>
                                     </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -811,9 +931,54 @@
         </div>
 
     </div>
-    <button class="btn btn-secondary text-white rounded-circle" id="add-something">
+    
+    <button class="btn btn-secondary text-white rounded-circle" id="add-something" data-toggle="modal"
+        data-target="#myModal">
         <i class="fas fa-plus"></i>
     </button>
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> Add New Task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Select Project:</label>
+                            <select class="form-control" id="selectProject">
+                                <option>Select Project</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Select Collaborators: </label>
+                            <select class="form-control" id="selectProject">
+                                <option> Select Collaborators </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Task:</label>
+                            <input type="text" class="form-control" id="message-text">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Desciption:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary modal-save">Save changes</button>
+                    <button type="button" class="btn btn-primary modal-close" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -832,7 +997,21 @@
                 $('#sidebar').toggleClass('active');
                 $(this).toggleClass('active');
             });
-        });
+
+            $('#myModal').on('shown.bs.modal', function () {
+                $('#myInput').trigger('focus')
+            });
+            $('.table-responsive').on('show.bs.dropdown', function () {
+     $('.table-responsive').css( "overflow", "inherit" );
+});
+
+$('.table-responsive').on('hide.bs.dropdown', function () {
+     $('.table-responsive').css( "overflow", "auto" );
+})
+           
+});
+
+
     </script>
 </body>
 
