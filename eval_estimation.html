@@ -57,16 +57,23 @@
 
 .main-section {
   margin: 50px auto;
-  width: 50%;
+  width: 60%;
 }
 
 .section1 {
   border: 1px solid #919191;
   box-sizing: border-box;
+  
 }
 
 .section1 div {
   padding: 5px 20px;
+  
+  
+}
+
+.hc-date{
+  margin-left: 2.3rem!important;
 }
 
 #word h1 {
@@ -126,7 +133,9 @@ div h3 {
 input {
   height: 30px;
   width: 50%;
-  text-align: center;
+  /* text-align: center; */
+  text-align:left;
+  padding-left: 1rem;
   border: 1px solid;
 }
 
@@ -135,10 +144,26 @@ input {
   width: 100%;
 }
 
+.proj-date{
+  width: 75% !important;
+  color: rgba(145, 145, 145, 0.6);
+}
+
+#copywriter{
+  width: 75%;
+  
+}
+
+.bill-border{
+  border-bottom: 1px solid #919191;
+  width: 100%!important;
+}
+
 .end {
   margin-left: 50px;
   width: 100%;
 }
+
 
 i input {
   border: none;
@@ -270,7 +295,7 @@ input {
       </div>
       <hr />
 
-      <div id="bill">
+      <!-- <div id="bill">
         <h3>Billing</h3>
 
         <div class="hour">
@@ -278,11 +303,7 @@ input {
 
           <input type="text" name="estTime" placeholder="Hours" />
         </div>
-        <div class="hour">
-
-          <p>How much (in hours) do you charge per hour?</p>
-          <input type="text" name="estPrice" placeholder="NGN 0.00" />
-        </div>
+        
 
 
 
@@ -335,11 +356,118 @@ input {
               <input type="text" name="exp2" id="exp2"> /5
         </div>
 
+      </div> -->
+      <div class="container-fluid">
+          <h1 class="ml-4">Billing</h1>
+          <div class="row">
+              <div class="col-sm-6">
+                  <p>How long in hours will it take you to complete this project?</p>
+              </div>
+  
+              <div class="col-sm-6">
+                  <input type="number" placeholder="16 Hours">
+              </div>
+          </div>
+          
+  
+          <!-- <div class="row">
+              <div class="col-sm-6">
+                  <p>How long do you charge per hour?</p>
+              </div>
+  
+              <div class="col-sm-6">
+                  <input type="number" placeholder="NGN 0.00">
+              </div>
+          </div> -->
+  
+          <div class="row border-bottom-row" >
+            <div class="col-sm-4" style="display: flex; align-items: center;">
+                <p>Project starts/ends?</p>
+            </div>
+            <!-- <div class="col-3 proj-date">
+                <span>Set start date</span>
+                <input type="date">
+            </div>
+            <div class="col-3 proj-date">
+                <span>Set end date</span>
+                <input type="date">
+            </div> -->
+
+            
+            <div class="col-3 ml-4 mr-4 pl-4 hc-date">
+              <i class="fa fa-calendar start"><input type="text" onfocus="(this.type='date')" name="estStartDate"
+                placeholder=" Set start date" class="proj-date" /></i>
+            </div>
+            <div class="col-3 ml-2 pl-2">
+              <i class="fa fa-calendar end"><input type="text" onfocus="(this.type='date')" name="estEndDate"
+                placeholder="Set end date" class="proj-date"/></i>
+            </div>
+            
+  
+          </div>
+  
       </div>
+      <hr class="bill-border">
+
+      <div class="container-fluid">
+
+        
+        <h1 class="ml-4">Expenses</h1>
+        <div class="row">
+          <div class="col-sm-6">
+              <p>How much will it cost you to power your devices or equipment for this project?</p>
+          </div>
+
+          <div class="col-sm-6">
+              <input type="number" placeholder="USD 450">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+              <p>Are you subcontracting to anyone?</p>
+          </div>
+
+          <div class="col-sm-6">
+              <input type="text" placeholder="E.g Copywriter" id="copywriter">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+              <p>How much would they be paid?</p>
+          </div>
+
+          <div class="col-sm-6">
+              <input type="number" placeholder="USD 950">
+          </div>
+        </div>
+        <h1 class="ml-4">Expertise</h1>
+        <div class="row">
+          <div class="col-sm-6">
+              <p>How many similar projects have you done before?</p>
+          </div>
+
+          <div class="col-sm-6">
+              <input type="number" placeholder="">
+          </div>
+        </div>
+
+        <div class="row border-bottom-row">
+          <div class="col-sm-6">
+              <p>Out of 5, how would you rate your experience level in executing this project?</p>
+          </div>
+
+          <div class="col-sm-6">
+              <input type="number" min="1" max="5" placeholder=""> /5
+          </div>
+        </div>
+
+      </div>
+
       <hr />
 
 
-      <div id="currency">
+      <div class="ml-4 " id="currency">
         Currency:<select>
           <option>NGN</option>
           <option>AED</option>

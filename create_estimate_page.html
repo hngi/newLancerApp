@@ -37,10 +37,17 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title card-title-1">Do you want to track a project?</h5>
-                <a href="signin.html" class="my-link"><input type="button" class="btn btn-primary btn-sm" value="sign-in"></input></a>
-                <h6 class="card-text">Don't have an account? <a href="signup.html" class="my-text-color"> sign-up</a></h6>
-
+                
+                <h5 class="card-title">A previously created project</h5>
+                <p class="card-text">Find estimate for a previously created project, by doing so the estimate gets populated with some of the data.</p>
+                <div class="dropdown mr-1">
+                   <select class="dropbtn" name="" onmouseout="verifyPath()" id="projectSelect">
+                       <option value="select" selected="disabled">Select Project</option>
+                       <a href=""><option value="app" class="dropdown-item">Glacier Fintech App</option></a>
+                       <a href=""><option value="branding" class="dropdown-item">AB Technology Solutions Branding</option></a>
+                   </select>  
+                                         
+               </div>
            </div>
        </div>
    </div>
@@ -54,7 +61,7 @@
               </p>
             
              <div class="project">
-                 <input class="l-proj" type="text" onmouseout="verifyPath()" placeholder= "Project Name" name="" id="createProject">
+                 <input class="l-proj" type="text" oninput="verifyPath()" placeholder= "Project Name" name="" id="createProject">
                  <br>
                  <span class="req">Required</span>
              </div>
@@ -73,37 +80,10 @@
 </div>
 
     <script>
-    let est_content = document.querySelector('#est_content');
-    let estimate_page = document.querySelector('#Create_estimate');
-
-    let hide = () => {
-       // estimate_page.classList.add('hidden');
-       document.querySelector('#Create_estimate').classList.remove('hidden');
-       document.querySelector('#estimate').classList.add('hidden');
-       
-    }
-
-    est_content.addEventListener('click', hide );
-
-
-    document.querySelector('#close').addEventListener('click', () => {
-        document.querySelector('#estimate').classList.remove('hidden');
-        document.querySelector('#Create_estimate').classList.add('hidden');
-
-    });
-
-        //createProject = '';
     
-    
-    
-
     function verifyPath(){
         let createProject = document.getElementById('createProject').value;
-        let projectSelect = document.getElementById('projectSelect');
-
-        let ele = projectSelect.selectedIndex;
-
-        if ( createProject !== "" || ele !== 0 ){
+        if ( createProject !== ""){
             document.querySelector('.a-next').style.background = '#0ABAB5';
             document.querySelector('.next').style.background = '#0ABAB5';
             
