@@ -86,27 +86,7 @@ nav{
 .page_nav{
     display: flex;
 }
-.searchDiv input{
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #b1b1b1;
-    height: 40px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 16px;
-    outline: none;
-    text-indent: 32px;
-}
 
-.searchDiv{
-    position: relative; 
-    left: 150px;
-}
-.fa-search{
-    position: absolute;
-    top: 40px;
-    left: 10px;
-}
 .circle {
     height: 100%;
     width: 100%;
@@ -136,7 +116,7 @@ a.dropdown-item:hover{
 
 .content-nav{
     /* Primary Blue */
-    background: #009FFF;
+    background:  rgba(19, 41, 82, 1);
     padding: 15px;
     width: 100%;
 }
