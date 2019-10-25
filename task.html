@@ -61,7 +61,7 @@
         .navi-ul li {
             list-style: none;
             color: white;
-            margin: 10px;
+            margin: 11px;
         }
 
         .navi-active {
@@ -409,7 +409,25 @@
                 margin-left: 40px;
             }
         }
+
+
+        #sidebarCollapse.active span {
+            transform: none;
+            opacity: 1;
+            margin: 5px auto;
+        }
+
+        /* ---------------------------------------------------
+            MEDIAQUERIES
+        ----------------------------------------------------- */
+        @media (max-width: 450px){
+            .my-link input{
+                margin-left: -30px;
+            } 
+        }
+        
         @media (max-width: 533px) {
+
             #sidebar {
               margin-left: -220px;
               transform: rotateY(90deg);
