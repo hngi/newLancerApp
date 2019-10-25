@@ -1,87 +1,60 @@
+* {
+    margin-right: 0px;
+    margin-left: 0px;
+    font-family: Ubuntu;
+}
+body {
+    margin-top: 0px;
+}
+ul {
+    display: inline-block;
+    float: none;   
+    width: fit-content;
+    padding-inline-start: 10px;
+    margin-top: 24px;
+    
+}
 
-         * {
-                margin-right: 0px;
-                margin-left: 0px;
-                font-family: Ubuntu;
-            }
-            
-        body {
-			margin-top: 0px;
-        }
+li {
+    
+    display: inline;
+}
+.h1, h1 {
+    font-size: 2.4rem !important;
+    margin-top: 4% !important;
+    color: #262626;
+}
+.text-center h1 {
+    text-align: left !important;
+    margin-left: 17.2%;
+}
+button {
+    width: 120px;
+    background: #ffffff;
+    border: none;
+    height: 100%;
+}
+#container div {
+    border: 1px solid black;
+}
 
-            ul {
-                display: inline-block;
-                float: none;   
-                width: fit-content;
-                padding-inline-start: 10px;
-                margin-top: 24px;
-                
-            }
-
-            li {
-                
-                display: inline;
-            }
-            .h1, h1 {
-                font-size: 2.4rem !important;
-                margin-top: 4% !important;
-                color: #262626;
-            }
-            .text-center h1 {
-                text-align: left !important;
-                margin-left: 17.2%;
-            }
-            button {
-                width: 120px;
-                background: #ffffff;
-                border: none;
-                height: 100%;
-            }
-            .disabled {
-                cursor: not-allowed !important;
-            }
-     /*navbar css*/
-     #container {
-                display: grid;
-                grid-template-columns: 1fr 8fr 2fr;
-            }
-            /*changed this*/
-            #container div {
-                box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
-                outline: none;
-                height: 60px;
-            }
-            #container p {
-                justify-content: center;
-                margin-top: 15px;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 1.3em;
-                color: #323A43;
-            }
-            div>#ext {
-                background: rgba(207, 204, 204, 0.4);
-                font-size: 24px;
-                font-weight: bold;
-                justify-content: center;
-                border: none;
-                color: white;
-                width: 100%;
-                height: 60px;
-                outline: none;
-                /*added outline none*/
-            }
-            
-            /*changed this from clear to close*/
-            div>.close {
-                outline: none;
-            }
-            .close {
-                color: #C4C4C4;
-                width: 100%;
-            }
-    /*end of nav bar*/
-    .cEstimate { 
+#container p {
+    justify-content: center;
+    margin-top: 9px;
+    font-style: normal;
+    font-weight: bold;
+    color: #323A43;
+}
+/*#container .navM {
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}*/
+.cEstimate { 
     margin: 0 auto;
     align-content: center;
     font-weight: bold;
@@ -101,6 +74,16 @@
     padding-right: 98px;
     padding-left: 47px;
     color: white;
+}
+div > #ext{
+    background: rgba(207, 204, 204, 0.4);
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: center;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 50px;
 }
  .a-next {
     background: rgba(207, 204, 204, 0.4);
@@ -140,13 +123,45 @@ h5 {
 .card .card-body
 {
     display: inline-grid;
-    max-width: fit-content;
     justify-content: baseline;
     align-items: flex-end;
+   
 }
-.card-body:hover {
-    border: 5px solid black;
-    box-sizing: border-box;
+
+.my-text{
+    text-align: center;
+}
+.my-link{
+    margin-left:110px;
+    margin-top: -50px;
+}
+.my-link input{
+    padding: 10px 8;
+    width:80px;
+    height: 35px;  
+}
+.my-text-color{
+    color:#0ABAB5;
+}
+.my-text-color a {
+    text-decoration:none;
+}
+.btn{
+    background-color: #0ABAB5;
+    border: none;
+}
+.btn:hover{
+    background-color: rgb(10, 170, 165);
+}
+.card-title-1{
+    margin-bottom:20px ;
+    margin-top:-100px;
+    padding:0px 10px;
+    width:109%;
+}
+.my-text-3{
+    text-align: center !important;
+    
 }
 .dropbtn, .project {
      margin-top: 1vh; 
@@ -247,7 +262,12 @@ option, select{
 #clear{
     padding: auto;
 }
- 
+ /*#ext {
+    justify-content: center;
+    border: none;
+    color: white;
+    border: none !important;
+}*/
 .row {
     margin-right: 0;
     margin-left: -15px;
@@ -292,9 +312,7 @@ p.card-text {
   {
     min-height: 34vh;
 }
-.card-body:hover {
-    border: 3px solid black;
-}
+
 .dropbtn, .project {
      margin-top: 1vh; 
     height: 40px;
@@ -326,73 +344,6 @@ option, select{
 }
 
 
-@media (max-width: 992px) 
-{
-.h1, h1 {
-    font-size: 2rem !important;
-    margin-top: 3% !important;
-}
-.text-center h1 {
-    margin-left: 17.2%;
-}
-button {
-    width: 120px;
-    height: 100%;
-}
-#container p {
-    font-size: 19.5px;
-    margin-top: 9px;
-}
-div > #ext{
-    font-size: 20px;
-}
-.a-next {
-    width: 180px;
-    height: 60px;
-    padding: 5px 20px;
-    font-size: 20px;
-    margin-top: 60px;
-}
-.h5, h5 {
-    font-size: 1.05rem;
-}
-p.card-text {
-    font-size: .8rem;
-}
-  .card
-  {
-    min-height: 34vh;
-}
-.card-body:hover {
-    border: 3px solid black;
-}
-.dropbtn, .project {
-     margin-top: 1vh; 
-    height: 40px;
-    padding: 10px;
-    width: 100%;
-}
-.project {
-    border: 1.5px solid rgba(145, 145, 145, 0.4);
-    overflow: hidden;
-}
-.l-proj {
-    font-size: 14px;
-    width: 100%;
-    margin-bottom: 2rem;
-}
-.l-proj::placeholder {
-    line-height: 10px;
-}
-.box {
-    margin-top: 3%;
-}
-option, select{
-    font-size: 14px;
-}
-#container .navM img {
-    height: 20px;
-}
 
 @media (max-width: 767px) 
 {
@@ -421,9 +372,7 @@ option, select{
     max-width: 85%;
     margin-left: 7%;
 }
-.card-body:hover {
-    border: 2px solid black;
-}
+
 .dropbtn, .project {
      margin-top: 1vh; 
     height: 40px;
@@ -465,7 +414,7 @@ div > #ext {
 }
 
 
-@media (max-width: 576px) 
+@media screen and(max-width: 576px) 
 {
 .h1, h1 {
     font-size: 1.15rem !important;
@@ -492,9 +441,7 @@ p.card-text {
     font-size: .78rem;
     padding-right: .5rem;
 }
-.card-body:hover {
-    border: 1px solid black;
-}
+
 .dropbtn, .project {
      margin-top: 0; 
     height: 35px;
@@ -529,11 +476,101 @@ div > #ext {
 button {
     width: 70px;
 }
+.card .card-body {
+    display: inline-grid;
+    justify-content: baseline;
+    align-items: flex-end;
+    
+}
 
 }
-           
-            @media (max-width: 976px) {
-    div>#ext{
-        font-size: 15px;
+
+@media (max-width:550px){
+    .card .card-body
+{
+    display: inline-grid;
+    justify-content: baseline;
+    align-items: flex-end;
+   
+}
+
+
+.dropbtn, .project {
+    margin-top: 1vh;
+    height: 40px;
+    padding: 0;
+    width: 70vw !important;
+}
+}
+@media (max-width:500px){
+    #container div {
+        border: .5px solid black;
     }
-            }
+    div > #ext {
+        font-size: 16px;
+        height:40px;
+        width:10vw;
+    }
+    .dropbtn, .project {
+        margin-top: 1vh;
+        height: 40px;
+        padding: 0;
+        width: 68vw !important;
+    }
+
+}
+@media (max-width:450px){
+    .dropbtn, .project {
+        margin-top: 1vh;
+        height: 40px;
+        padding: 0;
+        width: 66vw !important;
+    }
+}
+@media (max-width:390px){
+    .my-text-3 {
+        text-align: left !important;
+        font-size: 20px !important;
+        margin-left:  -2px !important;
+        margin-right: -1px !important ;
+        padding-left: 1em;
+    }
+    
+    .dropbtn, .project {
+        margin-top: 1vh;
+        height: 40px;
+        padding: 0;
+        width: 60vw !important;
+    }
+}
+@media (max-width:430px){
+    #container div {
+        border: 1px solid black;
+        height: 40px;
+    }
+    #container p{
+    font-size: 15px;
+    margin-top: 9px;
+}
+}
+@media (max-width:404px){
+    #container div {
+        border: 1px solid black;
+        height: 40px;
+        
+    }
+    #container p{
+    font-size: 13px;
+    margin-top: 9px;
+}
+div > #ext {
+    font-size: 13px;
+    height: 40px;
+    width: 5vw;
+}
+h1 {
+    font-size: 1.2rem !important;
+    margin-top: 3% !important;
+}
+
+}
