@@ -5,8 +5,9 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	    <meta name="description" content="Generate estimates, invoices, contacts and much more for your project">
-	    <meta name="author" content="HNG Internship Group">
-	    <!-- Fontawesome CSS -->
+		<meta name="author" content="HNG Internship Group">
+		<link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
+		<!-- Fontawesome CSS -->
 	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	    <!-- Bootstrap CSS -->
 	    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
@@ -23,6 +24,9 @@
 			   /****************************/
 			  /*------- main styles ------*/
 			 /****************************/
+			html{
+				scroll-behavior: smooth;
+			}
 			body{
 				font-family: 'Open Sans', sans-serif !important;
 				font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))  !important;
@@ -145,6 +149,14 @@
 				border-color: inherit !important;
 				opacity: 0.8 !important;
 			}
+
+			.fas{
+				font-size: xx-large;
+    color: var(--secondary-color) !important;
+
+			}
+
+
 			   /****************************/
 			  /*-----Landing Page---------*/
 			 /****************************/
@@ -351,12 +363,14 @@
 					<div class="col-xs-12 col-sm-6 col-md-4">
 						<h5>Reach us</h5>
 						<p class="text-dark small">
-							52b, Charity Lane, off Magboso Highway, Ikate, London, Nigeria
+								3 Birrel Avenue, Sabo.
+								Yaba, Lagos State,
+								Nigeria
 						</p>
 						<h5 class="">
 							<a href="https://facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
 							<a href="https://twitter.com" class="text-dark"><i class="fab fa-twitter-square"></i></a>
-						</h3>
+						</h5>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-4">
 						<h5>Stay up to date</h5>
@@ -376,7 +390,7 @@
 			<div class="bg-white text-left py-2 mt-0">
 				<div class="container">
 					<p class="float-right">
-			    	<a href="#">Back to top</a>
+			    	<a href="#"><i class="fas fa-arrow-up"></i></a>
 				    </p>
 				    <p>&copy; Lancer 2019.</p>
 				</div>
