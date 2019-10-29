@@ -108,6 +108,11 @@
             transition: all ease-in-out .5s;
         }
 
+        .ban, .upgrade{
+            padding: 6px 25px;
+            border-radius: 0;
+            margin-left: 10px;
+        }
         .btn::after {
             content: "";
             display: block;
@@ -860,8 +865,8 @@
 
                 <div class="modal-body text-center">
 
-                    <button type="button" class="btn btn-primary ban">Yes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger ban">Yes</button>
+                    <button type="button" class="btn btn-primary ban" data-dismiss="modal">No</button>
 
                 </div>
                 
@@ -883,7 +888,7 @@
                 <div class="modal-body text-center">
 
                     <button type="button" class="btn btn-primary upgrade">Yes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary upgrade" data-dismiss="modal">No</button>
 
                 </div>
 
