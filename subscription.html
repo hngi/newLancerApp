@@ -14,7 +14,7 @@
         <style>
             .navbar-brand{
                 font-family: Pacifico;
-                color: white
+                color: white;
                 }
             .navbar-brand h3 span{
                 color: #0ABAB5
@@ -68,6 +68,14 @@
                 margin-left: auto;
                 margin-right: auto;
 
+            }
+            .pricecol-current{                
+                background: #091429;
+                color: white;
+                border: none;
+            }
+            .pricecol-current svg {
+                fill: white;
             }
             .pricetext{
                 text-align: center;
@@ -284,7 +292,7 @@
                     </div>
                     
                     <div class="card" style="margin-left: auto; margin-right: auto; margin-bottom: 10px; float: left;">
-                            <div class="pricecol p-2 pt-4">
+                            <div class="pricecol pricecol-current p-2 pt-4">
                             <p class="pricetext">Pro</p>
                             <div class="price">
                                     <h5 class="pricenumber">24.99<p>/mo</p></h5>
@@ -307,7 +315,7 @@
                             </ul>
     
                             <div class="price-button p-3">
-                                    <a href="/signup.html" class="btn btn-primary btn-block">Subscribe</a>
+                                    <a href="/signup.html" class="btn btn-primary btn-block" onclick="return confirm('Do you want to Unsubscribe from your current subscription?')">Unsubscribe</a>
                             </div>
                         </div>
                     </div>
