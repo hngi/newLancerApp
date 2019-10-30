@@ -824,7 +824,7 @@
                                         <td class="border-top border-bottom">#475</td>
                                         <td class="border-top border-bottom">5/09/2019</td>
                                         <td class="border-top border-bottom">
-                                            <span class="alert alert-primary py-0 px-2 small m-0">Active</span>
+                                            <span class="alert alert-primary py-0 px-2 small m-0" id="cancel-sub2">Active</span>
                                         </td>
                                         <td class="border-top border-bottom text-left">5/09/2019</td>
                                         <td class="rounded-right border border-left-0 ">
@@ -887,7 +887,7 @@
 
                 <div class="modal-body text-center">
 
-                    <button type="button" class="btn btn-primary upgrade">Yes</button>
+                    <button type="button" class="btn btn-primary upgrade" id="myYes">Yes</button>
                     <button type="button" class="btn btn-primary upgrade" data-dismiss="modal">No</button>
 
                 </div>
@@ -926,15 +926,20 @@
 
 
         });
+        
+
+    </script>
+    <script type="text/javascript">
+        
         document.querySelector('#myYes').addEventListener('click', (e) => {
         document.querySelector('.close').click();
         document.getElementById("cancel-sub").textContent = "canceled";
          });
 
-    </script>
-    <script type="text/javascript">
-        
-        
+         document.querySelector('#myYes').addEventListener('click', (e) => {
+        document.querySelector('.close').click();
+        document.getElementById("cancel-sub2").textContent = "canceled";
+         });
     </script>
 </body>
 
