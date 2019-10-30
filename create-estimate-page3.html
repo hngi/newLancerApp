@@ -491,11 +491,187 @@ button {
 
 }
            
-            @media (max-width: 976px) {
-    div>#ext{
-        font-size: 15px;
+@media (max-width: 976px) {
+div>#ext{
+    font-size: 15px;
+}
+        }
+@media (max-width: 600px) {...}
+/* Extra small devices (phones, 600px and down) */
+.h1, h1 {
+font-size: 1.0rem !important;
+margin-top: 2% !important;
+}
+.text-center h1 {
+    margin-left: 30%;
+}
+#container p {
+    margin-top: 7px;
+    padding-left: 10px;
+    width: 50px;
+}
+#container i{
+    padding-left: 10px;
+}
+.container h1{
+    margin-top: 20px;
+    padding-left: 10px;
+  
     }
-            }
+
+.a-next {
+    width: 160px;
+    height: 55px;
+    padding: 5px 15px;
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+  .card
+  {
+    min-height: 28vh;
+    margin-bottom: 30px;
+    max-width: 85%;
+    margin-left: 7%;
+}
+.card-body:hover {
+    border: 2px solid black;
+}
+.dropbtn, .project {
+     margin-top: 1vh; 
+    height: 40px;
+    padding: 0;
+    width: 72vw !important;
+}
+.project {
+    border: 1.5px solid rgba(145, 145, 145, 0.4);
+    overflow: hidden;
+}
+.l-proj {
+    font-size: 14px;
+    width: 100%;
+    margin: .5rem 0 0 .3rem;
+}
+.l-proj::placeholder {
+    line-height: 10px;
+}
+.box {
+    margin-top: 3%;
+}
+option, select{
+    font-size: 14px;
+}
+#container .navM img {
+    height: 20px;
+}
+#container p {
+    font-size: 17.5px;
+    margin-top: 12px;
+}
+div > #ext {
+    font-size: 18px;
+}
+#container .navM img {
+    height: 18px;
+}
+
+}
+
+@media only screen and (max-width: 300px) {...}
+
+.h1, h1 {
+font-size: 1.0rem !important;
+margin-top: 2% !important;
+}
+.text-center h1 {
+    margin-left: 30%;
+}
+.container .row .container-fluid"{
+    height:00px;
+    padding-bottom: 50px;
+    margin-bottom: 200px: 
+
+}
+
+#container p {
+    margin-top: 7px;
+    padding-left: 10px;
+    width: 50px;
+}
+#container i{
+    padding-left: 10px;
+}
+.container h1{
+    margin-top: 20px;
+    padding-left: 10px;
+  
+    }
+
+.a-next {
+    width: 160px;
+    height: 55px;
+    padding: 5px 15px;
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+  .card
+  {
+    min-height: 28vh;
+    margin-bottom: 30px;
+    max-width: 85%;
+    margin-left: 7%;
+}
+.card-body:hover {
+    border: 2px solid black;
+}
+.dropbtn, .project {
+     margin-top: 1vh; 
+    height: 40px;
+    padding: 0;
+    width: 72vw !important;
+}
+.project {
+    border: 1.5px solid rgba(145, 145, 145, 0.4);
+    overflow: hidden;
+}
+.l-proj {
+    font-size: 14px;
+    width: 100%;
+    margin: .5rem 0 0 .3rem;
+}
+.l-proj::placeholder {
+    line-height: 10px;
+}
+.box {
+    margin-top: 3%;
+}
+option, select{
+    font-size: 14px;
+}
+#container .navM img {
+    height: 20px;
+}
+#container p {
+    font-size: 17.5px;
+    margin-top: 12px;
+}
+div > #ext {
+    font-size: 18px;
+}
+#container .navM img {
+    height: 18px;
+}
+
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+
+
+}
 
     </style>
 </head>
@@ -504,7 +680,7 @@ button {
     <div id="container">
         <div>
             <button class="close navM" ><a href="index.html"><span>
-                    <i class="fa fa-times"></i>
+                    <i class="fa fa-times" style="color: grey;"></i>
                   </span></a></button>
         </div>
 
@@ -514,6 +690,7 @@ button {
         </div>
         <div>
             <input class="next disabled" id="ext" type="button" value="NEXT">
+
         </div>
     </div>
   
@@ -552,32 +729,31 @@ button {
      <div class="row ml-auto box justify-content-center">
       <div class="card">
           <div class="card-body">
-              <h5 class="card-title">New Client</h5>
+              <h5 class="card-title"   >New Client</h5>
               <p class="card-text">Please Type here for new Client
               </p>
-              
-            
-             <div class="project">
-                 <input class="l-proj" type="text" oninput="verifyPath()"  placeholder= "Project Name" name="" id="createProject">
+             <div class="project"style="border: none;"  >
+                 <input class="l-proj" type="text" oninput="verifyPath()"  placeholder= "Project Name"  name="" id="createProject">
                  <br>
                  <span class="req">Required</span>
              </div>
           </div>
         </div>
-      
+      </div>
+    </div>
           <!--  -->
      
-    
-
+  
 <div class="container-fluid">
-<div class="row text-center">
+<div class="row text-center" align="center"> 
+
   <div class="col-12">
-    <button class="a-next disabled" id="btn" ><a href="#">NEXT</a></button>
+    <button class="a-next disabled" style="text-decoration:none">NEXT 
+    </button>
   </div>
 </div>
 </div>
-</div>
-</div>
+
 
 
     <script>

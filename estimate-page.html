@@ -128,7 +128,7 @@
     color: white;
 }
 
- .a-next {
+ .btn {
     background: rgba(207, 204, 204, 0.4);
     width: 220px;
     height: 60px;
@@ -143,7 +143,7 @@
     border: none !important;
 }
 
-.a-next a {
+.btn a {
     color: white;
 }
 p, h3 {
@@ -159,14 +159,14 @@ h5 {
   .card
   {
     display: grid;
-    min-height: 34vh;
-    max-width: fit-content;
+    height:30vh;
     position: relative;
+    width: 90%;
+    margin: 20px;
 }
 .card .card-body
 {
     display: inline-grid;
-    max-width: fit-content;
     justify-content: baseline;
     align-items: flex-end;
 }
@@ -301,7 +301,7 @@ button {
 div > #ext{
     font-size: 20px;
 }
-.a-next {
+.btn {
     width: 180px;
     height: 60px;
     padding: 5px 20px;
@@ -316,7 +316,7 @@ p.card-text {
 }
   .card
   {
-    min-height: 34vh;
+    height:30vh;
 }
 .card-body:hover {
     border: 3px solid black;
@@ -365,7 +365,7 @@ option, select{
 #container p {
     margin-top: 5px;
 }
-.a-next {
+.btn {
     width: 160px;
     height: 55px;
     padding: 5px 15px;
@@ -375,7 +375,7 @@ option, select{
 }
   .card
   {
-    min-height: 28vh;
+    height:30vh;
     margin-bottom: 30px;
     max-width: 85%;
     margin-left: 7%;
@@ -432,7 +432,7 @@ div > #ext {
 #container p {
     margin-top: 0x;
 }
-.a-next {
+.btn {
     width: 120px;
     height: 45px;
     padding: 5px 10px;
@@ -445,7 +445,7 @@ div > #ext {
 }
   .card
   {
-    min-height: 25vh;
+    height:30vh;
 }
 p.card-text {
     font-size: .78rem;
@@ -504,31 +504,28 @@ button {
     <div id="container">
         <div>
             <button class="close navM" ><a href="index.html"><span>
-                    <i class="fa fa-times"></i>
+                    <i class="fa fa-times" style="color: #555"></i>
                   </span></a></button>
         </div>
 
-        <div class="" align="center">
+        <div class="d-flex align-items-center justify-content-center" align="center">
           <h3>
-            <p class="nav cEstimate" id="cre" >Client</p></h3>
+            <p class="nav cEstimate " id="cre" >Client</p></h3>
         </div>
         <div>
-            <input class="next disabled" id="ext" type="button" value="NEXT">
+           
+             <button class="next disabled" id="btn" >NEXT</button>
         </div>
     </div>
   
 
-  <div class="container"align="center">
-  <!-- <div class="col text-center"> -->
     
-      <h1>What Client is it for?</h1><br>
+      <h1 class="my-5 text-center">What Client is it for?</h1>
     
-  <!-- </div> -->
-  </div>
 
-  <div class="row">
-  <div class="col-md-6">
-    <div class="row ml-auto box justify-content-center">
+  <div class="row ">
+  <div class="col-md-6 p-0">
+    <div class="row m-auto box justify-content-center">
       <div class="card">
           <div class="card-body">
               <h5 class="card-title">Select Client</h5>
@@ -548,34 +545,29 @@ button {
      </div>
    </div>
     <!--  -->
-    <div class="col-md-6">
-     <div class="row ml-auto box justify-content-center">
+    <div class="col-md-6 p-0">
+     <div class="row m-auto box justify-content-center">
       <div class="card">
           <div class="card-body">
-              <h5 class="card-title">New Client</h5>
+              <h5 class="card-title"   >New Client</h5>
               <p class="card-text">Please Type here for new Client
               </p>
               
             
-             <div class="project">
-                 <input class="l-proj" type="text" oninput="verifyPath()"  placeholder= "Project Name" name="" id="createProject">
+             <div class="project"style="border: none;"  >
+                 <input class="l-proj" type="text" oninput="verifyPath()"  placeholder= "Project Name"  name="" id="createProject">
                  <br>
                  <span class="req">Required</span>
              </div>
           </div>
-        </div>
+        </div></div></div>
       
           <!--  -->
      
     
 
-<div class="container-fluid">
-<div class="row text-center">
-  <div class="col-12">
-    <button class="a-next disabled" id="btn" ><a href="#">NEXT</a></button>
-  </div>
-</div>
-</div>
+    <button class="btn disabled my-5 mx-auto" id="btn" >NEXT</button>
+
 </div>
 </div>
 
@@ -586,17 +578,17 @@ button {
           
 
         if ( createProject !== "" ){
-            document.querySelector('.a-next').style.background = '#0ABAB5';
+            document.querySelector('.btn').style.background = '#0ABAB5';
             document.querySelector('.next').style.background = '#0ABAB5';
             
-            document.querySelector('.a-next').classList.remove('disabled');
+            document.querySelector('.btn').classList.remove('disabled');
             document.querySelector('.next').classList.remove('disabled');
         } else {
             //console.log('here works');
             document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
             document.querySelector('.next').classList.add('disabled');
-            document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
-            document.querySelector('.a-next').classList.add('disabled');
+            document.querySelector('.btn').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.btn').classList.add('disabled');
         }
         
     }
