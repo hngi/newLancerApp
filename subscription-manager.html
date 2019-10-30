@@ -799,7 +799,7 @@
                                         <td class="border-top border-bottom">#475</td>
                                         <td class="border-top border-bottom">5/09/2019</td>
                                         <td class="border-top border-bottom">
-                                            <span class="alert alert-primary py-0 px-2 small m-0 active">Expired</span>
+                                            <span class="alert alert-primary py-0 px-2 small m-0 active" id="cancel-sub">Expired</span>
                                         </td>
                                         <td class="border-top border-bottom text-left">5/09/2019</td>
                                         <td class="rounded-right border border-left-0 ">
@@ -865,7 +865,7 @@
 
                 <div class="modal-body text-center">
 
-                    <button type="button" class="btn btn-danger ban">Yes</button>
+                    <button type="button" class="btn btn-danger ban" id="myYes">Yes</button>
                     <button type="button" class="btn btn-primary ban" data-dismiss="modal">No</button>
 
                 </div>
@@ -926,6 +926,15 @@
 
 
         });
+        document.querySelector('#myYes').addEventListener('click', (e) => {
+        document.querySelector('.close').click();
+        document.getElementById("cancel-sub").textContent = "canceled";
+         });
+
+    </script>
+    <script type="text/javascript">
+        
+        
     </script>
 </body>
 
