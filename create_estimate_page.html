@@ -81,50 +81,25 @@
 
     <script>
 
-        let projectName = document.querySelector('#projectSelect');
-        console.log(projectName);
-
-        var index = projectName.selectedIndex;
-        console.log(index);
-
-        projectName.addEventListener('change', function($event){
-            // document.querySelector('.a-next').style.background = 'red';
-            console.log("clicked");
-            document.querySelector('.a-next').style.background = "#0ABAB5";
-            document.querySelector('.next').style.background = "#0ABAB5";
-
-            document.querySelector('.a-next').classList.remove('disabled');
-            document.querySelector('.next').classList.remove('disabled');
-
-        });
-        if(index ==-1){
-            document.querySelector('.a-next').classList.add('disabled');
-            document.querySelector('.next').classList.add('display');
-        }
-
-
-
-
-
-
-    
-    function verifyPath(){
-        let createProject = document.getElementById('createProject').value;
-        if ( createProject !== ""){
-            document.querySelector('.a-next').style.background = '#0ABAB5';
-            document.querySelector('.next').style.background = '#0ABAB5';
+        function verifyPath(){
+            let createProject = document.getElementById('createProject').value;
+            let projectSelect = document.getElementById('projectSelect');
+            let ele = projectSelect.selectedIndex;
+            if ( createProject !== "" || ele !== 0 ){
+                document.querySelector('.a-next').style.background = '#0ABAB5';
+                document.querySelector('.next').style.background = '#0ABAB5';
+                
+                document.querySelector('.a-next').classList.remove('disabled');
+                document.querySelector('.next').classList.remove('disabled');
+            } else {
+                //console.log('here works');
+                document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
+                document.querySelector('.next').classList.add('disabled');
+                document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
+                document.querySelector('.a-next').classList.add('disabled');
+            }
             
-            document.querySelector('.a-next').classList.remove('disabled');
-            document.querySelector('.next').classList.remove('disabled');
-        } else {
-            //console.log('here works');
-            document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
-            document.querySelector('.next').classList.add('disabled');
-            document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
-            document.querySelector('.a-next').classList.add('disabled');
         }
-        
-    }
 
     
 
