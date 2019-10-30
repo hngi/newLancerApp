@@ -799,7 +799,7 @@
                                         <td class="border-top border-bottom">#475</td>
                                         <td class="border-top border-bottom">5/09/2019</td>
                                         <td class="border-top border-bottom">
-                                            <span class="alert alert-primary py-0 px-2 small m-0 active" id="cancel-sub">Expired</span>
+                                            <span class="alert alert-primary py-0 px-2 small m-0 active cancel-sub">Expired</span>
                                         </td>
                                         <td class="border-top border-bottom text-left">5/09/2019</td>
                                         <td class="rounded-right border border-left-0 ">
@@ -808,7 +808,7 @@
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                                 data-target="#upgradeModal"> <i
                                                     class="fas fa-level-up-alt"></i>  </button>
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            <button type="button" class="close-sub btn btn-danger" data-toggle="modal"
                                                 data-target="#myModal"><i class="fas fa-ban"> </i> </button>
                                         </td>
 
@@ -824,7 +824,7 @@
                                         <td class="border-top border-bottom">#475</td>
                                         <td class="border-top border-bottom">5/09/2019</td>
                                         <td class="border-top border-bottom">
-                                            <span class="alert alert-primary py-0 px-2 small m-0" id="cancel-sub2">Active</span>
+                                            <span class="alert alert-primary py-0 px-2 small m-0 cancel-sub">Active</span>
                                         </td>
                                         <td class="border-top border-bottom text-left">5/09/2019</td>
                                         <td class="rounded-right border border-left-0 ">
@@ -833,7 +833,7 @@
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                                 data-target="#upgradeModal"> <i
                                                     class="fas fa-level-up-alt"></i>  </button>
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            <button type="button" class="close-sub btn btn-danger" data-toggle="modal"
                                                 data-target="#myModal"><i class="fas fa-ban"> </i> </button>
                                         </td>
 
@@ -930,17 +930,20 @@
 
     </script>
     <script type="text/javascript">
+        var currentSub;
+
+        document.querySelectorAll(".close-sub").forEach((elem) => {
+            elem.addEventListener('click', (evt) => {
+                currentSub = elem.parentElement.parentElement;
+            })
+        })
         
         document.querySelector('#myYes').addEventListener('click', (e) => {
-        document.querySelector('.close').click();
-        document.getElementById("cancel-sub").textContent = "canceled";
-         });
-
-         document.querySelector('#myYes').addEventListener('click', (e) => {
-        document.querySelector('.close').click();
-        document.getElementById("cancel-sub2").textContent = "canceled";
-         });
+            document.querySelector('.close').click();
+            currentSub.querySelector(".cancel-sub").textContent = "canceled";
+        });
     </script>
+    
 </body>
 
 </html>
