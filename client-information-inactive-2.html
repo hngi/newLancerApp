@@ -316,5 +316,133 @@
     </main>
     </div>
     
+	    <input type="button" value="Remove" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
+
+                </div>
+
+                <div class="">
+                    <span id="writeroot"></span>
+                    <input type="button" onclick="moreFields()" value="Add other contacts" />
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <footer> <button id="bottom-create" type="submit">Next</button></footer>
+
+
+
+</body>
+<script>
+    var companyname = document.getElementById("companyname");
+    var streetname = document.getElementById("streetname");
+    var strnumber = document.getElementById("strnumber");
+    var city = document.getElementById("city");
+    var postalcode = document.getElementById("postalcode");
+    var country = document.getElementById("country");
+    var state = document.getElementById("state");
+    var contactme = document.getElementById("contactname");
+    var contactemail = document.getElementById("contactemail");
+
+    // check if any input is empty.
+    function checkForm() {
+        if ((companyname.value == 0 && streetname.value == 0 &&
+                strnumber.value == 0 && city.value == 0 &&
+                postalcode.value == 0 && state.value == 0 &&
+                contactme.value == 0 && contactemail.value == 0)) {
+
+            document.getElementById("errorMsg").style.display = "block";
+        } else {
+            document.getElementById("errorMsg").style.display = "none";
+        }
+    }
+
+    function removeNameErrorWhenCorrecting() {
+
+        document.getElementById("errorMsg").style.display = "none";
+    }
+    if (companyname.addEventListener) {
+        companyname.addEventListener('blur', checkForm, false);
+        companyname.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (streetname.addEventListener) {
+        streetname.addEventListener('blur', checkForm, false);
+        streetname.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (strnumber.addEventListener) {
+        strnumber.addEventListener('blur', checkForm, false);
+        strnumber.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (city.addEventListener) {
+        city.addEventListener('blur', checkForm, false);
+        city.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (postalcode.addEventListener) {
+        postalcode.addEventListener('blur', checkForm, false);
+        postalcode.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (country.addEventListener) {
+        country.addEventListener('blur', checkForm, false);
+        country.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (state.addEventListener) {
+        state.addEventListener('blur', checkForm, false);
+        state.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (contactme.addEventListener) {
+        contactme.addEventListener('blur', checkForm, false);
+        contactme.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    } else if (contactemail.addEventListener) {
+        contactemail.addEventListener('blur', checkForm, false);
+        contactemail.addEventListener('focus', removeNameErrorWhenCorrecting, false);
+    }
+
+
+    // If email is the right format
+    function checkEmailField() {
+        // format for email validation
+        var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (contactemail.value.indexOf("@", 0) < 0) {
+            document.getElementById("errorEmail").style.display = "block";
+            document.getElementById("errorEmail").textContent = "Your email address does not have an '@' symbol!";
+
+
+        } else if (contactemail.value.indexOf(".", 0) < 0) {
+            document.getElementById("errorEmail").style.display = "block";
+            document.getElementById("errorEmail").textContent = "A '.' symbol is missing in your email address, please check!";
+
+        } else if (mailFormat.test(contactemail.value) == false) {
+            document.getElementById("errorEmail").style.display = "block";
+            document.getElementById("errorEmail").textContent = "Wrong email format, please try again!";
+
+        } else {
+            document.getElementById("errorEmail").style.display = "none";
+            country.removeAttribute('disabled');
+            contactemail.removeAttribute('disabled');
+        }
+    }
+
+    function removeEmailErrorWhenCorrecting() {
+        document.getElementById("errorEmail").style.display = "none";
+    }
+    if (contactemail.addEventListener) {
+        contactemail.addEventListener('blur', checkEmailField, false);
+        contactemail.addEventListener('focus', removeEmailErrorWhenCorrecting, false);
+    };
+
+    var counter = 0;
+
+    function moreFields() {
+        counter++;
+        var newFields = document.getElementById('readroot').cloneNode(true);
+        newFields.id = '';
+        newFields.style.display = 'block';
+        var newField = newFields.childNodes;
+        for (var i = 0; i < newField.length; i++) {
+            var theName = newField[i].name
+            if (theName)
+                newField[i].name = theName + counter;
+        }
+        var insertHere = document.getElementById('writeroot');
+        insertHere.parentNode.insertBefore(newFields, insertHere);
+    }
+
+    window.onload = moreFields;
+</script>
 </body>
 </html>
