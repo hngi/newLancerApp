@@ -11,7 +11,8 @@
   <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <style>
   
@@ -412,7 +413,7 @@ txt:hover{
     </div class="nex">
 
 
-      <button class="btn" id="button">SETUP THIS PROJECT</button>
+      <button class="btn next" id="button">SETUP THIS PROJECT</button>
     </div>
 
   </div>
@@ -534,6 +535,22 @@ cld.min ="year-month-day";
 cldTwo.min ="year-month-day";
 
 
+</script>
+
+<script>
+$(document).ready(function(){
+   
+   $('input').on('keypress',function(){
+    $('.next').css({"background":"#0ABAB5" , "color":"white"});
+    $('.cnc').css({"background":"#0ABAB5"});
+  })
+  $('input').on('keyup',function(){
+    $('.next').addClass("cnc");
+    $('.cnc').css({"background":"rgba(207, 204, 204, 0.4);"});
+  })
+  
+  
+})
 </script>
 
 
