@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>Tasks</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -112,6 +112,19 @@
         .disappear{
             visibility: hidden;
         }
+
+        /* .hc-width{
+            width: 20vw !important;
+        }
+
+        .hc-dropdown{
+            width: 3vw;
+        }
+
+        .hc-status{
+            width: 15vw;
+        } */
+
 
         /* ------search bar ---------- */
         .hc-more{
@@ -368,6 +381,22 @@
           left: 320px;
           z-index: 12;
         }
+
+        @media (max-width: 533px){
+            .hc-more{
+                margin-left: 0rem !important;
+                
+            }
+            #hc-search{
+                margin-left: 0.5rem!important;
+                padding-left: 0rem!important;
+                width: 40vw !important;
+            }
+            
+        }
+
+
+
     </style>
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -440,7 +469,7 @@
                         <span></span>
                     </button>
                     
-                    <form class="form-inline my-2 ml-4">
+                    <form class="form-inline my-2 ml-4" id="hc-search">
                         <div class="input-group ml-4 hc-more">
                             <div class="input-group-prepend">
                                 <span class="input-group-text border-right-0 bg-white" id="basic-addon1"><i class="fas fa-search"></i></span>
@@ -497,21 +526,14 @@
                                 </thead>
                                 <tbody>
                                     <tr class="py-2">
-                                        <!-- <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span> 
-                                            <span class="">Mar. 10, 2019</span>
-                                        </td> -->
-                                        <td class="border-top border-bottom titles hc-border">Online Music Shop</td>
+                                        
+                                        <td class="border-top border-bottom titles hc-border hc-width">Online Music Shop</td>
                                         <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                        <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">₦200,000</td> -->
-                                        <td class="border-top border-bottom">
+                                        <td class="border-top border-bottom hc-status">
                                             <span class="alert alert-primary py-0 px-2 small m-0 pending">Pending</span>
                                         </td>
-                                        <td class="rounded-right border border-left-0">
-                                            <div class="dropdown dropleft">
+                                        <td class="rounded-right border border-left-0 hc-dropdown">
+                                            <div class="dropdown dropleft ">
                                                 <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
@@ -524,16 +546,8 @@
                                         </td>
                                     </tr>
                                     <tr class="py-2 ">
-                                        <!-- <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span> 
-                                            <span class="">Mar. 10, 2019</span>
-                                        </td> -->
                                         <td class="border-top border-bottom titles hc-border">GateGuard</td>
                                         <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                        <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">₦200,000</td> -->
                                         <td class="border-top border-bottom">
                                             <span class="alert alert-primary py-0 px-2 small m-0">Completed</span>
                                         </td>
@@ -552,16 +566,8 @@
                                     </tr>
 
                                     <tr class="py-2">
-                                        <!-- <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span> 
-                                            <span class="">Mar. 10, 2019</span>
-                                        </td> -->
                                         <td class="border-top border-bottom titles hc-border">Start.ng Site</td>
                                         <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                        <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">₦200,000</td> -->
                                         <td class="border-top border-bottom">
                                             <span class="alert alert-primary py-0 px-2 small m-0">Completed</span>
                                         </td>
@@ -580,16 +586,8 @@
                                     </tr>
                                     
                                     <tr class="py-2">
-                                            <!-- <td scope="row" class="rounded-left border border-right-0">
-                                                <span class="text-small text-muted mr-2">
-                                                    <i class="fas fa-circle"></i>
-                                                </span> 
-                                                <span class="">Mar. 10, 2019</span>
-                                            </td> -->
                                             <td class="border-top border-bottom titles hc-border">HNG 7.0 Site</td>
                                             <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                            <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                            <td class="border-top border-bottom text-right">₦200,000</td> -->
                                             <td class="border-top border-bottom">
                                                 <span class="alert alert-primary py-0 px-2 small m-0">Completed</span>
                                             </td>
@@ -609,16 +607,8 @@
 
 
                                     <tr class="py-2">
-                                        <!-- <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span> 
-                                            <span class="">Mar. 10, 2019</span>
-                                        </td> -->
                                         <td class="border-top border-bottom titles hc-border">HNG 6.0 Site</td>
                                         <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                        <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">₦200,000</td> -->
                                         <td class="border-top border-bottom">
                                             <span class="alert alert-primary py-0 px-2 small m-0">Completed</span>
                                         </td>
@@ -638,16 +628,8 @@
 
 
                                     <tr class="py-2">
-                                        <!-- <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span> 
-                                            <span class="">Mar. 10, 2019</span>
-                                        </td> -->
                                         <td class="border-top border-bottom titles hc-border">Shopping Cart</td>
                                         <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                        <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">₦200,000</td> -->
                                         <td class="border-top border-bottom">
                                             <span class="alert alert-primary py-0 px-2 small m-0 active">Active</span>
                                         </td>
@@ -667,16 +649,8 @@
 
 
                                     <tr class="py-2">
-                                        <!-- <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span> 
-                                            <span class="">Mar. 10, 2019</span>
-                                        </td> -->
                                         <td class="border-top border-bottom titles hc-border">School Management</td>
                                         <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                        <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">₦200,000</td> -->
                                         <td class="border-top border-bottom">
                                             <span class="alert alert-primary py-0 px-2 small m-0 active">Active</span>
                                         </td>
@@ -694,16 +668,8 @@
                                         </td>
                                     </tr>
                                     <tr class="py-2">
-                                        <!-- <td scope="row" class="rounded-left border border-right-0">
-                                            <span class="text-small text-muted mr-2">
-                                                <i class="fas fa-circle"></i>
-                                            </span> 
-                                            <span class="">Mar. 10, 2019</span>
-                                        </td> -->
                                         <td class="border-top border-bottom titles hc-border">CBT Mobile App</td>
                                         <td class="border-top border-bottom">Aug. 10, 2019</td>
-                                        <!-- <td class="border-top border-bottom text-right">₦200,000</td>
-                                        <td class="border-top border-bottom text-right">₦200,000</td> -->
                                         <td class="border-top border-bottom">
                                             <span class="alert alert-primary py-0 px-2 small m-0">Completed</span>
                                         </td>
