@@ -7,11 +7,24 @@
         <script src="https://kit.fontawesome.com/d4f2148171.js" crossorigin="anonymous"></script>       
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
+        <!-- Fontawesome CSS -->
+	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	    <!-- Bootstrap CSS -->
+	    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>..</title>
         <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
         <style>
+            :root{
+				--primary-color: #091429;
+				--secondary-color: #0ABAB5;
+				--dark-color: #262626;
+				--light-color: #B1B1B1;
+			}
+            .btn-secondary {
+    background-color: var(--secondary-color) !important;
+    color:white;
+}
             .navbar-brand{
                 font-family: Pacifico;
                 color: white;
@@ -107,9 +120,7 @@
                 margin: auto 5px
             }
 
-            .button:hover {
-                color: white;
-            }
+            
 
             .price-button a{
                 color: #fff;
@@ -145,10 +156,37 @@
                 padding: 25px;
             }
 
-            footer {
-                background-color: white;
-                padding: 25px;
-            }
+            h5,
+			.h5 {
+			  	font-size: 1.2rem;
+				font-weight: 700 !important;
+				line-height: 150% !important;
+			}
+            .mb-2, .my-2 {
+    margin-bottom: .5rem!important;
+}
+            
+            .fas{
+				font-size: xx-large;
+    color: var(--secondary-color) !important;
+
+			}
+            .text-dark{
+				color: var(--dark-color) !important;
+			}
+
+            
+            /*-----------footer list--------*/
+			.list-unstyled li a{
+				font-size: 17px !important;
+				transition: 0.25s !important;
+				font-style: normal;
+				font-weight: normal;
+			}
+			.list-unstyled li a:hover{
+				color: gray !important;
+				text-decoration: none;
+			}
 
             .enter-div {
                 text-align: center;
@@ -192,7 +230,7 @@
 
             .btn {
                 border: 1px solid #0ABAB5 ;
-                color: #0ABAB5;
+                
                 box-sizing: border-box;
                 border-radius: 6px;
                 }
@@ -364,42 +402,44 @@
                 <h4 id="enter-line">Enterprise ready tools</h4>
                 <h6>With dedicated support and quick and consistent delivery of new features, you can trust your process in our able hands</h6>
                 <br>
-                <button type="button" class="btn button" onclick="contact-support.html" style="border-width: 2px">Contact Sales</button>
+                <button type="button" class="btn btn-secondary-outline btn-lg" onclick="contact-support.html" style="border-width: 2px; color:white">Contact Sales</button>
             </div>
         </article>
         
-                        <footer class="bg-white pt-4">
+        <footer class="bg-white pt-4">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-2">
-						<a href="index.html"><img src="https://res.cloudinary.com/nxcloud/image/upload/v1570984909/Lancer/Lancers_c40ozr.svg" alt="" class="img img-responsive mb-2" height="30" width="80px" style=""></a>
+						<img src="https://lancer-app.000webhostapp.com/images/svg/logo-dark.svg" alt="" class="img img-responsive mb-2" height="30" width="auto">
 						<ul class="list-unstyled">
-							<li><a class="text-dark" href="#">Pricing</a></li>
+							<li><a class="text-dark" href="pricing.html">Pricing</a></li>
 							<li><a class="text-dark" href="signin.html">Sign in</a></li>
 							<li><a class="text-dark" href="signup.html">Sign up</a></li>
 						</ul>
 					</div>
-					<div class="col-xs-12 col-sm-6 col-md-2 mt-2">
-						<h6>Useful Links</h6>
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<h5>Features</h5>
 						<ul class="list-unstyled">
-							<li><a class="text-dark" href="signin.html">Dashboard</a></li>
-							<li><a class="text-dark" href="https://lancers.app/projects">Projects</a></li>
-							<li><a class="text-dark" href="invoice_loggedin_user.html">Invoices</a></li>
-							<li><a class="text-dark" href="https://lancers.app/projects">Create a Project</a></li>
+							<li><a class="text-dark" href="documents.html">Dashboard</a></li>
+							<li><a class="text-dark" href="project.html">Projects</a></li>
+							<li><a class="text-dark" href="invoice-view.html">Invoices</a></li>
+							<li><a class="text-dark" href="client-information-inactive-2.html">Create a Project</a></li>
 						</ul>
 					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4 mt-2">
-						<h6>Reach us</h6>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<h5>Reach us</h5>
 						<p class="text-dark small">
-							52b, Charity Lane, off Magboso Highway, Ikate, London, Nigeria
+								3 Birrel Avenue, Sabo.
+								Yaba, Lagos State,
+								Nigeria
 						</p>
 						<h5 class="">
-							<a href="https://www.facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
-							<a href="https://www.twitter.com" class="text-dark"><i class="fab fa-twitter-square"></i></a>
+							<a href="https://facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
+							<a href="https://twitter.com" class="text-dark"><i class="fab fa-twitter-square"></i></a>
 						</h5>
 					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4 mt-2">
-						<h6>Stay up to date</h6>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<h5>Stay up to date</h5>
 						<p class="text-dark small">
 							Get emails about our newest features and events you can visit. We promise not to spam.
 						</p>
@@ -408,7 +448,7 @@
 								<label for="staticEmail2" class="sr-only">Email</label>
 								<input type="email" class="form-control" id="staticEmail2" value="" placeholder="Email Address" required>
 							</div>
-							<button type="submit" class="btn btn-secondary mb-2" id="btn-sub">Subscribe</button>
+							<button type="submit" class="btn btn-secondary mb-2">Subscribe</button>
 						</form>
 					</div>
 				</div>
@@ -416,7 +456,7 @@
 			<div class="bg-white text-left py-2 mt-0">
 				<div class="container">
 					<p class="float-right">
-			    	<a href="#">Back to top</a>
+			    	<a href="#"><i class="fas fa-arrow-up"></i></a>
 				    </p>
 				    <p>&copy; Lancer 2019.</p>
 				</div>
