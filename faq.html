@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <meta name="description" content="Generate estimates, invoices, contacts and much more for your project">
+		<meta name="author" content="HNG Internship Group">
+		<link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
+		<!-- Fontawesome CSS -->
+	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	    <!-- Bootstrap CSS -->
+	    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+	    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
+	    <!-- Main css -->
+	    <style type="text/css">
+	    	/*Main page style by message*/
+			@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+			:root{
+				--primary-color: #091429;
+				--secondary-color: #0ABAB5;
+				--dark-color: #262626;
+				--light-color: #B1B1B1;
+			}
+			   /****************************/
+			  /*------- main styles ------*/
+			 /****************************/
+			html{
+				scroll-behavior: smooth;
+			}
+			body{
+				font-family: 'Open Sans', sans-serif !important;
+				font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)))  !important;
+			}
+			h1,
+			.h1{
+			  	font-weight: 600 !important;
+				font-size: 3.5rem;
+			  	font-size: calc(38px + 4 * (100vw - 767px) / 700);
+			  	line-height: 120% !important;
+				vertical-align: top !important;
+			}
+			h2,
+			.h2 {
+			  	font-size: 3.2rem;
+			  	font-size: calc(28px + 4 * (100vw - 767px) / 700);
+			  	font-weight: 700;
+			}
+			h3,
+			.h3 {
+			  	font-size: 2rem !important;
+			  	font-size: calc(24px + 4 * (100vw - 767px) / 700) !important;
+			  	font-weight: 600 !important;
+				line-height: 150% !important;
+			}
+			h4,
+			.h4 {
+			  font-size: 1.6rem;
+			}
+			h5,
+			.h5 {
+			  	font-size: 1.2rem;
+				font-weight: 700 !important;
+				line-height: 150% !important;
+			}
+			h6,
+			.h6 {
+			  font-size: 1.4rem;
+			}
+			p{
+				font-size: 16px !important;
+				font-weight: normal;
+				line-height: 32px;
+			}
+			p.bold{
+				font-size: 18px !important;
+				font-weight: 700;
+				line-height: 32px;
+			}
+			.text-primary{
+				color: var(--primary-color) !important;
+			}
+			.text-secondary{
+				color: var(--secondary-color) !important;
+			}
+			.text-dark{
+				color: var(--dark-color) !important;
+			}
+			.text-light{
+				color: var(--light-color) !important;
+			}
+			.bg-primary{
+				background-color: var(--primary-color) !important;
+			}
+			.bg-secondary{
+				background-color: var(--secondary-color) !important;
+			}
+			.bg-light{
+				background-color: var(--light-color) !important;
+			}
+			.bg-dark{
+				background-color: var(--dark-color) !important;
+			}
+			.btn{
+				border: none !important;
+				display: inline-block;
+				position: relative;
+				overflow: hidden;
+				transition: all ease-in-out .5s;
+			}
+			.btn::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 25%;
+				height: 100%;
+				width: 40%;
+				background-color: #000;
+				border-radius: 50%;
+				opacity: 0;
+				pointer-events: none;
+				transition: all ease-in-out 1s;
+				transform: scale(5, 5);
+			}
+			.btn:active::after {
+				padding: 0;
+				margin: 0;
+				opacity: .2;
+				transition: 0s;
+				transform: scale(0, 0);
+			}
+			.btn-primary{
+				background-color: var(--primary-color) !important;
+			}
+			.btn-secondary{
+				background-color: var(--secondary-color) !important;
+			}
+			.btn-primary-outline{
+				background-color: transparent !important;
+				color: var(--primary-color)  !important;
+				border: 1px solid var(--primary-color)  !important;
+			}
+			.btn-secondary-outline{
+				background-color: transparent !important;
+				color: var(--secondary-color)  !important;
+				border: 2px solid var(--secondary-color)  !important;
+			}
+			.btn-primary:hover, .btn-secondary:hover, .btn-primary-outline:hover, .btn-secondary-secondary:hover{
+				border-color: inherit !important;
+				opacity: 0.8 !important;
+			}
+
+			.fas{
+				font-size: xx-large;
+    color: var(--secondary-color) !important;
+
+			}
+
+
+			   /****************************/
+			  /*-----Landing Page---------*/
+			 /****************************/
+			/*------Navbar------------*/
+			.navbar-main {
+			    background-color: var(--primary-color);
+			}
+			.navbar-main .navbar-brand,
+			.navbar-main .navbar-text {
+			    color: rgba(255, 255, 255, 0.9);
+			}
+			.navbar-main .navbar-nav .nav-link {
+				font-size: 1rem;
+			    color: rgba(255, 255, 255, 0.8);
+			}
+			.navbar-main .nav-item.active .nav-link,
+			.navbar-main .nav-item:hover .nav-link {
+			    color: #ffffff;
+			}
+			/* for navbar toggler design */
+			.icon-bar {
+				width: 22px; 
+				height: 2px;
+				background-color: #B6B6B6;
+				display: block;
+				transition: all 0.2s;
+				margin-top: 4px
+			}
+			.navbar-toggler {
+			  border: none;
+			  background: transparent !important;
+			}
+			.navbar-toggler:focus{
+				outline: none !important;
+			}
+			/* navbar toggler animation*/
+			.navbar-toggler .top-bar {
+			  transform: rotate(45deg);
+			  transform-origin: 10% 10%;
+			} 
+			.navbar-toggler .middle-bar {
+			  opacity: 0;
+			} 
+			.navbar-toggler .bottom-bar {
+			  transform: rotate(-45deg);
+			  transform-origin: 10% 90%;
+			}
+			.navbar-toggler.collapsed .top-bar {
+			  transform: rotate(0);
+			} 
+			.navbar-toggler.collapsed .middle-bar {
+			  opacity: 1;
+			}
+			.navbar-toggler.collapsed .bottom-bar {
+			  transform: rotate(0);
+			}
+			/*-----------footer list--------*/
+			.list-unstyled li a{
+				font-size: 17px !important;
+				transition: 0.25s !important;
+				font-style: normal;
+				font-weight: normal;
+			}
+			.list-unstyled li a:hover{
+				color: gray !important;
+				text-decoration: none;
+			}
+
+			.faq-top{
+				/*margin: 0 0;*/
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.faq-btn {
+				font-size: 1.4em;
+				color: white;	
+				text-decoration: none;
+				padding: 10px 20px;
+			}
+			.faq-btn:hover {
+				color: #091429;
+				text-decoration: none;
+			}
+			.faq-btn:active {
+				color: #091429;
+				text-decoration: none;
+			}
+			.card-reader {
+				background-color: #0ABAB5;
+				color: white;
+			}
+			[data-toggle="collapse"] .fa:before {
+				content: "\f146";
+			}
+
+			[data-toggle="collapse"].collapsed .fa:before {
+				content: "\f0fe";
+			}
+	    </style>
+		<title>Lancer FAQ Page</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-main">
+				<div class="container">
+					<a class="navbar-brand" href="#">
+						<img src="https://lancer-app.000webhostapp.com/images/svg/logo-white.svg" class="img img-responsive" height="30" width="auto">
+					</a>
+					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar top-bar"></span>
+						<span class="icon-bar middle-bar"></span>
+						<span class="icon-bar bottom-bar"></span>
+						<!-- <span class="navbar-toggler-icon"><i class="fa fa-bars fa-lg py-1 text-white"></i></span> -->
+					</button>
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+						<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+							<li class="nav-item active">
+								<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="pricing.html">Pricing</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="signin.html">Sign in</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="signup.html">Sign up</a>
+							</li>                             
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section class="" >
+			    <div class="container">
+			      	<div class="row">
+			      		<div class="col-12 col-lg-12 faq-top">
+			      			<h2 class="text-center"> Frequently Asked Questions </h2>
+			      		</div>
+			      	</div>
+
+			      	<div class="row">
+			      		<div class="col-12 col-lg-12">
+			      			<div class="accordion" id="accordionBox">
+			      				<div class="card">
+			      					<div class="card-reader" id="headingOne">
+			      						<h5 class="mb-0">
+
+			      							<button class="btn btn-link faq-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" ><i class="fa" aria-hidden="true"> </i> What is Lancers App all about?</button>
+			      						</h5>
+			      						
+			      					</div>
+
+			      					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionBox">
+			      						<div class="card-body">
+			      							Lancers App is a web application that makes it easy for you to create and manage your invoices and estimates for every project you take on.
+			      							 <p> Visit our <a href="index.html">homepage </a> for more information.</p>
+			      						</div>
+			      					</div>
+			      				</div>
+
+			      				<div class="card">
+			      					<div class="card-reader" id="headingTwo">
+			      						<h5 class="mb-0">
+			      							<button class="btn btn-link faq-btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" ><i class="fa" aria-hidden="true"> </i> Is it free to use?</button>
+			      						</h5>
+			      						
+			      					</div>
+
+			      					<div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionBox">
+			      						<div class="card-body">
+			      							Yes, our starter plan is completely free to use. However, if you desire more advanced features, you can subscribe to our pro plan at $24.99/month or Pro Plus plan at $79.99/month. <p> Check our <a href="pricing.html">pricing page </a> for more information.</p>
+			      						
+			      						</div>
+			      					</div>
+			      				</div>
+
+			      				<div class="card">
+			      					<div class="card-reader" id="headingOne">
+			      						<h5 class="mb-0">
+			      							<button class="btn btn-link faq-btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" ><i class="fa" aria-hidden="true"> </i> Can I edit my invoice after creating an estimate?</button>
+			      						</h5>
+			      						
+			      					</div>
+
+			      					<div id="collapseThree" class="collapse " aria-labelledby="headingOne" data-parent="#accordionBox">
+			      						<div class="card-body">
+			      							Yes, you can. All you have to do is visit your project tab in the menu and click the edit button.
+			      						
+			      						</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+
+			    </div>
+		  	</section>
+
+
+		  	
+		</main>
+
+		
+		<section class="resume-section p-4 p-lg-5 text-center" id="contact">
+	        <div class="my-auto">
+	          <h2 class="mb-4">Question not in FAQ?</h2>
+
+	          <h6>
+	            Ask us directly...
+	          </h6>
+
+	          <!-- edit form action -->
+	          <form
+	            class="contact-form d-flex flex-column align-items-center"
+	            action="https://formspree.io/youremail@mail.com" 
+	            method="POST"
+	          >
+	            <div class="form-group w-75">
+	              <input
+	                type="name"
+	                class="form-control"
+	                placeholder="Name"
+	                name="name"
+	                required
+	              />
+	            </div>
+	            <div class="form-group w-75">
+	              <input
+	                type="email"
+	                class="form-control"
+	                placeholder="Email"
+	                name="email"
+	                required
+	              />
+	            </div>
+
+	            <div class="form-group w-75">
+	              <textarea
+	                class="form-control"
+	                type="text"
+	                placeholder="What would you like to know about Lancer?"
+	                rows="7"
+	                name="message"
+	                required
+	              ></textarea>
+	            </div>
+
+	            <button type="submit" class="btn btn-submit btn-info w-75">Submit</button>
+	          </form>
+	        </div>
+      	</section>
+		
+
+		
+		<footer class="bg-white pt-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<img src="https://lancer-app.000webhostapp.com/images/svg/logo-dark.svg" alt="" class="img img-responsive mb-2" height="30" width="auto">
+						<ul class="list-unstyled">
+							<li><a class="text-dark" href="pricing.html">Pricing</a></li>
+							<li><a class="text-dark" href="signin.html">Sign in</a></li>
+							<li><a class="text-dark" href="signup.html">Sign up</a></li>
+							<li><a class="text-dark" href="faq.html">FAQ</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<h5>Features</h5>
+						<ul class="list-unstyled">
+							<li><a class="text-dark" href="documents.html">Dashboard</a></li>
+							<li><a class="text-dark" href="project.html">Projects</a></li>
+							<li><a class="text-dark" href="invoice-view.html">Invoices</a></li>
+							<li><a class="text-dark" href="client-information-inactive-2.html">Create a Project</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<h5>Reach us</h5>
+						<p class="text-dark small">
+								3 Birrel Avenue, Sabo.
+								Yaba, Lagos State,
+								Nigeria
+						</p>
+						<h5 class="">
+							<a href="https://facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
+							<a href="https://twitter.com" class="text-dark"><i class="fab fa-twitter-square"></i></a>
+						</h5>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<h5>Stay up to date</h5>
+						<p class="text-dark small">
+							Get emails about our newest features and events you can visit. We promise not to spam.
+						</p>
+						<form class="form-inline">
+							<div class="form-group mb-2 mr-2">
+								<label for="staticEmail2" class="sr-only">Email</label>
+								<input type="email" class="form-control" id="staticEmail2" value="" placeholder="Email Address" required>
+							</div>
+							<button type="submit" class="btn btn-secondary mb-2">Subscribe</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="bg-white text-left py-2 mt-0">
+				<div class="container">
+					<p class="float-right">
+			    	<a href="#"><i class="fas fa-arrow-up"></i></a>
+				    </p>
+				    <p>&copy; Lancer 2019.</p>
+				</div>
+			</div>
+		</footer>
+		<!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- <script type="text/javascript" src="js/bootstrap.js"></script> -->
+
+		<!-- <script>
+		$('.collapse').collapse();
+		</script> -->
+	</body>
+</html>
