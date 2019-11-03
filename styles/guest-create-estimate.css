@@ -6,7 +6,7 @@
             }
             
         body {
-    margin-top: 0px;
+                margin-top: 0px;
         }
 
             ul {
@@ -29,7 +29,7 @@
             }
             .text-center h1 {
                 text-align: left !important;
-                margin-left: 17.2%;
+                margin-left: 30.2%;
             }
             button {
                 width: 120px;
@@ -92,6 +92,7 @@
 .next a {
     color: #ffffff;
 }
+/*
 .next {
     width: 10px;
     background: rgba(196, 196, 196, 0.4);
@@ -101,11 +102,11 @@
     padding-right: 98px;
     padding-left: 47px;
     color: white;
-}
+}*/
 
  .a-next {
     background: rgba(207, 204, 204, 0.4);
-    width: 220px;
+    width: 200px;
     height: 60px;
     padding: 5px 20px;
     margin: 0 auto;
@@ -146,9 +147,10 @@ h5 {
     align-items: flex-end;
 }
 .card-body:hover {
-    border: 5px solid black;
+    border: 1px solid #0ABAB5;
     box-sizing: border-box;
 }
+
 .dropbtn, .project {
      margin-top: 1vh; 
     height: 50px;
@@ -158,19 +160,26 @@ h5 {
     border: 1px solid rgba(145, 145, 145, 0.4);
     color: #091429;
 }
+
 .project {
     border: 2px solid rgba(145, 145, 145, 0.4);
     overflow: hidden;
 }
 .l-proj {
-    font-size: 14px;
+    font-size: 1em;
     border: none;
+    height: calc(1em + .75rem + 2px);
     width: 100%;
     vertical-align: middle;
     -webkit-box-pack: justify;
 }
 .l-proj::placeholder {
     color: #919191;
+}
+
+.l-proj input{
+    width:100px;
+    padding: .475rem .75rem;
 }
 .l-proj:focus {
     border: none;
@@ -263,7 +272,7 @@ option, select{
     margin-top: 3% !important;
 }
 .text-center h1 {
-    margin-left: 17.2%;
+    margin-left: 20.2%;
 }
 button {
     width: 120px;
@@ -286,21 +295,24 @@ div > #ext{
 .h5, h5 {
     font-size: 1.05rem;
 }
-p.card-text {
-    font-size: .8rem;
+.card-text p {
+    font-size: 11em !important;
 }
   .card
   {
     min-height: 34vh;
 }
 .card-body:hover {
-    border: 3px solid black;
+    border: 3px solid #0ABAB5;
 }
 .dropbtn, .project {
      margin-top: 1vh; 
     height: 40px;
     padding: 10px;
     width: 100%;
+}
+.text-center {
+    text-align: center!important;
 }
 .project {
     border: 1.5px solid rgba(145, 145, 145, 0.4);
@@ -335,7 +347,7 @@ option, select{
     margin-top: 3% !important;
 }
 .text-center h1 {
-    margin-left: 17.2%;
+    margin-left: 20.2%;
 }
 #container p {
     margin-top: 5px;
@@ -356,7 +368,7 @@ option, select{
     margin-left: 7%;
 }
 .card-body:hover {
-    border: 2px solid black;
+    border: 2px solid #0ABAB5;
 }
 .dropbtn, .project {
      margin-top: 1vh; 
@@ -405,7 +417,8 @@ div > #ext {
     font-size: 1.15rem !important;
 }
 #container p {
-    margin-top: 0x;
+    margin-top: 19px !important;
+    font-size:18px !important;
 }
 .a-next {
     width: 120px;
@@ -415,6 +428,11 @@ div > #ext {
     margin-top: 25px;
     margin-bottom: 110px;
 }
+.text-center h1{
+    margin-top: 25px !important;
+    margin-left: +20px !important;
+
+}
 .h5, h5 {
     font-size: 1rem;
 }
@@ -423,17 +441,17 @@ div > #ext {
     min-height: 25vh;
 }
 p.card-text {
-    font-size: .78rem;
+    font-size: 1rem;
     padding-right: .5rem;
 }
 .card-body:hover {
-    border: 1px solid black;
+    border: 1px solid #0ABAB5;
 }
 .dropbtn, .project {
      margin-top: 0; 
     height: 35px;
     padding: 0;
-    width: 70vw !important;
+    width: 75vw !important;
 }
 .project {
     border: .5px solid rgba(145, 145, 145, 0.4);
@@ -466,8 +484,10 @@ button {
 
 }
            
-            @media (max-width: 976px) {
+@media (max-width: 976px){
     div>#ext{
         font-size: 15px;
-    }
-            }
+    }         
+}
+
+
