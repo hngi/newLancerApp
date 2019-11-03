@@ -1,8 +1,11 @@
-
+/*global styling*/
          * {
                 margin-right: 0px;
                 margin-left: 0px;
                 font-family: Ubuntu;
+            }
+            *:focus {
+                outline: none;
             }
             
         body {
@@ -263,7 +266,7 @@ option, select{
     margin-left: -15px;
 }
 
-
+/*media queries*/
 
 @media (max-width: 992px) 
 {
@@ -490,4 +493,61 @@ button {
     }         
 }
 
+/*Media query for Galaxy S5 */
+@media (max-width: 360px){
+    .card{
+    max-width: 87%;
+    margin-left: 1%;
+    }
+    .text-center h1 {
+        margin-left: +20px !important;
+    }
+}
+/*Media query for Pixel 2 */
 
+@media (max-width: 411px){
+             
+    .l-proj {
+        font-size: 14px;
+        margin-top: 2px;
+    }
+    .text-center h1 {
+        margin-left: +30px !important;
+    }
+    .card  {
+        margin-left: -3px;
+    }
+    
+}
+/*Media query for iPhone 6/7*/
+
+@media (max-width: 414px){
+             
+    .l-proj {
+        font-size: 14px;
+        margin-top: 2px;
+    }
+    .text-center h1 {
+        margin-left: +30px !important;
+    }
+    .card  {
+        margin-left: -3px;
+    }
+    
+}
+
+/*Media query for iPad*/
+@media (max-width: 414px){
+             
+    .l-proj {
+        font-size: 14px;
+        margin-top: 2px;
+    }
+    .text-center h1 {
+        margin-left: +30px !important;
+    }
+    .card  {
+        margin-left: -3px;
+    }
+    
+}
