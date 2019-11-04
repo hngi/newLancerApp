@@ -549,5 +549,27 @@ button {
     .card  {
         margin-left: -3px;
     }
-    
+}
+
+
+/*Media query for iPad Pro*/
+@media (max-width:1024px){
+    .text-center h1 {
+        text-align: left !important;
+        margin-left: 20% !important;
+    }
+
+    .card-text{
+        font-size:22px;
+    }
+
+     h5 {
+        font-size: 35px !important;
+    }
+
+    .myNav p{
+        font-size: 30px !important;
+        font-weight: bold !important;
+    }
+
 }
