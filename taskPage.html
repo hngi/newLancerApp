@@ -104,9 +104,18 @@
             border-color: inherit !important;
             opacity: 0.8 !important;
         }
-
-        .hc-border{
+        /* -------table style-------- */
+        /* .hc-border{
             border-left: 0.8px solid #dee2e6!important;
+        } */
+
+        .border-hc{
+            border: 1px solid #dee2e6;
+        }
+
+        .hc-font{
+            font-family: Open Sans;
+            font-style: normal;
         }
 
         .disappear{
@@ -309,6 +318,15 @@
             background-color: #76D874;
             border-color:  #76D874;
         }
+
+        /*------------floating button---------*/
+        #add-something{
+          position: fixed;
+          bottom: 70px;
+          left: 320px;
+          z-index: 12;
+        }
+
         /* ---------------------------------------------------
             MEDIAQUERIES
         ----------------------------------------------------- */
@@ -374,12 +392,15 @@
           display: none;
         }
 
-        /*------------floating button---------*/
-        #add-something{
-          position: fixed;
-          bottom: 20px;
-          left: 320px;
-          z-index: 12;
+            
+
+        @media (max-width: 768px){
+            #add-something{
+            position: fixed;
+            bottom: 70px;
+            left: 100px;
+            z-index: 12;
+            }
         }
 
         @media (max-width: 533px){
@@ -391,6 +412,18 @@
                 margin-left: 0.5rem!important;
                 padding-left: 0rem!important;
                 width: 40vw !important;
+            }
+
+            .extra-small{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #add-something{
+            position: fixed;
+            bottom: 70px;
+            left: 50px;
+            z-index: 12;
             }
             
         }
@@ -515,7 +548,7 @@
                                 </select>
                             </form>
                         </div>
-                        <div class="table-responsive">
+                        <!-- <div class="table-responsive">
                             <table class="table project-table table-borderless">
                                 <thead>
                                     <tr>
@@ -688,6 +721,137 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div> -->
+                        <div class="container hc-font">
+                            <div class="row mb-3 mt-3 font-weight-bold extra-small" style="line-height:25px;">
+                                <div class="col-3 py-2">Task</div>
+                                <div class="col-6 py-2">Date</div>
+                                <div class="col py-2">Status</div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">Online Music Shop</div>
+                                <div class="col-6 py-3">August 20 2019</div>
+                                <!-- <button class="btn btn-success col-2">Pending</button> -->
+                                <div class="col-2 font-weight-bold py-3"><span class="alert alert-primary py-0 px-2 small m-0 pending">Pending</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">GateGuard</div>
+                                <div class="col-6 py-3 ">August 20 2019</div>
+                                <!-- <button class="btn btn-sm btn-success col-2">Completed</button> -->
+                                <div class="text-primary font-weight-bold col-2 py-3"><span class="alert alert-primary py-0 px-2 small m-0">Completed</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">Start.ng Site</div>
+                                <div class="col-6 py-3">August 20 2019</div>
+                                <!-- <button class="btn btn-sm btn-success col-2">Completed</button> -->
+                                <div class="text-primary font-weight-bold col-2 py-3"><span class="alert alert-primary py-0 px-2 small m-0">Completed</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">HNG 6.0 Site</div>
+                                <div class="col-6 py-3">August 20 2019</div>
+                                <!-- <button class="btn btn-sm btn-success col-2">Completed</button> -->
+                                <div class="font-weight-bold col-2 py-3"><span class="alert alert-primary py-0 px-2 small m-0">Completed</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">HNG7.0 Site</div>
+                                <div class="col-6 py-3">August 20 2019</div>
+                                <div class="font-weight-bold col-2 py-3"><span class="alert alert-primary py-0 px-2 small m-0">Completed</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">Shopping Cart</div>
+                                <div class="col-6 py-3">August 20 2019</div>
+                                <div class="font-weight-bold col-2 py-3"><span class="alert alert-primary py-0 px-2 small m-0 active">Active</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">School Management</div>
+                                <div class="col-6 py-3">August 20 2019</div>
+                                <!-- <button class="btn btn-sm btn-success col-2">Active</button> -->
+                                <div class="font-weight-bold col-2 py-3"><span class="alert alert-primary py-0 px-2 small m-0 active">Active</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border-hc extra-small">
+                                <div class="col-3 py-3">CBT Mobile App</div>
+                                <div class="col-6 py-3">August 20 2019</div>
+                                <div class="text-primary font-weight-bold col-2 py-3"><span class="alert alert-primary py-0 px-2 small m-0">Completed</span></div>
+                                <div class="dropdown dropleft py-3">
+                                    <a class="btn btn-white btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item text-success" href="#"><i class="fas fa-binoculars"></i> View</a>
+                                        <a class="dropdown-item text-secondary" href="#"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt"></i> Delete</a>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
