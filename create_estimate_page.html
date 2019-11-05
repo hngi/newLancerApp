@@ -1,143 +1,714 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/create_estimate_page.css">
     <title>Create Estimate</title>
-</head>
-<body class="container">
-   <!-- <div id="estimate">
-        <header>
-            <span class = "c-estimate shift">Estimates</span>
-            <ul>
-                <li class="login"><a  href="signin.html">Login</a></li>
-                <li class = "signup" ><a class = "signup" href="signup.html">Signup</a></li>
-            </ul>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/v1571417665/icons8-estimates-16_adktgw.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/create_estimate_page.css">
 
-        </header>
-        <section id="new_user">
-            <div>
-                <a class="btn est" id="est_content" href="#">Create Estimate</a> <br>
-                <h2><p class = "pad">Estimates helps you place value to your work and time!</p></h2>
-                <p class = "pad"><h5 class = "pad">Craeate and estimate and easily convert it to your invoice and send to your client</h5></p>
-            </div>
-        </section>
-    </div>_-->
+
+    <!-------I added internal CSS--------->
+    <style>
+* {
+    margin-right: 0px;
+    margin-left: 0px;
+    font-family: Ubuntu;
+}
+body {
+    margin-top: 0px;
+}
+ul {
+    display: inline-block;
+    float: none;   
+    width: fit-content;
+    padding-inline-start: 10px;
+    margin-top: 24px;
     
-    <!-- FOR ACTUAL INPT-->
-   <!-- <div id="Create_estimate" class="hidden">-->
-        <div id="container">
+}
 
-                <div>
-                    
-                    <button class="close"  id="close"><img id="clear" src="https://res.cloudinary.com/celx/image/upload/v1570718446/vhmdnd4sf3f5w3burj4m.svg" alt=""></button>
-                </div>
-                <div>
-                    <p class="nav c-estimate" id="cre">Create Estimate</p>
-                </div>
-                <div>
-                   <input class="nav disabled" id="ext" type="button" value="NEXT">
-                    
-                </div>
-
-            </div>
+li {
     
+    display: inline;
+}
 
 
+.h1, h1 {
+    font-size: 1.8rem !important;
+    margin-top: 4% !important;
+    color: solid #262626;
+}
+
+
+
+
+.text-center h1 {
+    text-align: left !important;
+    margin-left: 17.2%;
+}
+button {
+    width: 120px;
+    background: #ffffff;
+    border: none;
+    height: 100%;
+
+
+}
+#container div {
+    border: 2px solid rgba(207, 204, 204, 0.4);
+}
+
+#container p {
+    justify-content: center;
+    margin-top: 9px;
+    font-style: normal;
+    font-weight: bold;
+    color: #323A43;
+}
+
+
+.boxes:hover{ 
+    border:3px solid #0ABAB5
+}
+
+
+
+/*#container .navM {
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}*/
+.cEstimate { 
+    margin: 0 auto;
+    align-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.next a {
+    color: #ffffff;
+}
+.next {
+    width: 10px;
+    background: rgba(196, 196, 196, 0.4);
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+
+    padding-right: 70px;
+    padding-left: 70px;
+
+    color: white;
     
-       <section>
-           <h1>What project are you estimating?</h1>
-           <div class="cree">
-               <div class="lists">
-                   <div class="box">
-                        <h3 class="first-head"><h3>A previously created project</h3></p>
-                        <p class="contents">Find estimate for the previously created project, by
-                            doing so the estimate gets populated with some of the data
-                        </p>
-                   </div>
-                  
-                   <div class="contents dropdown">
-                           <select class="dropbtn" name="" onmouseout="verifyPath()" id="projectSelect">
-                               <option>Select Project</option>
-                               <option>Glacier Fintech App</option>
-                               <option> AB Technology Solutions Branding</option>
-                           </select>  
-                           <i class="fa fa-caret-down"></i>
-                           
-                   </div>
-               </div>
-           </div>
+}
+div > #ext{
+    background: rgba(207, 204, 204, 0.4);
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: center;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+ .a-next {
+    background: rgba(207, 204, 204, 0.4);
+    width: 220px;
+    height: 60px;
+    padding: 5px 20px;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 60px;
+    clear: both;
+    border: none;
+    color: white;
+    border: none !important;
+}
+
+.a-next a {
+    color: white;
+}
+p, h3 {
+    width: fit-content;
+}
+.lists {
+    width: fit-content;
+}
+h5 {
+    font-weight: bold;
+    color: #262626;
+}
+  .card
+  {
+    display: grid;
+    min-height: 34vh;
+    max-width: fit-content;
+    position: relative;
+}
+.card .card-body
+{
+    display: inline-grid;
+    justify-content: baseline;
+    align-items: flex-end;
    
+}
+
+.my-text{
+    text-align: center;
+}
+.my-link{
+    margin-left:110px;
+    margin-top: -50px;
+}
+.my-link input{
+    padding: 10px 8;
+    width:80px;
+    height: 35px;  
+}
+.my-text-color{
+    color:#0ABAB5;
+}
+.my-text-color a {
+    text-decoration:none;
+}
+.btn{
+    background-color: #0ABAB5;
+    border: none;
+}
+.btn:hover{
+    background-color: rgb(10, 170, 165);
+}
+.card-title-1{
+    margin-bottom:20px ;
+    margin-top:-100px;
+    padding:0px 10px;
+    width:109%;
+}
+.my-text-3{
+    text-align: center !important;
+    
+}
+.dropbtn, .project {
+     margin-top: 1vh; 
+    height: 50px;
+    padding: 10px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(145, 145, 145, 0.4);
+    color: #091429;
+}
+.project {
+    border: 2px solid rgba(145, 145, 145, 0.4);
+    overflow: hidden;
+}
+.l-proj {
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    vertical-align: middle;
+    -webkit-box-pack: justify;
+}
+.l-proj::placeholder {
+    color: #919191;
+}
+.l-proj:focus {
+    border: none;
+}
+.req {
+     margin-left: 221px; 
+     margin-top: 12rem;
+    float: right;
+}
+.signup {
+    background: #0ABAB5;
+    width: 145px;
+    height: 54px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: white;
+}
+
+.est {
+    color: white; 
+    background:  #0ABAB5;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    padding: 10px;
+    text-align: center;
+    padding-top: 10px !important;
+}
+li {
+    padding: 15px;
+    margin: 8px !important;
+    margin-top: 21px;
+}
+li a {
+    margin: 1px;
+    padding: 1px;
+    color: black;
+}
+
+#new_user {
+    margin-top: 20px;
+    margin-left: 2%;
+}
+.shift {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+}
+.login {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+.hidden {
+    display: none;
+}
+.disabled {
+    cursor: not-allowed;
+}
+.box {
+    margin-top: 4%;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr;
+}
+option, select{
+    font-size: 14px;
+}
+.dropbtn:focus, .project:focus, .dropbtn:hover, .project:hover {
+    cursor: pointer !important;
+}
+#clear{
+    padding: auto;
+}
+ /*#ext {
+    justify-content: center;
+    border: none;
+    color: white;
+    border: none !important;
+}*/
+.row {
+    margin-right: 0;
+    margin-left: -15px;
+}
+
+
+
+@media (max-width: 992px) 
+{
+.h1, h1 {
+    font-size: 2rem !important;
+    margin-top: 3% !important;
+}
+.text-center h1 {
+    margin-left: 17.2%;
+}
+button {
+    width: 120px;
+    height: 100%;
+}
+#container p {
+    font-size: 19.5px;
+    margin-top: 9px;
+}
+div > #ext{
+    font-size: 20px;
+}
+.a-next {
+    width: 180px;
+    height: 60px;
+    padding: 5px 20px;
+    font-size: 20px;
+    margin-top: 60px;
+}
+.h5, h5 {
+    font-size: 1.05rem;
+}
+p.card-text {
+    font-size: .8rem;
+}
+  .card
+  {
+    min-height: 34vh;
+}
+
+.dropbtn, .project {
+     margin-top: 1vh; 
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+}
+.project {
+    border: 1.5px solid rgba(145, 145, 145, 0.4);
+    overflow: hidden;
+}
+.l-proj {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.l-proj::placeholder {
+    line-height: 10px;
+}
+.box {
+    margin-top: 3%;
+}
+option, select{
+    font-size: 14px;
+}
+#container .navM img {
+    height: 20px;
+}
+
+}
+
+
+
+@media (max-width: 767px) 
+{
+.h1, h1 {
+    font-size: 1.5rem !important;
+    margin-top: 3% !important;
+}
+.text-center h1 {
+    margin-left: 17.2%;
+}
+#container p {
+    margin-top: 5px;
+}
+.a-next {
+    width: 160px;
+    height: 55px;
+    padding: 5px 15px;
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+  .card
+  {
+    min-height: 28vh;
+    margin-bottom: 30px;
+    max-width: 85%;
+    margin-left: 7%;
+}
+
+.dropbtn, .project {
+     margin-top: 1vh; 
+    height: 40px;
+    padding: 0;
+    width: 72vw !important;
+}
+.project {
+    border: 1.5px solid rgba(145, 145, 145, 0.4);
+    overflow: hidden;
+}
+.l-proj {
+    font-size: 14px;
+    width: 100%;
+    margin: .5rem 0 0 .3rem;
+}
+.l-proj::placeholder {
+    line-height: 10px;
+}
+.box {
+    margin-top: 3%;
+}
+option, select{
+    font-size: 14px;
+}
+#container .navM img {
+    height: 20px;
+}
+#container p {
+    font-size: 17.5px;
+    margin-top: 12px;
+}
+div > #ext {
+    font-size: 18px;
+}
+#container .navM img {
+    height: 18px;
+}
+
+}
+
+
+@media screen and(max-width: 576px) 
+{
+.h1, h1 {
+    font-size: 1.15rem !important;
+}
+#container p {
+    margin-top: 0x;
+}
+.a-next {
+    width: 120px;
+    height: 45px;
+    padding: 5px 10px;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 110px;
+}
+.h5, h5 {
+    font-size: 1rem;
+}
+  .card
+  {
+    min-height: 25vh;
+}
+p.card-text {
+    font-size: .78rem;
+    padding-right: .5rem;
+}
+
+.dropbtn, .project {
+     margin-top: 0; 
+    height: 35px;
+    padding: 0;
+    width: 70vw !important;
+}
+.project {
+    border: .5px solid rgba(145, 145, 145, 0.4);
+}
+.l-proj {
+    font-size: 12px;
+}
+.box {
+    margin-top: 2%;
+}
+option, select{
+    font-size: 12px;
+}
+#container .navM img {
+    height: 20px;
+}
+#container p {
+    font-size: 16px;
+    margin-top: 12px;
+}
+div > #ext {
+    font-size: 15px;
+}
+#container .navM img {
+    height: 14px;
+}
+button {
+    width: 70px;
+}
+.card .card-body {
+    display: inline-grid;
+    justify-content: baseline;
+    align-items: flex-end;
+    
+}
+
+}
+
+@media (max-width:550px){
+    .card .card-body
+{
+    display: inline-grid;
+    justify-content: baseline;
+    align-items: flex-end;
    
-           <div id="cree"  class="cree">
-                   <div class="lists glacier">
-                       <div class="box">
-                            <h3 class="first-head">A new project</h3>
-                            <p class="contents">Create a new estimate and set up a new project <br />
-                                based on the information 
-                            </p>
-                       </div>
-                      
-                       <div class="contents project">
-                           <input class="l-proj" type="text" onmouseout="verifyPath()" placeholder= "Project Name" name="" id="createProject">
-                           <br>
-                           <span class="req">Required</span></div>
-       
-                   </div>
-               </div>
-               <button class="a-next disabled"><a href="#">NEXT</a></button>
-       </section>
-    </div>
-    </div>
+}
 
-    <script>
-    let est_content = document.querySelector('#est_content');
-    let estimate_page = document.querySelector('#Create_estimate');
 
-    let hide = () => {
-       // estimate_page.classList.add('hidden');
-       document.querySelector('#Create_estimate').classList.remove('hidden');
-       document.querySelector('#estimate').classList.add('hidden');
-       
+.dropbtn, .project {
+    margin-top: 1vh;
+    height: 40px;
+    padding: 0;
+    width: 70vw !important;
+}
+}
+@media (max-width:500px){
+    #container div {
+        border: .5px solid black;
+    }
+    div > #ext {
+        font-size: 16px;
+        height:40px;
+        width:10vw;
+    }
+    .dropbtn, .project {
+        margin-top: 1vh;
+        height: 40px;
+        padding: 0;
+        width: 68vw !important;
     }
 
-    est_content.addEventListener('click', hide );
-
-
-    document.querySelector('#close').addEventListener('click', () => {
-        document.querySelector('#estimate').classList.remove('hidden');
-        document.querySelector('#Create_estimate').classList.add('hidden');
-
-    });
-
-        //createProject = '';
+}
+@media (max-width:450px){
+    .dropbtn, .project {
+        margin-top: 1vh;
+        height: 40px;
+        padding: 0;
+        width: 66vw !important;
+    }
+}
+@media (max-width:390px){
+    .my-text-3 {
+        text-align: left !important;
+        font-size: 20px !important;
+        margin-left:  -2px !important;
+        margin-right: -1px !important ;
+        padding-left: 1em;
+    }
     
-    
-    
-
-    function verifyPath(){
-        let createProject = document.getElementById('createProject').value;
-        let projectSelect = document.getElementById('projectSelect');
-
-        let ele = projectSelect.selectedIndex;
-
-        if ( createProject !== "" || ele !== 0 ){
-            document.querySelector('.a-next').style.background = '#0ABAB5';
-            document.querySelector('.next').style.background = '#0ABAB5';
-            
-            document.querySelector('.a-next').classList.remove('disabled');
-            document.querySelector('.next').classList.remove('disabled');
-        } else {
-            //console.log('here works');
-            document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
-            document.querySelector('.next').classList.add('disabled');
-            document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
-            document.querySelector('.a-next').classList.add('disabled');
-        }
+    .dropbtn, .project {
+        margin-top: 1vh;
+        height: 40px;
+        padding: 0;
+        width: 60vw !important;
+    }
+}
+@media (max-width:430px){
+    #container div {
+        border: 1px solid black;
+        height: 40px;
+    }
+    #container p{
+    font-size: 15px;
+    margin-top: 9px;
+}
+}
+@media (max-width:404px){
+    #container div {
+        border: 1px solid black;
+        height: 40px;
         
     }
+    #container p{
+    font-size: 13px;
+    margin-top: 9px;
+}
+div > #ext {
+    font-size: 13px;
+    height: 40px;
+    width: 5vw;
+}
+h1 {
+    font-size: 1.2rem !important;
+    margin-top: 3% !important;
+}
+
+}
+
+    
+    </style>
+</head>
+<body>
+  <div id="container">
+    <div>
+        <button class="close navM"  id="close"><img id="clear" src="https://res.cloudinary.com/celx/image/upload/v1570718446/vhmdnd4sf3f5w3burj4m.svg" alt=""></a></button>
+    </div>
+    <div>
+        <p class="nav cEstimate" id="cre">Create Estimate</p>
+    </div>
+    <div>
+        
+        
+       <input class="next disabled" id="ext" type="button" value="NEXT">
+    </div>
+  </div>
+
+  <div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-12">
+      <h1 class="text-center my-text-3">What project are you estimating?</h1>
+    </div>
+  </div>
+  </div>
+
+  <div class="row ml-auto box justify-content-center">
+    <div class="col-md-4 ">
+        <div class="card">
+            <div class="card-body boxes">
+                
+                <h5 class="card-title">A previously created project</h5>
+                <p class="card-text">Find estimate for a previously created project, by doing so the estimate gets populated with some of the data.</p>
+                <div class="dropdown mr-1">
+                   <select class="dropbtn" name="" onmouseout="verifyPath()" id="projectSelect">
+                       <option value="select" selected="disabled">Select Project</option>
+                       <a href=""><option value="app" class="dropdown-item">Glacier Fintech App</option></a>
+                       <a href=""><option value="branding" class="dropdown-item">AB Technology Solutions Branding</option></a>
+                   </select>  
+                                         
+               </div>
+           </div>
+       </div>
+   </div>
+  
+    <div class="col-md-4">
+      <div class="card">
+          <div class="card-body boxes">
+              <h5 class="card-title">A new project</h5>
+              <p class="card-text">Create a new estimate and set up a new project based on the
+                  information.
+              </p>
+            
+             <div class="project">
+                 <input class="l-proj" type="text" oninput="verifyPath()" placeholder= "Project Name" name="" id="createProject">
+                 <br>
+                 <span class="req">Required</span>
+             </div>
+          </div>
+       </div>
+     </div>
+
+ </div>
+
+<div class="container-fluid">
+<div class="row text-center">
+  <div class="col-12">
+    <button class="a-next disabled"><a href="#" style="text-decoration: none" >NEXT</a></button>
+  </div>
+</div>
+</div>
+
+    <script>
+
+        function verifyPath(){
+            let createProject = document.getElementById('createProject').value;
+            let projectSelect = document.getElementById('projectSelect');
+            let ele = projectSelect.selectedIndex;
+            if ( createProject !== "" || ele !== 0 ){
+                document.querySelector('.a-next').style.background = '#0ABAB5';
+                document.querySelector('.next').style.background = '#0ABAB5';
+                
+                document.querySelector('.a-next').classList.remove('disabled');
+                document.querySelector('.next').classList.remove('disabled');
+            } else {
+                //console.log('here works');
+                document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
+                document.querySelector('.next').classList.add('disabled');
+                document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
+                document.querySelector('.a-next').classList.add('disabled');
+            }
+            
+        }
+
+    
+
+
     </script>
     
 </body>

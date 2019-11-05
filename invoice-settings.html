@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invoice Settings</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -103,18 +104,22 @@
             padding: 0;
             margin: 0;
             float: left;
-            offset: none;
+            /*offset: none;*/
             outline: none;
         }
 
         .color-text {
             border: 0px solid red;
             border: 1px solid #ccc;
-            font-size: 14px;
-            font-weight: lighter;
+            font-family: Ubuntu;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
             float: left;
             margin-top: 4px;
             margin-left: -3px;
+            padding: 0.2rem;
             height: 27px;
         }
 
@@ -339,6 +344,7 @@
                 width: 100px;
             }
         }
+        
 
         @media only screen and (max-width: 360px) {
             .upload-area {
@@ -394,6 +400,72 @@
                 font-size: 12px;
                 width: 100px;
             }
+
+            @media only screen and (max-width: 320px) {
+                .upload-area {
+                font-size: 1px larger;
+            }
+            .settings-form{
+                width: 90%;
+                padding: 30px 30px 78px 30px;
+            }
+            .brand-color {
+                font-weight: normal;
+                
+            }
+
+            .text-bc {
+                font-size: 10px;
+                text-align: center;
+                margin-right: 40px;
+            }
+
+            input {
+                margin-left: 8px;
+            }
+
+            .modal-content {
+                padding: 30px 54px 54px 54px;
+                width: 50%;
+            }
+
+            .button_1 {
+                margin-right: 15px;
+                margin-top: 30px;
+            }
+
+            .button_2 {
+                font-size: 12px;
+            }
+
+            .title-text {
+                font-size: 12px;
+                margin-top: 30px;
+                margin-left: 5px;
+                margin-bottom: 80px;
+            }
+
+            .colors-box {
+                width: 75px;
+                height: 22px;
+            }
+
+            .colors {
+                
+                height: 34px;
+                width: 30%;
+                margin-right:;
+                margin-top:-4px ;
+                border:none;
+            }
+            .text-bc{
+                font-size: 13px;
+            }
+            .color-text {
+                font-size: 14px;
+                width: 100px;
+                margin-right: -40px;
+            }
         }
     </style>
 
@@ -408,12 +480,12 @@
                     <p>Branding Options</p>
                     <p>Logo</p>
                     <div class="upload-area">
-                        <p class="text-grey">Drag Logo here or upload file here</p>
+                        <p class="text-grey" >Drag Logo here or upload file here</p>
                     </div>
                     <div class="brand-color">
                         <div class="text-bc">Brand Color</div>
                         <div class="colors-box">
-                            <span class="color-text" id="color-value">#0ABAB5 <i class="caret"></i></span><input class="colors" type="color" name="favcolor" value="#0ABAB5">
+                            <span class="color-text" id="color-value">#0ABAB5</span> <input class="colors" type="color" name="favcolor" value="#0ABAB5">
                         </div>
                     </div>
 

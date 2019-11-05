@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Estimate</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/create_estimate_page.css">
+</head>
+<body>
+  <div id="container">
+    <div>
+        <button class="close navM"  id="close"><img id="clear" src="https://res.cloudinary.com/celx/image/upload/v1570718446/vhmdnd4sf3f5w3burj4m.svg" alt=""></button>
+    </div>
+    <div>
+        <p class="nav cEstimate" id="cre">Create Estimate</p>
+    </div>
+    <div>
+       <input class="next disabled" id="ext" type="button" value="NEXT">
+    </div>
+  </div>
+
+  <div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-12">
+      <h1>What project are you estimating?</h1>
+    </div>
+  </div>
+  </div>
+
+  <div class="row ml-auto box justify-content-center">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body boxes">
+                <h5 class="card-title">A previously created project</h5>
+                <p class="card-text">Find estimate for a previously created project, by doing so the estimate gets populated with some of the data.</p>
+
+                <div class="dropdown mr-1">
+                   <select class="dropbtn" name="" onchange="verifyPath()" id="projectSelect">
+                       <option value="select" selected="disabled">Select Project</option>
+                       <a href=""><option value="app" class="dropdown-item">Glacier Fintech App</option></a>
+                       <a href=""><option value="branding" class="dropdown-item">AB Technology Solutions Branding</option></a>
+                   </select>  
+                   <i class="fa fa-caret-down"></i>                           
+               </div>
+           </div>
+       </div>
+   </div>
+  
+    <div class="col-md-4">
+      <div class="card">
+          <div class="card-body boxes">
+              <h5 class="card-title">A new project</h5>
+              <p class="card-text">Create a new estimate and set up a new project based on the
+                  information.
+              </p>
+            
+             <div class="project">
+                 <input class="l-proj" type="text" value="Glacier Fintech App" name="" id="createProject">
+                 <br>
+                 <span class="req">Required</span>
+             </div>
+          </div>
+       </div>
+     </div>
+
+ </div>
+
+<div class="container-fluid">
+<div class="row text-center">
+  <div class="col-12">
+    <button class="a-next disabled"><a href="#">NEXT</a></button>
+  </div>
+</div>
+</div>
+
+    <script>
+    let est_content = document.querySelector('#est_content');
+    let estimate_page = document.querySelector('#Create_estimate');
+    let hide = () => {
+       // estimate_page.classList.add('hidden');
+       document.querySelector('#Create_estimate').classList.remove('hidden');
+       document.querySelector('#estimate').classList.add('hidden');
+       
+    }
+    est_content.addEventListener('click', hide );
+    document.querySelector('#close').addEventListener('click', () => {
+        document.querySelector('#estimate').classList.remove('hidden');
+        document.querySelector('#Create_estimate').classList.add('hidden');
+    });
+        //createProject = '';
+    
+    
+    
+    function verifyPath(){
+        let createProject = document.getElementById('createProject').value;
+        let projectSelect = document.getElementById('projectSelect');
+        let ele = projectSelect.selectedIndex;
+        if ( createProject !== "" || ele !== 0 ){
+            document.querySelector('.a-next').style.background = '#0ABAB5';
+            document.querySelector('.next').style.background = '#0ABAB5';
+            
+            document.querySelector('.a-next').classList.remove('disabled');
+            document.querySelector('.next').classList.remove('disabled');
+        } else {
+            //console.log('here works');
+            document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.next').classList.add('disabled');
+            document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.a-next').classList.add('disabled');
+        }
+        
+    }
+    </script>
+    
+</body>
+</html>

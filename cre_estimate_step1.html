@@ -1,0 +1,345 @@
+
+<!-- Select Project -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="TZhRIrAqEISd3ujh93JXEUPNNruy8UX4moredfTS">
+
+    <title>Lancers - </title>
+
+    
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400&display=swap" rel="stylesheet">
+
+
+    <!-- Styles -->
+    
+
+
+   
+
+        <style>
+        * {
+            margin-right: 0px;
+            margin-left: 0px;
+            font-family: Ubuntu;
+        }
+
+
+        /*navbar css*/
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 8fr 2fr;
+        }
+
+
+        #container div {
+            box-shadow: 0px 4px 2px rgba(163, 21, 21, 0.1);
+            outline: none;
+            height: 60px;
+
+        }
+
+        #container p {
+            justify-content: center;
+            margin-top: 15px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #323A43;
+        }
+
+
+        div>#ext {
+            background: rgba(207, 204, 204, 0.4);
+            font-size: 24px;
+            font-weight: bold;
+            justify-content: center;
+            border: none;
+            color: white;
+            width: 100%;
+            height: 60px;
+            outline: none;
+            /*added outline none*/
+        }
+
+        div>#ext:hover {
+            background: #0ABAB5;
+        }
+
+        div>.close {
+            outline: none;
+        }
+
+        .close {
+
+            color: #C4C4C4;
+            width: 100%;
+
+        }
+
+        .navM i {
+            padding-top: 15px;
+        }
+
+        /*end of nav bar*/
+
+        @media (max-width: 976px) {
+
+            div>#ext {
+                font-size: 15px;
+            }
+        }
+
+
+        @media (max-width: 992px) {
+
+
+            #container p {
+                font-size: 19.5px;
+                margin-top: 9px;
+            }
+
+            div>#ext {
+                font-size: 20px;
+            }
+        }
+
+
+
+        @media (max-width: 767px) {
+
+            #container p {
+                margin-top: 5px;
+           }
+            #container p {
+                font-size: 17.5px;
+                margin-top: 12px;
+            }
+
+            div>#ext {
+                font-size: 18px;
+            }
+
+
+        }
+
+
+        @media (max-width: 576px) {
+            #container p {
+                font-size: 16px;
+                margin-top: 12px;
+            }
+
+            div>#ext {
+                font-size: 15px;
+            }
+
+        }
+        .card:hover{border: 4px solid #0ABAB5;}
+    </style>
+
+<!-- <link rel="stylesheet" href="https://dev.lancers.app/css/step1.css"/> -->
+
+
+</head>
+<body>
+
+    
+    
+               
+    
+
+
+<div id="container">
+    <div>
+        <a href="dashboard.html">
+         <button class="close navM"><span>
+                <i class="fa fa-times"></i>
+         </span></button></a>
+    </div>
+    <div>
+        <p class="nav cEstimate" id="cre">Create Estimate</p>
+    </div>
+    <div>
+        <input class="disabled" id="ext" type="button" value="NEXT">
+    </div>    
+</div>
+
+
+<div class="contaner">
+    <div class="clearfix"></div>
+    <br/>  <br/>
+    <div class="row ml-auto box justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <h2>What project are you estimating for?</h2>
+            <br>
+            <p style="color:red;"></p>
+        </div>
+    </div>
+    <!-- <h3 class="text-center">What project are you estimating?</h3> -->
+        
+    <form method="post" action="/estimate/create/step2">
+        <input type="hidden" name="_token" value="TZhRIrAqEISd3ujh93JXEUPNNruy8UX4moredfTS">        <div class="row ml-auto box justify-content-center">
+        <!-- <div class="row ml-auto mr-auto box justify-content-center"> -->
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">A previously created project</h5>
+                        <p style="padding-bottom: 10px;" class="card-text">Find estimate for a previously created project, by doing so the
+                            estimate
+                            gets populated with some of the data.
+                        </p>
+                        <div class="contents dropdown">
+                            <select class="dropbtn form-control" name="old_project" id="projectSelect">
+                                <option selected value="">Select</option>
+                                                            </select>
+                            <!-- <i class="fa fa-caret-down"></i> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">A new project</h5>
+                        <p style="margin-bottom: 3em;" class="card-text">Create a new estimate and set up a new project based on the
+                            information.
+                        </p>
+                        <input type="text" class="form-control" name="new_project" id="name" placeholder="Project Name">           
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row ml-auto box justify-content-center mt-20" style="margin-top: 20px;">
+            <div class="col-sm-4">
+                <input class="disabled" id="ext" type="submit" value="NEXT">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+    
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <script>
+    //image picker jquery
+      $("#image_selecter").on("click", function() {
+        $("#picture").trigger("click");
+      });
+
+
+     function image1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image_selecter')
+                    .attr('src', e.target.result)
+                    .width(100)
+                    .height(100);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+   var upload_button = document.getElementById("picture_upload");
+   upload_button.style.display = "block";
+    }
+
+    //estimate form jquery step1
+    $("#upperNext").on("click", function() {
+        $("#formNext").trigger("click");
+      });
+
+      //estimate form jquery step3
+    $("#upperNext3").on("click", function() {
+        $("#formNext3").trigger("click");
+      });
+
+
+    </script>
+
+   
+
+       
+<script>
+        function verifyPath() {
+        let a_next =  document.querySelector('.a-next');
+        let next = document.querySelector('.next');
+        let bt = document.getElementById('btne');
+
+
+        
+        if (createProject.value !== "" && createProject.value.length >= 4 ) {
+             a_next.style.background = '#0ABAB5';
+             next.style.background = '#0ABAB5';
+              bt.disabled = false;
+
+
+            document.querySelector('.a-next').classList.remove('disabled');
+            document.querySelector('.next').classList.remove('disabled');
+        } else {
+
+            //console.log('here works');
+            document.querySelector('.next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.next').classList.add('disabled');
+            document.querySelector('.a-next').style.background = 'rgba(207, 204, 204, 0.4)';
+            document.querySelector('.a-next').classList.add('disabled');
+             bt.disabled = true;
+              bt.preventDefault();
+            
+            
+             
+        }
+    }
+    
+    let createProject = document.getElementById('createProject');
+    window.onload=function(){
+         createProject.addEventListener('keyup', verifyPath);
+    }
+   
+
+     function manage(createProject) {
+        let bt = document.getElementById('btne');
+        if (createProject.value != '') {
+            bt.disabled = false;
+        }
+        else {
+            bt.disabled = true;
+             bt.preventDefault(); 
+        }
+    }    
+    </script>
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+    });
+</script>
+</html>

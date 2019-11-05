@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Estimation-Lancer</title>
+  <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+  
+  body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* nav */
+
+#container {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 5fr 1fr;
+}
+
+#container div {
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
+  height: 50px;
+}
+
+#container i {
+  padding-top: 15px;
+  color: #C4C4C4
+}
+
+#container p {
+  justify-content: center;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: bold;
+  color: #323A43;
+}
+
+
+.cnc {
+  border: none;
+  background:rgba(184, 181, 181, 0.4);;
+  height: 50px;
+  width: 100%;
+  color: white
+}
+
+/* main section */
+
+.main-section {
+  margin: 50px auto;
+  width: 50%;
+}
+
+.section1 {
+  border: 1px solid #919191;
+  box-sizing: border-box;
+}
+
+.section1 div {
+  padding: 5px 20px;
+}
+
+#word h1 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 48px;
+  color: #262626;
+}
+
+#word h5 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #262626;
+}
+
+#glac h1 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 41px;
+  color: #262626;
+  padding-top: 30px;
+  margin-left: 50px;
+}
+
+div h3 {
+  font-family: Ubuntu;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 41px;
+  color: #262626;
+}
+
+.bill p {
+  font-size: 1em;
+  padding-top: 10px;
+  color: #262626;
+}
+
+.hour {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+   }
+
+input {
+  height: 30px;
+  width: 50%;
+  text-align: center;
+  border: 1px solid;
+}
+
+.start {
+  margin-left: 1px;
+  width: 100%;
+}
+
+.end {
+  margin-left: 50px;
+  width: 100%;
+}
+
+i input {
+  border: none;
+  border-bottom: 1px solid;
+  text-decoration: underline;
+}
+
+.sub {
+  width: 90%;
+}
+
+.hour {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+
+#currency {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  color: #262626;
+  padding-bottom: 20px;
+  
+}
+
+#currency p{
+float: right;
+padding-right: 10px;
+}
+select {
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.btn {
+  border: 1px solid #e4e4e4;
+  background: rgba(184, 181, 181, 0.4);
+  margin-top: 40px;
+  margin-left: 30%;
+  width: 40%;
+  height: 60px;
+  color: white;
+  font-size:17px;
+}
+
+@media screen and (max-width: 1400px) {
+  .start {
+    margin-left: 80px;
+    width: 100%;
+  }
+  .end {
+    margin-left: 30px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1102px) {
+  .hours {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 948px) {
+  .hour, .hours {
+    display: block;
+  }
+  .start {
+    margin-left: 0px;
+    width: 100%;
+  }
+  .end {
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+    
+ @media (max-width: 600px) {
+  .main-section {
+  margin: 50px auto;
+  width: 80%;
+}
+  
+  
+input {
+   width: 80%;
+  margin-bottom:10px;
+ }
+}
+
+.text-center:hover{
+color: black;
+}
+
+txt:hover{
+  color: black;
+}
+  </style>
+</head>
+
+<body>
+
+
+
+  <div id="container">
+
+        <!------I added the href function in order to make the cancel button return to the dashboard------>
+    <div class=" text-center" id="txt">
+      <span>
+          
+        <a href="dashboard.html">
+        <i class="fa fa-times"></i>
+      </span></a>
+    </div>
+
+     <!------I added the href function in order to make the back button return to step 1------>
+    <div class="text-center">
+      <span>
+            <a href="cre_estimate_step1.html">
+        <i class="fa fa-chevron-left" id="arrow1"></i>
+      </span></a>
+    </div>
+
+    <div class="text-center">
+      <p class=""> <h4>Create Estimate</h4></p>
+    </div>
+
+    <div class="">
+        <a href="select-cient.html">
+      <input class="text-center cnc" value="SETUP THIS PROJECT" type="button"></a>
+    </div>
+
+
+  </div>
+
+
+  <div class="container-fluid main-section">
+
+    <div id="word">
+      <h1>Evaluation</h1>
+      <h5>Please Input the required fields in the form below</h5><br>
+    </div>
+
+
+
+    <div class="section1">
+
+      <div id="glac">
+        <h1>Glacier Fintech App</h1>
+        <hr />
+      </div>
+      <hr />
+
+      <div id="bill">
+        <h3>&nbsp&nbsp&nbsp Billing</h3>
+
+         <div class="hour">
+          <p>How long (in hours) will it take you <br> to complete this project?</p>
+
+          <input type="number" placeholder="Hours"  style="border: 1px solid #919191;" class="hours" required/>
+        </div>
+
+          <!------I eliminated the "how much in hours, do you charge per hour" text------>
+
+        <div class="hours">
+          <p> Project starts/ends</p>
+          <i class="fa fa-calendar start"><input type="text" placeholder="Set start date" onfocus="(this.type='date')" name="estStartDate"
+              placeholder=" Set start date" min="2019-10-1" max="2100-10-30" id="startDate"/></i>
+          <i class="fa fa-calendar end"><input type="text" placeholder="Set end date" onfocus="(this.type='date')" name="estEndDate"
+              placeholder="Set end date" min="2019-11-1" id="endDate"/></i>
+
+        </div>
+
+      </div>
+
+      <hr />
+      <div>
+        <h3>&nbsp&nbsp&nbsp Expenses</h3>
+        <div class="hour">
+          <p id="cost">
+            How much would it cost you to power your devices or equipment <br>for this
+            project?
+          </p>
+          <input type="number" placeholder="NGN 0.00"  style="border: 1px solid #919191;" class="equipment"/>
+        </div>
+
+
+        <div class="hour">
+          <p id="sub">Are you subcontracting to anyone?</p>
+          <input type="text" name="est2" id="est2" placeholder="E.g. Illustrator, Consulting..." class="sub"  style="border: 1px solid #919191;"/>
+        </div><br />
+
+        <div class="hour">
+          <p id="pay">How much would they be paid?</p>
+          <input type="number" placeholder="NGN 0.00" style="border: 1px solid #919191;"/>
+        </div>
+      </div>
+      <br>
+      <div>
+        <h3>&nbsp&nbsp&nbsp Expertise</h3>
+
+        <div class="hour">
+          <p id="proj">How many similar projects have<br>you done before?</p>
+          <input type="number"  style="border: 1px solid #919191;" class="sim-proj" required/>
+
+        </div>
+
+
+        <div class="hour">
+          <p id="rate">Out of 5 how would you rate your<br>experience level in executing this </i><br>project?<p>
+                <input type="number" style="border: 1px solid #919191;" class="rate" required/>/5
+        </div>
+
+      </div>
+      <hr />
+
+
+      <div class="ml-4" id="currency" style="color: 1px solid #919191;">
+             Currency:<select>
+             
+          <option>NGN</option>
+          <option>AED</option>
+          <option>AFN</option>
+          <option>ALL</option>
+          <option>AMD</option>
+          <option>ANG</option>
+          <option>AOA</option>
+          <option>ARS</option>
+          <option>AUD</option>
+          <option>AWG</option>
+          <option>AZN</option>
+          <option>BAM</option>
+          <option>BBD</option>
+          <option>BDT</option>
+          <option>BGN</option>
+          <option>BHD</option>
+          <option>BIF</option>
+          <option>BMD</option>
+          <option>BND</option>
+          <option>BOB</option>
+          <option>BRL</option>
+          <option>BSD</option>
+          <option>BSD</option>
+          <option>BTN</option>
+          <option>BWP</option>
+          <option>BYN</option>
+          <option>BZD</option>
+          <option>CAD</option>
+          <option>CDF</option>
+          <option>CHF</option>
+          <option>CLP</option>
+          <option>CNY</option>
+          <option>COP</option>
+          <option>CRC</option>
+          <option>CUC</option>
+        </select>
+
+      </div>
+
+      
+
+
+
+    </div class="nex">
+
+    <a href="select-cient.html">
+      <button class="btn">SETUP THIS PROJECT</button>
+    </a>
+    </div>
+
+  </div>
+
+
+  <script>
+    let hours = document.querySelector(".hours");
+    // console.log(hours);
+
+    let equipment = document.querySelector(".equipment");
+    // console.log(equipment);
+
+    let est = document.querySelector("#est2");
+    // console.log(est);
+
+    let simProject = document.querySelector(".sim-proj")
+    // console.log(simProject);
+
+    let rate = document.querySelector(".rate");
+    // console.log(rate);
+
+    let btn = document.querySelector(".btn");
+    // console.log(btn);
+
+    let btn1 = document.querySelector(".cnc");
+    // console.log(btn1);
+
+    // variable declaration for date verification
+    let today = new Date();
+    // console.log(today);
+
+    let dd = today.getDate();
+    // console.log(dd);
+
+    let mm = today.getMonth() + 1;
+    // console.log(mm);
+
+    let year = today.getFullYear();
+    // console.log(year);
+    // end of variable declaration for date validation
+
+
+
+    // turning the two buttons green with input is made
+    hours.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    equipment.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    est.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    simProject.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    rate.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+
+    // date validation
+    // if(dd<10){
+    //   dd='0'+ dd
+    // }
+    // if(mm<10){
+    //   mm='0' + mm;
+    // }
+
+    // today=year + '-' + mm + '-' + dd;
+    // document.getElementById("startDate").setAttribute('max', today);
+
+    // end date validation
+
+    if (dd<10){
+      dd='0' + dd
+    }
+    if(mm <10){
+      mm="0" + mm;
+    }
+
+    today = year + '-' + mm + '-' + dd;
+    document.querySelector("#endDate").setAttribute('min', today);
+
+
+
+    
+
+
+  
+  </script>
+</body>
+
+</html>

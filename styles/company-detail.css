@@ -32,10 +32,11 @@
   .navbar-nav {
   
     align-items: last baseline;
+    height: 60px!important;
   }
   
   .nav-item:not(:last-child) {
-    border-right: 1px solid #B1B1B1;
+    border-right: 0.8px solid #B1B1B1;
     padding: 10px;
     
   }
@@ -57,7 +58,10 @@
   }
   
   .user-avatar {
-    border: 1px solid #091429;
+    border: 2px solid #091429;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -326,14 +330,17 @@
   
   .companyHeader{
     font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
-  text-transform: uppercase;
-  margin: 15px;
-  /* identical to box height */
-  color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    text-transform: uppercase;
+    margin: 15px;
+   
+    padding-top:1.5rem;
+    padding-left: 1rem;
+    /* identical to box height */
+    color: #000000;
   }
   
 
@@ -348,15 +355,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 32px;
+    margin-top: 30px;
+    margin-bottom: 28px;
   }
   
+  /* styling for form container  */
   #form {
     /* margin-left: 32px;
     margin-right: 32px;
     margin-bottom: 81px; */
     border: 1px solid #c4c4c4;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
     padding: 20px;
   
   }

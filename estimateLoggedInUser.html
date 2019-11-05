@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Estimates Logged In User</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400&display=swap" rel="stylesheet">
@@ -50,7 +51,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
-            padding: 1rem 2rem 1rem 0rem !important;
+            padding: 1rem 3rem 1rem 0rem !important;
             position: fixed;
             top: 0;
             left: 14rem;
@@ -77,7 +78,7 @@
             margin-right: 1rem !important;
             margin-left: 4rem !important;
             position: relative;
-            margin: 8px;
+            margin: 0;
         }
 
         .header-lists li {
@@ -86,28 +87,24 @@
         }
       
 
-/*
         .support-icon {
             height: 30px;
             width: auto;
         }
-*/
 
-/*        .notification-icon {*/
+        .notification-icon {
             height: 24.4px;
             width: auto;
         }
 
         .profile-photo {
-            height: 38px;
+            height: 40px;
             width: auto;
             
         }
-        
         .profile-photo img {
             border-radius: 50%;
         }
-        
         .support-list {
             display: inline-grid !important;
             grid-template-columns: 1fr 2fr;
@@ -146,7 +143,7 @@
             margin-bottom: 5rem;
         }
 
-        .sidebar{
+        .sidebar {
             position: fixed;
             top: 0;
             left: 0;
@@ -159,26 +156,11 @@
             padding-left: 1rem;
 
         }
-        
-        #sidebarToggler {
-            display: none;
-        }
 
-       li .dropdown-btn{
-            color:white;
-            background:#091429;
-            border: none;          
-            display:block;
-            list-style: none;
-           
-        }
-        
-       .dropdownContent{
-            display: none;
-        }
-        
-
-
+      
+      
+      
+      
         .sidebar ul li {
             padding: 1rem 0rem;
             text-align: left;
@@ -216,16 +198,7 @@
 
         }
 
-        .header-lists {
-            margin-left: auto!important;
-            margin-right: auto !important;
-            min-width: 100% !important;
-        }
-        
-        .header-lists .hamburger {
-            margin-top: auto !important;
-            margin-bottom: auto !important;
-        }
+
 
         .content h3 {
 
@@ -263,7 +236,7 @@
             padding: 10px 40px
         }
 
-/*        @media(max-width: 1100px) {*/
+        @media(max-width: 1100px) {
             .main-heading {
                 font-size: 1.8rem;
             }
@@ -294,13 +267,12 @@
             }
         }
 
-/*        @media(max-width: 1010px) {*/
+        @media(max-width: 1010px) {
             .second-heading {
                 width: 65%;
             }
         }
 
-/*        this is the class controling the navbar*/
         @media(max-width: 950px) {
             .header {
                 padding: 0.7rem 3rem 0.7rem 0rem !important;
@@ -321,10 +293,6 @@
             .sidebar {
                 display: none;
             }
-            
-            #sidebarToggler {
-            display: inline
-        }
 
             .profile-list {
                 margin-right: 3rem;
@@ -333,8 +301,8 @@
             .hamburger {
                 position: absolute;
                 /* z-index: 1; */
-                left: 100%;
-                top: auto;
+                right: 0;
+                top: 1px;
                 height: 20px;
                 width: 18px;
                 cursor: pointer;
@@ -421,7 +389,7 @@
             }
         }
 
-/*        @media(max-width: 750px) {*/
+        @media(max-width: 750px) {
             .main-container {
                 width: auto !important;
             }
@@ -515,8 +483,6 @@
                 align-items: center;
                 grid-row-gap: 0.5rem;
             }
-            
-            .leaveOnSmallScreens {display: none}
 
             main {
                 margin-top: 7rem;
@@ -526,59 +492,43 @@
             }
            
             }
-        
-        .sign-up {
+            .sign-up {
             width: 5.0rem;
             margin-right: 0rem;
         }
 
-        }
-
+        
     </style>
 </head>
 
 <body>
     <div class="main-body">
-        <header class="header" style="max-width: i">
+        <header class="header">
             <!-- Header -->
-            <span style="margin-left: auto;margin-right: auto; ">
-                <h1 class="main-heading" style="margin-left: auto; margin-right: auto">Estimates</h1>
-            </span>
-            <span class="" style="margin-left: 10px; margin-right: 10px">
+            <div>
+                <h1 class="main-heading">Estimates</h1>
+
+            </div>
+            <div>
                 <ul class="header-lists">
                     
-                    <li class="profile-list nav-item">
-                        <a href="clientInformation.html" class="support-icon nav-link"><img src="https://res.cloudinary.com/mide358/image/upload/v1571239047/help_skaspu.png"
-                            alt="" srcset="" class=" "><span class="leaveOnSmallScreens" >Support</span> </a>
+                    <li class="profile-list">
+                        <a href="clientInformation.html" class="support-icon"><img src="https://res.cloudinary.com/mide358/image/upload/v1571239047/help_skaspu.png"
+                            alt="" srcset="">Support <span> </span> </a>
                     </li>
-                    <li class="nav-item" >
-                        <a href=" " class="notification-icon nav-link" > <img src="https://res.cloudinary.com/mide358/image/upload/v1571239022/notification_mysvnj.png" 
-                            alt="" srcset="" class=" "><span></span></a>
+                    <li>
+                        <a href=" " class="notification-icon" > <img src="https://res.cloudinary.com/mide358/image/upload/v1571239022/notification_mysvnj.png" 
+                            alt="" srcset=""><span></span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="" class="profile-photo nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-height:"><img src="https://res.cloudinary.com/mide358/image/upload/v1571239118/images_gscs6c.png" alt="" srcset="" class=" "> Juliet
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                            
+                    <li>
+                        <a href="/signin.html" class="profile-photo" ><img src="https://res.cloudinary.com/mide358/image/upload/v1571239118/images_gscs6c.png"
+                            alt="" srcset=""> Juliet <i class="fa fa-angle-down"></i><span></span></a>
                     </li>
-                    
-                    <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="sidebarToggler">
-                        <span class="navbar-toggler-icon" id="menuBtn"></span>
-                    </button>
-                    
-<!--
-                    <li class="hamburger nav-item" id="menuBtn">
-                        <a class="nav-link"><span class="hamburger-btn "></span></a>
+                    <li class="hamburger" id="menuBtn">
+                        <span class="hamburger-btn"></span>
                     </li>
--->
-                    
                 </ul>
-            </span>
+            </div>
 
         </header>
         <div class="sidebar" id="sidebar">
@@ -597,26 +547,9 @@
                             alt="" srcset="" /> Client</a>
                 </li>
                 <li>
-                    <a class="dropdown-btn"><img
+                    <a href=""><img
                             src="https://res.cloudinary.com/undercover/image/upload/v1570695514/lightbulb_tnpl08.svg"
-                            alt="" srcset="" ><span> Project</span><i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdownContent">
-                                    <li>
-                                            <a href="#"> Status</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Overview</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Collabrators</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Task</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Documents</a>
-                                        </li>
-                            </ul>
+                            alt="" srcset="" /> Project<i class="fa fa-angle-down"></i></a>
                 </li>
                 <li>
                     <a href=""><img
@@ -638,10 +571,10 @@
         </div>
         <main>
             <!-- Main body -->
-            <div class="r main-container">
+            <div class="container main-container">
 
                 <div class="content">
-                    <button class='create-estimate' style="margin-top: 60px">Create Estimate</button>
+                    <button class="create-estimate">Create Estimate</button>
                     <h3>Estimates helps you place value to your work and time!</h3>
                     <p>Create an estimate and easily convert it to an invoice and send to your client.</p>
                 </div>
@@ -661,47 +594,24 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 <script>
-    
     const menuBtn = document.getElementById("menuBtn")
     const sidebar = document.getElementById("sidebar")
     let showMenu = false
     menuBtn.addEventListener("click", () => {
         if (!showMenu) {
             sidebar.classList.add("open-menu")
-//            document.querySelector(".hamburger-btn").classList.add("cross-hamburger")
+            document.querySelector(".hamburger-btn").classList.add("cross-hamburger")
 
             showMenu = true;
         } else {
             sidebar.classList.remove("open-menu")
-//            document.querySelector(".hamburger-btn").classList.remove("cross-hamburger")
+            document.querySelector(".hamburger-btn").classList.remove("cross-hamburger")
             showMenu = false;
         }
     })
     document.querySelector('.create-estimate').addEventListener('click', () => {
             location.href = "invoice-view.html"
         })
-
-       
- /*project dropdown toggle */
- var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
-
-    /* Toggle between hiding and showing the active panel */
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-
 </script>
 
 </html>
