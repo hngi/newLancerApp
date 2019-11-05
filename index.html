@@ -10,7 +10,12 @@
 		<!-- Fontawesome CSS -->
 	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	    <!-- Bootstrap CSS -->
-	    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+		<!-- Add animations -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-- end add animations -->
 	    <!-- Main css -->
 	    <style type="text/css">
 	    	/*Main page style by message*/
@@ -107,6 +112,7 @@
 				overflow: hidden;
 				transition: all ease-in-out .5s;
 			}
+			
 			.btn::after {
 				content: "";
 				display: block;
@@ -155,6 +161,19 @@
     color: var(--secondary-color) !important;
 
 			}
+
+			/* .breath{
+				animation-name: breath;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+			}
+			@keyframes breath {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	
+	40% {-webkit-transform: translateY(-15px);}
+	
+} */
 
 
 			   /****************************/
@@ -264,16 +283,17 @@
 			    <div class="container">
 			      	<div class="row">
 			      		<div class="col-12 col-md-5 col-lg-6">
-			      			<h1 class="jumbotron-heading text-dark my-5">Let us do the work for you</h1>
-					      	<p class="text-dark bold text-bold my-5">Generate estimates, invoices, contacts and much more<br> for your project</p>
+			      			<h1 class="jumbotron-heading text-dark my-5 animated bounce ">Let us do the work for you</h1>
+					      	<p class="text-dark bold text-bold my-5">Generate estimates, invoices, contacts and much more<br> for your project.</p>
 					      	<p class="text-dark my-5">
-					        	<a href="create_estimate_page.html" class="btn btn-secondary btn-lg py-2">Generate an Estimate</a>
+					        	<a href="create_estimate_page.html" class="btn btn-secondary btn-lg py-2  " data-aos="fade-right">Generate an Estimate</a>
 					      	</p>
 			      		</div>
 			      		<div class="col-12 col-md-7 col-lg-6 order-2 aos-init aos-animate">
 			      			<div class="text-center">
-			      				<img src="https://lancer-app.000webhostapp.com/images/svg/coding.svg" class="img img-responsive" height="auto" width="80%">
-			      			</div>
+			      				<img src="https://lancer-app.000webhostapp.com/images/svg/coding.svg" class="img img-responsive" data-aos="fade-left" height="auto" width="80%">
+							  </div>
+							  
 			      		</div>
 			      	</div>
 			    </div>
@@ -288,7 +308,7 @@
 			  						Use our handy cost estimator to find out how much it will take you to deliver on your project.
 			  					</p>
 			  					<p class="text-dark small">
-			  						We take into consideration your work hours, subcontractors, among other things, to make sure you always have a healthy profit at the end of the day
+			  						We take into consideration your work hours, subcontractors, amongst other things, to make sure you always have a healthy profit at the end of the day.
 			  					</p>
 			  					<p class="text-dark my-4">
 						        	<a href="create_estimate_page.html" class="btn btn-secondary btn-lg py-2">Generate an Estimate</a>
@@ -307,7 +327,7 @@
 		  		<div class="container mt-4 py-4">
 		  			<div class="row">
 		  				<div class="col-md-12">
-		  					<h3 class="text-white py-4 mb-4 text-center">Manage your Projects <br> for free</h3>
+		  					<h3 class="text-white py-4 mb-4 text-center" data-aos="zoom-in">Manage your Projects <br> for free</h3>
 		  				</div>
 		  			</div>
 		  			<div class="row">
@@ -333,16 +353,16 @@
 		  			<div class="row">
 		  				<div class="col-md-12">
 		  					<p class="text-center">
-			  					<a href="Invoice-new-user.html" class="btn btn-secondary-outline btn-lg">Create Invoice</a>
+			  					<a href="Invoice-new-user.html" class="btn btn-secondary-outline btn-lg breath ">Create Invoice</a>
 			  				</p>
 		  				</div>
-		  			</div>
+		  			</div> 
 		  		</div>
 		  	</section>
 		</main>
 
 		
-		<footer class="bg-white pt-4">
+		<footer class="bg-white pt-4 " data-aos="fade-down">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-2">
@@ -368,7 +388,7 @@
 						<p class="text-dark small">
 								3 Birrel Avenue, Sabo.
 								Yaba, Lagos State,
-								Nigeria
+								Nigeria.
 						</p>
 						<h5 class="">
 							<a href="https://facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
@@ -405,5 +425,8 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<!-- <script type="text/javascript" src="js/main.js"></script> -->
+		<script>
+			AOS.init();
+		  </script>
 	</body>
 </html>
