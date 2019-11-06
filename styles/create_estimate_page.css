@@ -1,581 +1,228 @@
-* {
-    margin-right: 0px;
-    margin-left: 0px;
-    font-family: Ubuntu;
-}
-body {
-    margin-top: 0px;
-}
-ul {
-    display: inline-block;
-    float: none;   
-    width: fit-content;
-    padding-inline-start: 10px;
-    margin-top: 24px;
-    
+ body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
 }
 
-li {
-    
-    display: inline;
-}
-.h1, h1 {
-    font-size: 2.4rem !important;
-    margin-top: 4% !important;
-    color: #262626;
-}
-.text-center h1 {
-    text-align: left !important;
-    margin-left: 17.2%;
-}
-button {
-    width: 120px;
-    background: #ffffff;
-    border: none;
-    height: 100%;
-}
-#container div {
-    border: 1px solid black;
-}
-
-#container p {
-    justify-content: center;
-    margin-top: 9px;
-    font-style: normal;
-    font-weight: bold;
-    color: #323A43;
-}
-
-
-.boxes:hover{
-    border:2px solid #262626;
-}
-/*#container .navM {
-    justify-content: center;
-    font-style: normal;
-    font-weight: bold;
-    display: inline-flex;
-    text-align: center;
-    align-items: center;
-    cursor: pointer;
-}*/
-.cEstimate { 
-    margin: 0 auto;
-    align-content: center;
-    font-weight: bold;
-    font-size: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.next a {
-    color: #ffffff;
-}
-.next {
-    width: 10px;
-    background: rgba(196, 196, 196, 0.4);
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    padding-right: 98px;
-    padding-left: 47px;
-    color: white;
-}
-div > #ext{
-    background: rgba(207, 204, 204, 0.4);
-    font-size: 24px;
-    font-weight: bold;
-    justify-content: center;
-    border: none;
-    color: white;
-    width: 100%;
-    height: 50px;
-}
- .a-next {
-    background: rgba(207, 204, 204, 0.4);
-    width: 220px;
-    height: 60px;
-    padding: 5px 20px;
-    margin: 0 auto;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 60px;
-    clear: both;
-    border: none;
-    color: white;
-    border: none !important;
-}
-
-.a-next a {
-    color: white;
-}
-p, h3 {
-    width: fit-content;
-}
-.lists {
-    width: fit-content;
-}
-h5 {
-    font-weight: bold;
-    color: #262626;
-}
-  .card
-  {
-    display: grid;
-    min-height: 34vh;
-    max-width: fit-content;
-    position: relative;
-}
-.card .card-body
-{
-    display: inline-grid;
-    justify-content: baseline;
-    align-items: flex-end;
-   
-}
-
-.my-text{
-    text-align: center;
-}
-.my-link{
-    margin-left:110px;
-    margin-top: -50px;
-}
-.my-link input{
-    padding: 10px 8;
-    width:80px;
-    height: 35px;  
-}
-.my-text-color{
-    color:#0ABAB5;
-}
-.my-text-color a {
-    text-decoration:none;
-}
-.btn{
-    background-color: #0ABAB5;
-    border: none;
-}
-.btn:hover{
-    background-color: rgb(10, 170, 165);
-}
-.card-title-1{
-    margin-bottom:20px ;
-    margin-top:-100px;
-    padding:0px 10px;
-    width:109%;
-}
-.my-text-3{
-    text-align: center !important;
-    
-}
-.dropbtn, .project {
-     margin-top: 1vh; 
-    height: 50px;
-    padding: 10px;
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid rgba(145, 145, 145, 0.4);
-    color: #091429;
-}
-.project {
-    border: 2px solid rgba(145, 145, 145, 0.4);
-    overflow: hidden;
-}
-.l-proj {
-    font-size: 14px;
-    border: none;
-    width: 100%;
-    vertical-align: middle;
-    -webkit-box-pack: justify;
-}
-.l-proj::placeholder {
-    color: #919191;
-}
-.l-proj:focus {
-    border: none;
-}
-.req {
-     margin-left: 221px; 
-     margin-top: 12rem;
-    float: right;
-}
-.signup {
-    background: #0ABAB5;
-    width: 145px;
-    height: 54px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: white;
-}
-
-.est {
-    color: white; 
-    background:  #0ABAB5;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 32px;
-    padding: 10px;
-    text-align: center;
-    padding-top: 10px !important;
-}
-li {
-    padding: 15px;
-    margin: 8px !important;
-    margin-top: 21px;
-}
-li a {
-    margin: 1px;
-    padding: 1px;
-    color: black;
-}
-
-#new_user {
-    margin-top: 20px;
-    margin-left: 2%;
-}
-.shift {
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 32px;
-}
-.login {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-}
-.hidden {
-    display: none;
-}
-.disabled {
-    cursor: not-allowed;
-}
-.box {
-    margin-top: 4%;
-}
+/* nav */
 
 #container {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 5fr 1fr;
+}
+
+#container div {
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
+  height: 50px;
+}
+
+#container i {
+  padding-top: 15px;
+  color: #C4C4C4
+}
+
+#container p {
+  justify-content: center;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: bold;
+  color: #323A43;
+}
+
+.cnc {
+  border: none;
+  background:rgba(207, 204, 204, 0.4);
+  height: 50px;
+  width: 100%;
+  color: white
+}
+
+/* main section */
+
+.main-section {
+  margin: 50px auto;
+  width: 50%;
+}
+
+.section1 {
+  border: 1px solid #919191;
+  box-sizing: border-box;
+}
+
+.section1 div {
+  padding: 5px 20px;
+}
+
+#word h1 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 48px;
+  color: #262626;
+}
+
+#word h5 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #262626;
+}
+
+#glac h1 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 41px;
+  color: #262626;
+  padding-top: 30px;
+  margin-left: 50px;
+}
+
+div h3 {
+  font-family: Ubuntu;
+  font-style: bold;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 41px;
+  color: #262626;
+}
+
+.bill p {
+  font-size: 1em;
+  padding-top: 10px;
+  color: #262626;
+}
+
+.hour {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+   }
+
+input {
+  height: 30px;
+  width: 50%;
+  text-align: center;
+  border: 1px solid;
+}
+
+.start {
+  margin-left: 1px;
+  width: 100%;
+}
+
+.end {
+  margin-left: 50px;
+  width: 100%;
+}
+
+i input {
+  border: none;
+  border-bottom: 1px solid;
+  text-decoration: underline;
+}
+
+.sub {
+  width: 90%;
+}
+
+.hour {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+
+#currency {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  color: #262626;
+  padding-bottom: 20px;
+  
+}
+
+#currency p{
+float: right;
+padding-right: 10px;
+}
+select {
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.btn {
+  border: 1px solid #e4e4e4;
+  background: rgba(207, 204, 204, 0.4);
+  margin-top: 40px;
+  margin-left: 30%;
+  width: 40%;
+  height: 60px;
+  color: white;
+  font-size:17px;
+}
+
+@media screen and (max-width: 1400px) {
+  .start {
+    margin-left: 80px;
+    width: 100%;
+  }
+  .end {
+    margin-left: 30px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1102px) {
+  .hours {
     display: grid;
-    grid-template-columns: 1fr 8fr 2fr;
-}
-option, select{
-    font-size: 14px;
-}
-.dropbtn:focus, .project:focus, .dropbtn:hover, .project:hover {
-    cursor: pointer !important;
-}
-#clear{
-    padding: auto;
-}
- /*#ext {
-    justify-content: center;
-    border: none;
-    color: white;
-    border: none !important;
-}*/
-.row {
-    margin-right: 0;
-    margin-left: -15px;
+    grid-template-columns: 0.5fr 1fr 1fr;
+  }
 }
 
-
-
-@media (max-width: 992px) 
-{
-.h1, h1 {
-    font-size: 2rem !important;
-    margin-top: 3% !important;
-}
-.text-center h1 {
-    margin-left: 17.2%;
-}
-button {
-    width: 120px;
-    height: 100%;
-}
-#container p {
-    font-size: 19.5px;
-    margin-top: 9px;
-}
-div > #ext{
-    font-size: 20px;
-}
-.a-next {
-    width: 180px;
-    height: 60px;
-    padding: 5px 20px;
-    font-size: 20px;
-    margin-top: 60px;
-}
-.h5, h5 {
-    font-size: 1.05rem;
-}
-p.card-text {
-    font-size: .8rem;
-}
-  .card
-  {
-    min-height: 34vh;
-}
-
-.dropbtn, .project {
-     margin-top: 1vh; 
-    height: 40px;
-    padding: 10px;
+@media (max-width: 948px) {
+  .hour, .hours {
+    display: block;
+  }
+  .start {
+    margin-left: 0px;
     width: 100%;
-}
-.project {
-    border: 1.5px solid rgba(145, 145, 145, 0.4);
-    overflow: hidden;
-}
-.l-proj {
-    font-size: 14px;
+  }
+  .end {
+    margin-left: 0px;
     width: 100%;
-    margin-bottom: 2rem;
+  }
 }
-.l-proj::placeholder {
-    line-height: 10px;
-}
-.box {
-    margin-top: 3%;
-}
-option, select{
-    font-size: 14px;
-}
-#container .navM img {
-    height: 20px;
-}
-
-}
-
-
-
-@media (max-width: 767px) 
-{
-.h1, h1 {
-    font-size: 1.5rem !important;
-    margin-top: 3% !important;
-}
-.text-center h1 {
-    margin-left: 17.2%;
-}
-#container p {
-    margin-top: 5px;
-}
-.a-next {
-    width: 160px;
-    height: 55px;
-    padding: 5px 15px;
-    font-size: 18px;
-    margin-top: 60px;
-    margin-bottom: 100px;
-}
-  .card
-  {
-    min-height: 28vh;
-    margin-bottom: 30px;
-    max-width: 85%;
-    margin-left: 7%;
-}
-
-.dropbtn, .project {
-     margin-top: 1vh; 
-    height: 40px;
-    padding: 0;
-    width: 72vw !important;
-}
-.project {
-    border: 1.5px solid rgba(145, 145, 145, 0.4);
-    overflow: hidden;
-}
-.l-proj {
-    font-size: 14px;
-    width: 100%;
-    margin: .5rem 0 0 .3rem;
-}
-.l-proj::placeholder {
-    line-height: 10px;
-}
-.box {
-    margin-top: 3%;
-}
-option, select{
-    font-size: 14px;
-}
-#container .navM img {
-    height: 20px;
-}
-#container p {
-    font-size: 17.5px;
-    margin-top: 12px;
-}
-div > #ext {
-    font-size: 18px;
-}
-#container .navM img {
-    height: 18px;
-}
-
-}
-
-
-@media screen and(max-width: 576px) 
-{
-.h1, h1 {
-    font-size: 1.15rem !important;
-}
-#container p {
-    margin-top: 0x;
-}
-.a-next {
-    width: 120px;
-    height: 45px;
-    padding: 5px 10px;
-    font-size: 15px;
-    margin-top: 25px;
-    margin-bottom: 110px;
-}
-.h5, h5 {
-    font-size: 1rem;
-}
-  .card
-  {
-    min-height: 25vh;
-}
-p.card-text {
-    font-size: .78rem;
-    padding-right: .5rem;
-}
-
-.dropbtn, .project {
-     margin-top: 0; 
-    height: 35px;
-    padding: 0;
-    width: 70vw !important;
-}
-.project {
-    border: .5px solid rgba(145, 145, 145, 0.4);
-}
-.l-proj {
-    font-size: 12px;
-}
-.box {
-    margin-top: 2%;
-}
-option, select{
-    font-size: 12px;
-}
-#container .navM img {
-    height: 20px;
-}
-#container p {
-    font-size: 16px;
-    margin-top: 12px;
-}
-div > #ext {
-    font-size: 15px;
-}
-#container .navM img {
-    height: 14px;
-}
-button {
-    width: 70px;
-}
-.card .card-body {
-    display: inline-grid;
-    justify-content: baseline;
-    align-items: flex-end;
     
+ @media (max-width: 600px) {
+  .main-section {
+  margin: 50px auto;
+  width: 80%;
+}
+  
+  
+input {
+   width: 80%;
+  margin-bottom:10px;
+ }
 }
 
+.text-center:hover{
+color: black;
 }
 
-@media (max-width:550px){
-    .card .card-body
-{
-    display: inline-grid;
-    justify-content: baseline;
-    align-items: flex-end;
-   
-}
-
-
-.dropbtn, .project {
-    margin-top: 1vh;
-    height: 40px;
-    padding: 0;
-    width: 70vw !important;
-}
-}
-@media (max-width:500px){
-    #container div {
-        border: .5px solid black;
-    }
-    div > #ext {
-        font-size: 16px;
-        height:40px;
-        width:10vw;
-    }
-    .dropbtn, .project {
-        margin-top: 1vh;
-        height: 40px;
-        padding: 0;
-        width: 68vw !important;
-    }
-
-}
-@media (max-width:450px){
-    .dropbtn, .project {
-        margin-top: 1vh;
-        height: 40px;
-        padding: 0;
-        width: 66vw !important;
-    }
-}
-@media (max-width:390px){
-    .my-text-3 {
-        text-align: left !important;
-        font-size: 20px !important;
-        margin-left:  -2px !important;
-        margin-right: -1px !important ;
-        padding-left: 1em;
-    }
-    
-    .dropbtn, .project {
-        margin-top: 1vh;
-        height: 40px;
-        padding: 0;
-        width: 60vw !important;
-    }
-}
-@media (max-width:430px){
-    #container div {
-        border: 1px solid black;
-        height: 40px;
-    }
-    #container p{
-    font-size: 15px;
-    margin-top: 9px;
-}
-}
-@media (max-width:404px){
-    #container div {
-        border: 1px solid black;
-        height: 40px;
-        
-    }
-    #container p{
-    font-size: 13px;
-    margin-top: 9px;
-}
-div > #ext {
-    font-size: 13px;
-    height: 40px;
-    width: 5vw;
-}
-h1 {
-    font-size: 1.2rem !important;
-    margin-top: 3% !important;
-}
-
+txt:hover{
+  color: black;
 }

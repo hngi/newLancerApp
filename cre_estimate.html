@@ -46,9 +46,10 @@
   color: #323A43;
 }
 
+
 .cnc {
   border: none;
-  background:rgba(207, 204, 204, 0.4);
+  background:rgba(184, 181, 181, 0.4);;
   height: 50px;
   width: 100%;
   color: white
@@ -181,7 +182,7 @@ select {
 
 .btn {
   border: 1px solid #e4e4e4;
-  background: rgba(207, 204, 204, 0.4);
+  background: rgba(184, 181, 181, 0.4);
   margin-top: 40px;
   margin-left: 30%;
   width: 40%;
@@ -264,7 +265,7 @@ txt:hover{
     <div class="text-center">
       <span>
             <a href="cre_estimate_step1.html">
-        <i class="fa fa-chevron-left"></i>
+        <i class="fa fa-chevron-left" id="arrow1"></i>
       </span></a>
     </div>
 
@@ -274,7 +275,7 @@ txt:hover{
 
     <div class="">
         <a href="select-cient.html">
-      <input class="text-center cnc" value="SETUP THIS PROJECT" type="button"></a>>
+      <input class="text-center cnc" value="SETUP THIS PROJECT" type="button"></a>
     </div>
 
 
@@ -304,17 +305,17 @@ txt:hover{
          <div class="hour">
           <p>How long (in hours) will it take you <br> to complete this project?</p>
 
-          <input type="number" placeholder="Hours"  style="border: 1px solid #919191;"/>
+          <input type="number" placeholder="Hours"  style="border: 1px solid #919191;" class="hours" required/>
         </div>
 
-                          <!------I eliminated the "how much in hours, do you charge per hour" text------>
+          <!------I eliminated the "how much in hours, do you charge per hour" text------>
 
         <div class="hours">
           <p> Project starts/ends</p>
-          <i class="fa fa-calendar start" "><input type="text" placeholder="Set start date" onfocus="(this.type='date')" name="estStartDate"
-              placeholder=" Set start date" /></i>
+          <i class="fa fa-calendar start"><input type="text" placeholder="Set start date" onfocus="(this.type='date')" name="estStartDate"
+              placeholder=" Set start date" min="2019-10-1" max="2100-10-30" id="startDate"/></i>
           <i class="fa fa-calendar end"><input type="text" placeholder="Set end date" onfocus="(this.type='date')" name="estEndDate"
-              placeholder="Set end date" /></i>
+              placeholder="Set end date" min="2019-11-1" id="endDate"/></i>
 
         </div>
 
@@ -328,7 +329,7 @@ txt:hover{
             How much would it cost you to power your devices or equipment <br>for this
             project?
           </p>
-          <input type="number" placeholder="NGN 0.00"  style="border: 1px solid #919191;"/>
+          <input type="number" placeholder="NGN 0.00"  style="border: 1px solid #919191;" class="equipment"/>
         </div>
 
 
@@ -348,14 +349,14 @@ txt:hover{
 
         <div class="hour">
           <p id="proj">How many similar projects have<br>you done before?</p>
-          <input type="number"  style="border: 1px solid #919191;"/>
+          <input type="number"  style="border: 1px solid #919191;" class="sim-proj" required/>
 
         </div>
 
 
         <div class="hour">
           <p id="rate">Out of 5 how would you rate your<br>experience level in executing this </i><br>project?<p>
-                <input type="number" style="border: 1px solid #919191;"/>/5
+                <input type="number" style="border: 1px solid #919191;" class="rate" required/>/5
         </div>
 
       </div>
@@ -416,6 +417,103 @@ txt:hover{
     </div>
 
   </div>
+
+
+  <script>
+    let hours = document.querySelector(".hours");
+    // console.log(hours);
+
+    let equipment = document.querySelector(".equipment");
+    // console.log(equipment);
+
+    let est = document.querySelector("#est2");
+    // console.log(est);
+
+    let simProject = document.querySelector(".sim-proj")
+    // console.log(simProject);
+
+    let rate = document.querySelector(".rate");
+    // console.log(rate);
+
+    let btn = document.querySelector(".btn");
+    // console.log(btn);
+
+    let btn1 = document.querySelector(".cnc");
+    // console.log(btn1);
+
+    // variable declaration for date verification
+    let today = new Date();
+    // console.log(today);
+
+    let dd = today.getDate();
+    // console.log(dd);
+
+    let mm = today.getMonth() + 1;
+    // console.log(mm);
+
+    let year = today.getFullYear();
+    // console.log(year);
+    // end of variable declaration for date validation
+
+
+
+    // turning the two buttons green with input is made
+    hours.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    equipment.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    est.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    simProject.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+    rate.addEventListener('input', function(){
+      btn.style.background="#0ABAB5";
+      btn1.style.background = "#0ABAB5";
+    })
+
+
+    // date validation
+    // if(dd<10){
+    //   dd='0'+ dd
+    // }
+    // if(mm<10){
+    //   mm='0' + mm;
+    // }
+
+    // today=year + '-' + mm + '-' + dd;
+    // document.getElementById("startDate").setAttribute('max', today);
+
+    // end date validation
+
+    if (dd<10){
+      dd='0' + dd
+    }
+    if(mm <10){
+      mm="0" + mm;
+    }
+
+    today = year + '-' + mm + '-' + dd;
+    document.querySelector("#endDate").setAttribute('min', today);
+
+
+
+    
+
+
+  
+  </script>
 </body>
 
 </html>

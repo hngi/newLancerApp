@@ -13,7 +13,8 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
+   
+        <!-- Our Custom CSS -->
     <!-- <link rel="stylesheet" href="style/project.css"> -->
     <style type="text/css">
         /*Main page style by message*/
@@ -642,6 +643,48 @@
             right: 20px;
             z-index: 12;
         }
+
+        @media only screen and (max-width:780px){
+            th{
+                font-size: 14px;
+                
+            }
+            span, td{
+                font-size:14px;
+            }
+            h1{
+                font-size: 35px;
+            }
+            
+        }
+        @media only screen and (min-width:716px){
+            th{
+                font-size: 14px;
+                
+            }
+            span, td{
+                font-size:14px;
+            }
+
+            h1{
+                font-size: 30px;
+            }
+            .table {
+             width:100%;
+             max-width: 100%;
+             margin-bottom: 1rem;
+             background-color: transparent;
+             }
+             
+        }
+        .table-responsive {
+    display: block;
+    width: 100%;
+    margin:auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
     </style>
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -799,7 +842,7 @@
                                         <td class="border-top border-bottom">#475</td>
                                         <td class="border-top border-bottom">5/09/2019</td>
                                         <td class="border-top border-bottom">
-                                            <span class="alert alert-primary py-0 px-2 small m-0 active">Expired</span>
+                                            <span class="alert alert-primary py-0 px-2 small m-0 active cancel-sub">Expired</span>
                                         </td>
                                         <td class="border-top border-bottom text-left">5/09/2019</td>
                                         <td class="rounded-right border border-left-0 ">
@@ -808,7 +851,7 @@
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                                 data-target="#upgradeModal"> <i
                                                     class="fas fa-level-up-alt"></i>  </button>
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            <button type="button" class="close-sub btn btn-danger" data-toggle="modal"
                                                 data-target="#myModal"><i class="fas fa-ban"> </i> </button>
                                         </td>
 
@@ -824,7 +867,7 @@
                                         <td class="border-top border-bottom">#475</td>
                                         <td class="border-top border-bottom">5/09/2019</td>
                                         <td class="border-top border-bottom">
-                                            <span class="alert alert-primary py-0 px-2 small m-0">Active</span>
+                                            <span class="alert alert-primary py-0 px-2 small m-0 cancel-sub">Active</span>
                                         </td>
                                         <td class="border-top border-bottom text-left">5/09/2019</td>
                                         <td class="rounded-right border border-left-0 ">
@@ -833,7 +876,7 @@
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                                 data-target="#upgradeModal"> <i
                                                     class="fas fa-level-up-alt"></i>  </button>
-                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            <button type="button" class="close-sub btn btn-danger" data-toggle="modal"
                                                 data-target="#myModal"><i class="fas fa-ban"> </i> </button>
                                         </td>
 
@@ -865,7 +908,7 @@
 
                 <div class="modal-body text-center">
 
-                    <button type="button" class="btn btn-danger ban">Yes</button>
+                    <button type="button" class="btn btn-danger ban" id="myYes">Yes</button>
                     <button type="button" class="btn btn-primary ban" data-dismiss="modal">No</button>
 
                 </div>
@@ -887,7 +930,7 @@
 
                 <div class="modal-body text-center">
 
-                    <button type="button" class="btn btn-primary upgrade">Yes</button>
+                    <button type="button" class="btn btn-primary upgrade" id="myYes">Yes</button>
                     <button type="button" class="btn btn-primary upgrade" data-dismiss="modal">No</button>
 
                 </div>
@@ -924,9 +967,27 @@
                 location.href = "subscription.html"
             });
 
+            // want to do auto nrewal
 
         });
+        
+
     </script>
+    <script type="text/javascript">
+        var currentSub;
+
+        document.querySelectorAll(".close-sub").forEach((elem) => {
+            elem.addEventListener('click', (evt) => {
+                currentSub = elem.parentElement.parentElement;
+            })
+        })
+        
+        document.querySelector('#myYes').addEventListener('click', (e) => {
+            document.querySelector('.close').click();
+            currentSub.querySelector(".cancel-sub").textContent = "canceled";
+        });
+    </script>
+    
 </body>
 
 </html>
