@@ -14,6 +14,7 @@
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <style>
   
   body {
@@ -22,6 +23,13 @@
   padding: 0;
   font-size: 1em;
 }
+
+.error{
+        color:red;
+        font-size: 15px;
+        
+        }
+
 
 /* nav */
 
@@ -159,7 +167,8 @@ i input {
   grid-template-columns: 1fr 1fr;
 }
 
-
+input::-webkit-datetime-edit{ color: black; }
+input:focus::-webkit-datetime-edit{ color: #000; }
 
 #currency {
   font-family: Ubuntu;
@@ -313,10 +322,10 @@ txt:hover{
 
         <div class="hours">
           <p> Project starts/ends</p>
-          <i class="fa fa-calendar start"><input type="text" min="2019-10-31" placeholder="Set start date" onfocus="(this.type='date')" name="estStartDate"
-              placeholder=" Set start date"  /></i>
-          <i class="fa fa-calendar end"><input type="text" min="2019-10-31" placeholder="Set end date" onfocus="(this.type='date')" name="estEndDate"
-              placeholder="Set end date" /></i>
+          <i class="fa fa-calendar start"><input type="date" id="date" min="2019-10-31"  onfocus="(this.type='date')" name="estStartDate"
+                /></i>
+          <i class="fa fa-calendar end"><input type="date" min="2019-10-31" onfocus="(this.type='date')" name="estEndDate"
+               /></i>
 
         </div>
 
@@ -357,7 +366,7 @@ txt:hover{
 
         <div class="hour">
           <p id="rate">Out of 5 how would you rate your<br>experience level in executing this </i><br>project?<p>
-                <input type="number" id="rte" style="border: 1px solid #919191;"/>/5
+                <input type="number" id="rte" style="border: 1px solid #919191;"/><span id="div">/5</span>
         </div>
 
       </div>
@@ -423,100 +432,101 @@ txt:hover{
 
 
 <script>
-  var button = document.getElementById("button");
-  var but = document.getElementById("but");
-  but.addEventListener("click",function(){
-    var hrs = document.getElementById("hrs").value;
-    var estt = document.getElementById("estt").value;
-    var amt = document.getElementById("amt").value;
-    var amt2 = document.getElementById("amt2").value;
-    var sp = document.getElementById("sp").value;
-    var rte = document.getElementById("rte").value;
-  //&& est2.length < 1 && amt.length < 1 && amt2.length < 1 && sp.length < 1 && rte.length < 1){  
-   if(hrs.length < 1 ){
-      alert("please answer all the questions to proceed");
-    }
-    else{
-      if(amt.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(amt.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(estt.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(amt2.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(sp.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(rte.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-      window.open("create_estimate_step1.html");
-      }
-      }
-      }
-      }
-      }
+  // var button = document.getElementById("button");
+  // var but = document.getElementById("but");
+  // but.addEventListener("click",function(){
+  //   var hrs = document.getElementById("hrs").value;
+  //   var estt = document.getElementById("estt").value;
+  //   var amt = document.getElementById("amt").value;
+  //   var amt2 = document.getElementById("amt2").value;
+  //   var sp = document.getElementById("sp").value;
+  //   var rte = document.getElementById("rte").value;
+  // //&& est2.length < 1 && amt.length < 1 && amt2.length < 1 && sp.length < 1 && rte.length < 1){  
+  //  if(hrs.length < 1 ){
+     
+  //     alert("please answer all the questions to proceed");
+  //   }
+  //   else{
+  //     if(amt.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(amt.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(estt.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(amt2.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(sp.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(rte.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //     window.open("create_estimate_step1.html");
+  //     }
+  //     }
+  //     }
+  //     }
+  //     }
 
-      }
-    }
-  },false);
-  button.addEventListener("click",function(){
-    var hrs = document.getElementById("hrs").value;
-    var estt = document.getElementById("estt").value;
-    var amt = document.getElementById("amt").value;
-    var amt2 = document.getElementById("amt2").value;
-    var sp = document.getElementById("sp").value;
-    var rte = document.getElementById("rte").value;
-  //&& est2.length < 1 && amt.length < 1 && amt2.length < 1 && sp.length < 1 && rte.length < 1){  
-   if(hrs.length < 1 ){
-      alert("please answer all the questions to proceed");
-    }
-    else{
-      if(amt.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(amt.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(estt.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(amt2.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(sp.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-        if(rte.length < 1){
-        alert("please answer all the questions to proceed");
-      }
-      else{
-      window.open("create_estimate_step1.html");
-      }
-      }
-      }
-      }
-      }
+  //     }
+  //   }
+  // },false);
+  // button.addEventListener("click",function(){
+  //   var hrs = document.getElementById("hrs").value;
+  //   var estt = document.getElementById("estt").value;
+  //   var amt = document.getElementById("amt").value;
+  //   var amt2 = document.getElementById("amt2").value;
+  //   var sp = document.getElementById("sp").value;
+  //   var rte = document.getElementById("rte").value;
+  // //&& est2.length < 1 && amt.length < 1 && amt2.length < 1 && sp.length < 1 && rte.length < 1){  
+  //  if(hrs.length < 1 ){
+  //     alert("please answer all the questions to proceed");
+  //   }
+  //   else{
+  //     if(amt.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(amt.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(estt.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(amt2.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(sp.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //       if(rte.length < 1){
+  //       alert("please answer all the questions to proceed");
+  //     }
+  //     else{
+  //     window.open("create_estimate_step1.html");
+  //     }
+  //     }
+  //     }
+  //     }
+  //     }
 
-      }
-    }
-  },false);
+  //     }
+  //   }
+  // },false);
 </script>
 
 
@@ -531,8 +541,8 @@ var year = currentDate.getFullYear();
 var cld = document.getElementById("cld");
 var cldTwo = document.getElementById("cldTwo");
 
-cld.min ="year-month-day";
-cldTwo.min ="year-month-day";
+// cld.min ="year-month-day";
+// cldTwo.min ="year-month-day";
 
 
 </script>
@@ -544,10 +554,86 @@ $(document).ready(function(){
     $('.next').css({"background":"#0ABAB5" , "color":"white"});
     $('.cnc').css({"background":"#0ABAB5"});
   })
+
   $('input').on('keyup',function(){
     $('.next').addClass("cnc");
     $('.cnc').css({"background":"rgba(207, 204, 204, 0.4);"});
   })
+
+  $('.next, .cnc').click(function(e){
+    e.preventDefault();
+    var input = $('input').val();
+    var hrs = $('#hrs').val();
+    var amt = $('#amt').val();
+    var amt2 = $('#amt2').val();
+    var estt = $('#estt').val();
+    var sp = $('#sp').val();
+    var rte = $('#rte').val();
+    $(".error").remove();
+ 
+    if (hrs.length < 1) {
+      $('#hrs').css('border', 'solid 2px red')
+      .after('<span class="error">This field is required</span>');
+    }
+    else if (hrs.length >= 1) {
+      $('#hrs').css('border', 'solid 2px green');
+     
+    }
+
+    if (amt.length < 1) {
+      $('#amt').css('border', 'solid 2px red')
+      .after('<span class="error">Please specify the above question</span>');
+    }
+
+    else if (amt.length >= 1) {
+      $('#amt').css('border', 'solid 2px green');
+     
+    }
+
+    if (amt2.length < 1) {
+      $('#amt2').css('border', 'solid 2px red')
+      .after('<span class="error">Please specify How much you would like to be paid</span>');
+    }
+
+    else if (amt2.length >= 1) {
+      $('#amt2').css('border', 'solid 2px green');
+     
+    }
+
+    if (estt.length < 1) {
+      $('#estt').css('border', 'solid 2px red')
+      .after('<span class="error">Specify if you are subcontracting </span>');
+    }
+
+    else if (estt.length >= 1) {
+      $('#estt').css('border', 'solid 2px green');
+     
+    }
+    
+    if (sp.length < 1) {
+      $('#sp').css('border', 'solid 2px red')
+      .after('<span class="error">Required for simlar projects done before</span>');
+    }
+
+    else if (sp.length >= 1) {
+      $('#sp').css('border', 'solid 2px green');
+     
+    }
+
+    if (rte.length < 1) {
+      $('#rte').css('border', 'solid 2px red')
+      
+    }
+
+    
+    else  {
+      location.href = "create_estimate_step1.html";  
+    }
+    
+    
+    
+    
+  });
   
   
 })
