@@ -9,13 +9,11 @@
 		<link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
 		<!-- Fontawesome CSS -->
 	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	    <!-- Bootstrap CSS -->
-		<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
-		<!-- Add animations -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<!-- end add animations -->
+	    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+	    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
 	    <!-- Main css -->
 	    <style type="text/css">
 	    	/*Main page style by message*/
@@ -112,7 +110,6 @@
 				overflow: hidden;
 				transition: all ease-in-out .5s;
 			}
-			
 			.btn::after {
 				content: "";
 				display: block;
@@ -161,19 +158,6 @@
     color: var(--secondary-color) !important;
 
 			}
-
-			/* .breath{
-				animation-name: breath;
-    animation-duration: 2s;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-			}
-			@keyframes breath {
-	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	
-	40% {-webkit-transform: translateY(-15px);}
-	
-} */
 
 
 			   /****************************/
@@ -243,8 +227,39 @@
 				color: gray !important;
 				text-decoration: none;
 			}
+
+			.faq-top{
+				/*margin: 0 0;*/
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.faq-btn {
+				font-size: 1.4em;
+				color: white;	
+				text-decoration: none;
+				padding: 10px 20px;
+			}
+			.faq-btn:hover {
+				color: #091429;
+				text-decoration: none;
+			}
+			.faq-btn:active {
+				color: #091429;
+				text-decoration: none;
+			}
+			.card-reader {
+				background-color: #0ABAB5;
+				color: white;
+			}
+			[data-toggle="collapse"] .fa:before {
+				content: "\f146";
+			}
+
+			[data-toggle="collapse"].collapsed .fa:before {
+				content: "\f0fe";
+			}
 	    </style>
-		<title>Lancer</title>
+		<title>Lancer FAQ Page</title>
 	</head>
 	<body>
 		<header>
@@ -279,90 +294,129 @@
 			</nav>
 		</header>
 		<main>
-			<section class="jumbotron p-0 text-left rounded-0 bg-white">
+			<section class="" >
 			    <div class="container">
 			      	<div class="row">
-			      		<div class="col-12 col-md-5 col-lg-6">
-			      			<h1 class="jumbotron-heading text-dark my-5 animated bounce ">Let us do the work for you</h1>
-					      	<p class="text-dark bold text-bold my-5">Generate estimates, invoices, contacts and much more<br> for your project.</p>
-					      	<p class="text-dark my-5">
-					        	<a href="create_estimate_page.html" class="btn btn-secondary btn-lg py-2  " data-aos="fade-right">Generate an Estimate</a>
-					      	</p>
-			      		</div>
-			      		<div class="col-12 col-md-7 col-lg-6 order-2 aos-init aos-animate">
-			      			<div class="text-center">
-			      				<img src="https://lancer-app.000webhostapp.com/images/svg/coding.svg" class="img img-responsive" data-aos="fade-left" height="auto" width="80%">
-							  </div>
-							  
+			      		<div class="col-12 col-lg-12 faq-top">
+			      			<h2 class="text-center"> Frequently Asked Questions </h2>
 			      		</div>
 			      	</div>
+
+			      	<div class="row">
+			      		<div class="col-12 col-lg-12">
+			      			<div class="accordion" id="accordionBox">
+			      				<div class="card">
+			      					<div class="card-reader" id="headingOne">
+			      						<h5 class="mb-0">
+
+			      							<button class="btn btn-link faq-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" ><i class="fa" aria-hidden="true"> </i> What is Lancers App all about?</button>
+			      						</h5>
+			      						
+			      					</div>
+
+			      					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionBox">
+			      						<div class="card-body">
+			      							Lancers App is a web application that makes it easy for you to create and manage your invoices and estimates for every project you take on.
+			      							 <p> Visit our <a href="index.html">homepage </a> for more information.</p>
+			      						</div>
+			      					</div>
+			      				</div>
+
+			      				<div class="card">
+			      					<div class="card-reader" id="headingTwo">
+			      						<h5 class="mb-0">
+			      							<button class="btn btn-link faq-btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" ><i class="fa" aria-hidden="true"> </i> Is it free to use?</button>
+			      						</h5>
+			      						
+			      					</div>
+
+			      					<div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionBox">
+			      						<div class="card-body">
+			      							Yes, our starter plan is completely free to use. However, if you desire more advanced features, you can subscribe to our pro plan at $24.99/month or Pro Plus plan at $79.99/month. <p> Check our <a href="pricing.html">pricing page </a> for more information.</p>
+			      						
+			      						</div>
+			      					</div>
+			      				</div>
+
+			      				<div class="card">
+			      					<div class="card-reader" id="headingOne">
+			      						<h5 class="mb-0">
+			      							<button class="btn btn-link faq-btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" ><i class="fa" aria-hidden="true"> </i> Can I edit my invoice after creating an estimate?</button>
+			      						</h5>
+			      						
+			      					</div>
+
+			      					<div id="collapseThree" class="collapse " aria-labelledby="headingOne" data-parent="#accordionBox">
+			      						<div class="card-body">
+			      							Yes, you can. All you have to do is visit your project tab in the menu and click the edit button.
+			      						
+			      						</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+
 			    </div>
 		  	</section>
-		  	<section class="">
-		  		<div class="container">
-		  			<div class="row">
-		  				<div class="col-md-6">
-		  					<div class="text-left">
-		  						<h3 class="text-dark">Estimate your project’s cost for free</h3>
-			  					<p class="text-dark small">
-			  						Use our handy cost estimator to find out how much it will take you to deliver on your project.
-			  					</p>
-			  					<p class="text-dark small">
-			  						We take into consideration your work hours, subcontractors, amongst other things, to make sure you always have a healthy profit at the end of the day.
-			  					</p>
-			  					<p class="text-dark my-4">
-						        	<a href="create_estimate_page.html" class="btn btn-secondary btn-lg py-2">Generate an Estimate</a>
-						      	</p>
-		  					</div>
-		  				</div>
-		  				<div class="col-md-6">
-		  					<div class="text-center">
-		  						<img src="https://lancer-app.000webhostapp.com/images/svg/undraw_calculator.svg" class="img img-responsive" height="auto" width="80%">
-		  					</div>
-		  				</div>
-		  			</div>
-		  		</div>
-		  	</section>
-		  	<section class="bg-primary">
-		  		<div class="container mt-4 py-4">
-		  			<div class="row">
-		  				<div class="col-md-12">
-		  					<h3 class="text-white py-4 mb-4 text-center" data-aos="zoom-in">Manage your Projects <br> for free</h3>
-		  				</div>
-		  			</div>
-		  			<div class="row">
-		  				<div class="col-md-4">
-		  					<div class="text-center text-white">
-		  						<img src="https://lancer-app.000webhostapp.com/images/svg/project-plan.svg" class="img img-responsive" height="auto" width="100%">
-		  						<p class="text-white text-bold mt-4">Plan</p>
-		  					</div>
-		  				</div>
-		  				<div class="col-md-4">
-		  					<div class="text-center text-white">
-		  						<img src="https://lancer-app.000webhostapp.com/images/svg/project-collaborate.svg" class="img img-responsive" height="auto" width="100%">
-		  						<p class="text-white text-bold mt-4">Collaborate</p>
-		  					</div>
-		  				</div>
-		  				<div class="col-md-4">
-		  					<div class="text-center text-white">
-		  						<img src="https://lancer-app.000webhostapp.com/images/svg/project-communicate.svg" class="img img-responsive" height="auto" width="100%">
-		  						<p class="text-white text-bold mt-4">Communicate</p>
-		  					</div>
-		  				</div>
-		  			</div>
-		  			<div class="row">
-		  				<div class="col-md-12">
-		  					<p class="text-center">
-			  					<a href="Invoice-new-user.html" class="btn btn-secondary-outline btn-lg breath ">Create Invoice</a>
-			  				</p>
-		  				</div>
-		  			</div> 
-		  		</div>
-		  	</section>
+
+
+		  	
 		</main>
 
 		
-		<footer class="bg-white pt-4 " data-aos="fade-down">
+		<section class="resume-section p-4 p-lg-5 text-center" id="contact">
+	        <div class="my-auto">
+	          <h2 class="mb-4">Question not in FAQ?</h2>
+
+	          <h6>
+	            Ask us directly...
+	          </h6>
+
+	          <!-- edit form action -->
+	          <form
+	            class="contact-form d-flex flex-column align-items-center"
+	            action="https://formspree.io/youremail@mail.com" 
+	            method="POST"
+	          >
+	            <div class="form-group w-75">
+	              <input
+	                type="name"
+	                class="form-control"
+	                placeholder="Name"
+	                name="name"
+	                required
+	              />
+	            </div>
+	            <div class="form-group w-75">
+	              <input
+	                type="email"
+	                class="form-control"
+	                placeholder="Email"
+	                name="email"
+	                required
+	              />
+	            </div>
+
+	            <div class="form-group w-75">
+	              <textarea
+	                class="form-control"
+	                type="text"
+	                placeholder="What would you like to know about Lancer?"
+	                rows="7"
+	                name="message"
+	                required
+	              ></textarea>
+	            </div>
+
+	            <button type="submit" class="btn btn-submit btn-info w-75">Submit</button>
+	          </form>
+	        </div>
+      	</section>
+		
+
+		
+		<footer class="bg-white pt-4">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-2">
@@ -371,6 +425,7 @@
 							<li><a class="text-dark" href="pricing.html">Pricing</a></li>
 							<li><a class="text-dark" href="signin.html">Sign in</a></li>
 							<li><a class="text-dark" href="signup.html">Sign up</a></li>
+							<li><a class="text-dark" href="faq.html">FAQ</a></li>
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-2">
@@ -387,7 +442,7 @@
 						<p class="text-dark small">
 								3 Birrel Avenue, Sabo.
 								Yaba, Lagos State,
-								Nigeria.
+								Nigeria
 						</p>
 						<h5 class="">
 							<a href="https://facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
@@ -423,9 +478,10 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		<!-- <script type="text/javascript" src="js/main.js"></script> -->
-		<script>
-			AOS.init();
-		  </script>
+		<!-- <script type="text/javascript" src="js/bootstrap.js"></script> -->
+
+		<!-- <script>
+		$('.collapse').collapse();
+		</script> -->
 	</body>
 </html>
