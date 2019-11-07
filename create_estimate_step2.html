@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -340,7 +338,7 @@ txt:hover{
             How much would it cost you to power your devices or equipment <br>for this
             project?
           </p>
-          <input type="number" placeholder="NGN 0.00" id="amt"  style="border: 1px solid #919191;"/>
+          <input type="text" placeholder="NGN 0.00" onchange="validate1()" id="amt"  style="border: 1px solid #919191;"/>
         </div>
 
 
@@ -351,7 +349,7 @@ txt:hover{
 
         <div class="hour">
           <p id="pay">How much would they be paid?</p>
-          <input type="number" placeholder="NGN 0.00" id="amt2" style="border: 1px solid #919191;"/>
+          <input type="text" placeholder="NGN 0.00" onchange="validate()" id="amt2" style="border: 1px solid #919191;"/>
         </div>
       </div>
       <br>
@@ -638,6 +636,38 @@ $(document).ready(function(){
   
   
 })
+
+var cur = document.getElementById("amt");
+           
+                    cur.addEventListener("change", function(){
+                    var num = new Intl.NumberFormat(undefined)
+                    
+                cur.value = num.format(cur.value);
+            });
+
+            function validate1(){
+      if ( isNaN(cur.value)){
+          alert("Not a number");
+          return false;
+          cur.value = 0;
+      }
+  }
+            
+                
+            var cur1 = document.getElementById("amt2");
+            cur1.addEventListener("change", function(){
+                var num = new Intl.NumberFormat(undefined)
+                    
+                cur1.value = num.format(cur1.value);
+            });
+            
+            function validate(){
+      if ( isNaN(cur1.value)){
+          alert("Not a number");
+          return false;
+          cur1.value = 0;
+      }
+  }
 </script>
 
 
