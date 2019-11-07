@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/client-doc-veiw.css">
     <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
-    </head>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+  </head>
 
   <body>
     <div class="main-cont">
@@ -20,7 +23,7 @@
           <span class="nav-span"></span>
         </div>
         <a href="#"><h4 class="header-nav-item header-nav-item-left header-links first-header-link">Project Info</h4></a>
-        <a href="#"><h4 class="header-nav-item header-links">Documents</h4></a>
+        <a href="#"><h4 class="header-nav-item header-links" id="document">Documents</h4></a>
       </div>
 
       <div class="sidebar mobile-sidebar" id="sidebar">
@@ -28,13 +31,13 @@
           <img class="logo-img" src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570557507/Lancers_c8dpbb.png" alt="logo">
           <table class="nav-table">
             <tr class="table-row">
-              <td><a href="documents.html"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/home_lbx6eq.png" alt="dashboard" class="icon"></a></td><td class="nav-txt"><a href="documents.html">Dashboard</a></td>
+              <td class="py-4"><a href="documents.html"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/home_lbx6eq.png" alt="dashboard" class="icon"></a></td><td class="nav-txt"><a href="documents.html">Dashboard</a></td>
             </tr>
             <tr>
-              <td><a href="client-information-active.html"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/Vector_envenf.png" alt="client" class="icon"></td><td class="nav-txt"><a href="client-information-active.html">Client</a></td>
+              <td class="py-4"><a href="client-information-active.html"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/Vector_envenf.png" alt="client" class="icon"></td><td class="nav-txt"><a href="client-information-active.html">Client</a></td>
             </tr>
             <tr class="click-project">
-              <td><a><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/lightbulb_wemwzq.png" alt="project" class="icon"></a></td>
+              <td class="py-4"><a><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/lightbulb_wemwzq.png" alt="project" class="icon"></a></td>
               <td class="nav-txt"><a>Project</a></td>
               <td><img src="https://res.cloudinary.com/slarin/image/upload/v1570706703/contact-support/expand_more_w4e0eb.svg"  class="caret-dwn">
              
@@ -45,50 +48,66 @@
             
               <tr class="hidden-sidebar-links">
                 <td></td>
-                <td class="nav-txt"><a href="#">Status</a></td>
+                <td class="nav-txt p-3"><a href="#">Status</a></td>
               </tr>
               <tr class="hidden-sidebar-links">
                 <td></td>
-                <td class="nav-txt"><a href="#">Overview</a></td>
+                <td class="nav-txt p-3"><a href="#">Overview</a></td>
               </tr>
               <tr class="hidden-sidebar-links">
                 <td></td>
-                <td class="nav-txt"><a href="#">Collaborators</a></td>
+                <td class="nav-txt p-3"><a href="#">Collaborators</a></td>
               </tr>
               <tr class="hidden-sidebar-links">
                 <td></td>
-                <td class="nav-txt"><a href="#">Task</a></td>
+                <td class="nav-txt p-3"><a href="#">Task</a></td>
               </tr>
             
 
 
             <tr>
-              <td><a href="invoice-view.html"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/approve-invoice_efuypp.png" alt="invoice" class="icon"></a></td><td class="nav-txt"><a href="invoice-view.html">Invoice</a></td>
+              <td class="py-4"><a href="invoice-view.html"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/approve-invoice_efuypp.png" alt="invoice" class="icon"></a></td><td class="nav-txt"><a href="invoice-view.html">Invoice</a></td>
             </tr>
             <tr>
-              <td><a href="#"><img src="https://res.cloudinary.com/slarin/image/upload/v1570714691/contact-support/policy_qtves1.svg" alt="contract" class="icon"></a></td><td class="nav-txt"><a href="#">Contract</a></td>
+              <td class="py-4"><a href="#"><img src="https://res.cloudinary.com/slarin/image/upload/v1570714691/contact-support/policy_qtves1.svg" alt="contract" class="icon"></a></td><td class="nav-txt"><a href="#">Contract</a></td>
             </tr>
             <tr>
-              <td><a href="#"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/approval_xfiucq.png" alt="proposals" class="icon"></a></td><td class="nav-txt"><a href="#">Proposals</a></td>
+              <td class="py-4"><a href="#"><img src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570556428/approval_xfiucq.png" alt="proposals" class="icon"></a></td><td class="nav-txt"><a href="#">Proposals</a></td>
             </tr>
           </table>
         </div>
       </div>
 
-      <div class="content">
+      <!-- End of Side Bar  -->
+
+      <div class="content container">
 
         <div class="lanclient-buttons"> 
           <div class="left">
-            <button type="button">Print</button> <button type="button">Download as PDF</button> 
+            <button type="button" >Print</button> 
+            <button type="button">Download as PDF</button> 
           </div> 
-            <div class="right"> 
+          <div class="right"> 
             <button type="button">Make Payment</button>
           </div> 
         </div>
 
-        <div class="invoice-cont"> 
-          <div class="lanclient-invoice-logo">
-            <div class="right-invy"> 
+        <!-- <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <button type="button">Print</button>
+              </div>
+              <div class="col">
+                <button type="button">Download as PDF</button> 
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="invoice-cont my-4"> 
+          <div class="lanclient-invoice-logo row my-4">
+            <div class="right-invy col mb-4"> 
               <h3 class="invoice-banner-txt">Invoice</h3> 
               <p><strong>Project:&nbsp;</strong>Branding and Marketing</p>
               <p><strong>Lancer:&nbsp;</strong>Endurance Dan-Jumbo</p> 
@@ -101,28 +120,37 @@
           </div>
           
           <div class="lanclient-billing"> 
-              <div> <p class="billing-clhead">Bill to</p>
-                     <div class="bills-descrip"> <p class="bills-description">John Doe</p> <p class="bills-description">johndoe@gmail.com</p> 
-                             <p>Accra, Ghana</p> 
-                     </div> 
+            <div class=" lanclient-grid">
+              <div class=""> 
+                <p class="billing-clhead">Bill to</p>
+                <div class="bills-descrip"> 
+                  <p class="bills-description">John Doe</p> 
+                  <p class="bills-description">johndoe@gmail.com</p> 
+                  <p>Accra, Ghana</p> 
+                </div> 
               </div> 
-                        <div> 
-                              <div class="top-mid-bill-details"> <p class="billing-clhead">Issue Date</p>
-                               <p class="bills-description">18th September 2019</p>
-                              </div> 
-                                     <div class="bottom-mid-bill-details"> 
-                               <p class="billing-clhead">Due Date</p>
-                               <p class="bills-description">28th September 2019</p> 
-                                    </div>
-                          </div>
-            
-             <div class="last-child-billing"> 
-                     <div class="top-last-bill-details"> <p class="billing-clhead">Hourly Rate</p> <p class="bills-description" id = "hourly-rateN">N/A</p> 
-                     </div> 
-                          <div class="bottom-last-bill-details"> <p class="billing-clhead">Amount Due</p> <p class="bills-description">NGN 38, 500</p>
-                           </div> 
+              <div class=""> 
+                <div class="top-mid-bill-details"> <p class="billing-clhead">Issue Date</p>
+                  <p class="bills-description">18th September 2019</p>
+                </div> 
+                <div class="bottom-mid-bill-details"> 
+                  <p class="billing-clhead">Due Date</p>
+                  <p class="bills-description">28th September 2019</p> 
+                </div>
+              </div>
+              
+              <div class="last-child-billing"> 
+                <div class="top-last-bill-details"> <p class="billing-clhead">Hourly Rate</p> <p class="bills-description" id = "hourly-rateN">N/A</p> 
+                </div> 
+                  <div class="bottom-last-bill-details"> 
+                    <p class="billing-clhead">Amount Due</p> 
+                    <p class="bills-description">NGN 38, 500</p>
+                  </div> 
+                </div>
+              </div>
+
             </div>
-          </div>
+            
 
           <section class="billing-data-table"> 
             <table> 
@@ -210,6 +238,14 @@
         }
       })
     </script>
+
+     <!-- jQuery CDN - Slim version (=without AJAX) -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <!-- Popper.JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+     <!-- Bootstrap JS -->
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+     
 
   </body>
 
