@@ -3,64 +3,72 @@
 <head>
 <meta charset="uft-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>  Coming Soon</title>
+<title>Lancer</title>
 <link rel="stylesheet"  href="css/style.css">
+</head>
 
 <style>
-body,html{
-    margin: 0;
-    padding: 0;
-    width:90%;
-    height: 50%;
-}
 
-body{
-    background: url(https://res.cloudinary.com/chelsea002/image/upload/v1573049836/bg5_pl6gdl.jpg); 
-    -moz-background-size: cover;
-    background-size: cover;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed;
-    width: 70%;
-    display: block;
-   
-}
-
+    *{
+        margin:0;
+        padding:0;
+        font-family: poppins;
+    }
 
 .container{
-    width: 100%;
-    position: center;
-    margin-top: -500px;
-    margin-left: 505px;
-    top: 50%;
-    left: 100%;
-    transform: translate (-50%, -50%);
-    text-align: center;
-    color: #091429;
-} 
-
-
-.container h1{   
-    text-transform: uppercase;
-    font-size: 60px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 2px;
-    margin-bottom: 6px;
+    width:100%;
 }
 
-.container h2{       
-margin: 0;
-font-size: 20px;
-font-weight: 500px;
-font-style: italic;
-padding-top: 0px;
+ body{
+    margin:0;
+    padding:0;
+    font-family: poppins;
+    }
+
+#navbar{
+    width: 100%;
+    height: 60px; 
+    background:#091429;
+}
+
+.logo{
+    width: 90px; 
+    height: 25px; 
+    padding-top: 15px; 
+    padding-left: 40px;
+}
+
+.container1{
+    width: 95vw;
+    margin:auto;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.right{
+    margin-top:15vh;
+    text-align: center;
+}
+
+.right h1{
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 5vw;
+    color: #091429;
+}
+.right h2{
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 2vw;
+    font-style: italic;
+    color: #091429;
 }
 
 .count{
-margin: 40px 0
+    margin-top: 3vh;
 }
-
-.countd{
+.countd {
     display: inline-block;
     width: 88px;
     height: 88px;
@@ -71,112 +79,331 @@ margin: 40px 0
     overflow: hidden;
     left: 30px;
 }
-
-
-.countd span{
-display: block;
-font-size: 26px;
-margin-top: 19px;
+.countd span {
+    display: block;
+    font-size: 26px;
+    margin-top: 19px;
 }
 
-@media (max-width: 50px) { 
-.form{
-width: 96%;
-max-width: 400px;
-margin-left: 480px;
-margin-bottom: 100px;
-
-}
-.form input[type="email"]{
-width: 73%;
-float: left;
-padding: 10px;
-margin: 10px auto;
-font-size: 18px;
-background-color: #fff;
-border: 1px solid #ddd;}
-
-.form input[type="submit"]{
-    width: 25%;
-    float: left;
-    padding: 10px;
-    margin: 10px auto;
-    font-size: 18px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}  }
-
-#navbar{
-    width: 158.7%; 
-    height: 60px; 
-    background:#091429;
+form {
+    display: block;
+    margin-top: 0em;
 }
 
-#box{
+#box {
     margin: 18px auto;
-     width: 289px; 
-     height: 29px;
-    margin-right: 10px 10px; 
-    border-radius: 25px 0 0 25px; 
-    border-bottom-color: #091429; 
+    width: 289px;
+    height: 29px;
+    margin-right: 10px 10px;
+    border-radius: 25px 0 0 25px;
+    border-bottom-color: #091429;
     border-top-color: #091429;
-    border-left-color:  #091429;
+    border-left-color: #091429;
     border-right-color: #091429;
     border-width: 1px;
     text-align: center;
 }
 
-#box:hover{
-border-top-color: #091429;
-border-bottom-color: #091429;
-border-left-color: #091429;
-border-right-color:#091429;
-border-width: 2px;
+.left img{
+
+    width: 100%;
+    height:90%;
+    margin-top:20px;
+
 }
 
 
-
-#ww{
-margin-top: 1px;
-font-size: solid 17px;
-}
-
-
-#sbt:hover{
-animation: 1s glow;
-animation-fill-mode: forwards;
-}
-
-@keyframes glow{
-    from{
-        background-color: #091429; 
+/*Media query*/
+@media (max-width: 790px){
+    
+    #navbar{
+        background: #091429;
     }
-    to{
-        background-color: #3c5a92; 
-    }
+
+    .left{
+        display: none;
+        background-color: #091429;
 }
 
- 
-#wrapper{
-  height: 1000%;
+.container1{
+    width: 95vw;
+    margin:auto;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr; 
 }
+
+.right h1 {
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 6vw;
+    color: #091429;
+    margin-bottom: 5px;
+}
+
+#navbar{
+    height: 55px;
+}
+.logo {
+    width: 85px;
+    height: 23px;
+    padding-top: 15px;
+    padding-left: 35px;
+}
+
+}
+
+@media (max-width: 573px){
+    .right h1 {
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 7vw;
+    color: #091429;
+    margin-bottom: 5px;
+}
+.right h2 {
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 3vw;
+    font-style: italic;
+    color: #091429;
+}
+
+.countd {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2.2px solid;
+    margin: 0 20px;
+    font-size: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 30px;
+}
+
+.countd span {
+    display: block;
+    font-size: 22px;
+    margin-top: 19px;
+}
+#box {
+    margin: 18px auto;
+    width: 70%;
+    height: 30px;
+    margin-right: 10px 10px;
+    border-radius: 25px 0 0 25px;
+    border-bottom-color: #091429;
+    border-top-color: #091429;
+    border-left-color: #091429;
+    border-right-color: #091429;
+    border-width: 1px;
+    text-align: center;
+}
+
+}
+
+@media (max-width: 475px) {
+    .right {
+    margin-top: 10vh;
+    text-align: center;
+}
+.right h1 {
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 9vw;
+    color: #091429;
+    margin-bottom: 5px;
+}
+
+.countd {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2.2px solid;
+    margin: 0 10px;
+    font-size: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 30px;
+}
+}
+
+@media (max-width: 453px){
+    .countd {
+    display: inline-block;
+    width: 78px;
+    height: 78px;
+    border: 2.2px solid;
+    margin: 0 10px;
+    font-size: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 30px;
+}
+
+}
+
+
+
+@media (max-width: 444px){
+
+    .countd {
+    display: inline-block;
+    width: 74px;
+    height: 74px;
+    border: 2px solid;
+    margin: 0 8px;
+    font-size: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 30px;
+}
+#box {
+    margin: 18px auto;
+    width: 65%;
+    height: 30px;
+    margin-right: 10px 10px;
+    border-radius: 25px 0 0 25px;
+    border-bottom-color: #091429;
+    border-top-color: #091429;
+    border-left-color: #091429;
+    border-right-color: #091429;
+    border-width: 1px;
+    text-align: center;
+}
+#navbar {
+    height: 50px;
+}
+.countd span {
+    display: block;
+    font-size: 20px;
+    margin-top: 19px;
+}
+.right h2 {
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 4vw;
+    font-style: italic;
+    color: #091429;
+}
+.logo {
+    width: 80px;
+    height: 20px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+}
+
+@media (max-width: 409px){
+    .countd {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 2px solid;
+    margin: 0 6px;
+    font-size: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 30px;
+}
+}
+
+@media (max-width: 375px){
+    
+    .countd {
+    display: inline-block;
+    width: 68px;
+    height: 68px;
+    border: 1.8px solid;
+    margin: 0 5px;
+    font-size: 9px;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 30px;
+}
+.right h1 {
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 10vw;
+    color: #091429;
+    margin-bottom: 5px;
+}
+    
+}
+
+
+@media (max-width: 358px){
+    .right {
+    margin-top: 8vh;
+    text-align: center;
+}
+#box {
+    margin: 18px auto;
+    width: 63%;
+    height: 30px;
+    margin-right: 10px 10px;
+    border-radius: 25px 0 0 25px;
+    border-bottom-color: #091429;
+    border-top-color: #091429;
+    border-left-color: #091429;
+    border-right-color: #091429;
+    border-width: 1px;
+    text-align: center;
+}
+.right h1 {
+    font-family: poppins-bold;
+    font-weight: bold;
+    font-size: 11vw;
+    color: #091429;
+    margin-bottom: 5px;
+}
+.countd {
+    display: block;
+    width: 74px;
+    height: 74px;
+    border: 1.8px solid;
+    margin: 5px auto;
+    font-size: 9px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+    
+}
+    
+
+
+    
+
+
 </style>
-</head>
+
 
 
 <body>
-<div class="holder" id="navbar">
- 
-  <img src="https://res.cloudinary.com/chelsea002/image/upload/v1573049836/Lancers_gdfpzn.png"   style="width: 90px; height: 30px; padding-top: 15px; padding-left: 40px;">
-</div>     
-     <br><br>
-     <img src="https://res.cloudinary.com/chelsea002/image/upload/v1573049836/t_yj8bxj.png"  id="image" style="width: 730px; height: 550px;">
-<div class="container" id="wrapper" style="width: 800px; margin-bottom: 470px; margin-left: 87vh; height: 0%;">
-      <h1> LANCERS </h1>
-      <h2> We are coming soon</h2>
+    <div class="container">
+
+    
+    <!--navbar-->
+    <div class="holder" id="navbar">
+     <img class="logo" src="https://res.cloudinary.com/chelsea002/image/upload/v1573049836/Lancers_gdfpzn.png">
+    </div>     
+  
+    <!--main-->
+    <section>
+        <div class="container1 container-img">
+      <div class="left">    
+     <img src="https://res.cloudinary.com/chelsea002/image/upload/v1573049836/t_yj8bxj.png"  id="image">
+        
+      
+    
+</div>  
 
       
-
+    <div class="right">
+            <h1> LANCERS </h1>
+            <h2> ...We are coming soon</h2>
       <div class="count">
           <div class="countd">
            <span id="days"> 00</span>
@@ -200,15 +427,19 @@ animation-fill-mode: forwards;
          </div>
          <div class="form">
      <form action="">
-<input type="text" placeholder="&nbsp&nbsp; Enter email address and get notified"  id="box" >
-<input type="submit" value="Submit" id="sbt"  style=" border: black; width: 80px; margin: 10px auto; height: 33px;  border-radius: 0 25px 25px 0; background-color: #091429; color: white;">
-</form>
-<p id="ww" style="font-weight: bold;"><i>we will not spam</i></p>
-        </div>
-        </div>
-      </div>      
-   </div>
+                 <input type="text" placeholder="&nbsp&nbsp; Enter email address and get notified"  id="box" >
+                 <input type="submit" value="Submit" id="sbt"  style=" border: black; width: 80px; margin: 10px auto; height: 33px;  border-radius: 0 25px 25px 0; background-color: #091429; color: white;">
+                 </form>
+                 <p id="ww" style="font-weight: bold;"><i>we will not spam...</i></p>
+                  </div>
+                  </div>
 
+
+
+        </div>        
+      </div>
+    </section>
+</div>
 
 
 
