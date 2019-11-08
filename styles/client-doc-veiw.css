@@ -46,7 +46,11 @@ body {
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     line-height: 25px;
-    color: #eeeeee;
+    color: #eeeeee!important;
+  }
+
+  .nav-txt a{
+    color:#eeeeee!important;
   }
   .caret-dwn {
     display: flex;
@@ -102,6 +106,10 @@ body {
     border-bottom: none;
    }
 
+   /* a .header-link{
+     color:red;
+   } */
+
    .header .first-header-link {
      color: #0ABAB5;
      }
@@ -115,6 +123,10 @@ body {
     font-size: 1.3rem;
     padding: 30px 0;
     cursor: pointer;
+  }
+  #document{
+    color: #000000;
+    opacity: 0.8;
   }
   .header-nav-item-left {border-bottom: 4px solid #009fff;}
   .header-nav-item:hover, .header-nav-item:active {
@@ -218,9 +230,19 @@ body {
   .lanclient-invoice-logo>.left-invy-logo { margin-right: 1.5em; 
   }
 
-  img.left-invy-logo { height: 50px; } 
+  /* img.left-invy-logo { 
+    width: 100;
+    display: block;
+    height: auto; 
+  }  */
 
-  .lanclient-billing { margin: 20px 0 0 10px; display: flex; justify-content: space-between;
+  /* .lanclient-billing { margin: 20px 0 0 10px; display: flex; justify-content: space-between;
+  } */
+
+  .lanclient-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2rem;
   }
 
   p.billing-clhead { color: #a6a6a6 !important; font-size: 18px; 
@@ -299,7 +321,8 @@ body {
       margin-left: 10px;
     }
   }
-  @media(max-width: 500px){
+  /* @media(max-width: 500px){ */
+  @media(max-width: 1000px){
     .main-cont {
       grid-template-columns: 1fr;
     }
