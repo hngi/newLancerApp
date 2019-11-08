@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Invoice View</title>
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png"
+        type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu&display=swap');
+    </style>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary-color: #091429;
+        --secondary-color: #0ABAB5;
+        --dark-color: #262626;
+        --light-color: #B1B1B1;
+    }
+
+    table {
+        border-spacing: 5px;
+    }
+
+    td,
+    th {
+        width: 46vw;
+        margin: 0 auto;
+        padding: 0 0 10px;
+        text-align: left;
+    }
+
+    td:first-child,
+    th:first-child {
+        padding-left: 20px;
+    }
+
+    td:last-child,
+    th:last-child {
+        margin-right: .5rem;
+        text-align: right;
+    }
+
+    thead,
+    .table-date {
+        max-width: 100%;
+        font-family: Ubuntu;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 28px;
+        color: #A6A6A6;
+    }
+
+    tbody,
+    .bold {
+
+        font-family: Ubuntu;
+        font-size: .97rem;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #212529;
+    }
+
+    .table-responsive {
+        display: table;
+        width: 100%;
+        overflow-x: unset;
+        padding-right: .5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .note h5 {
+        font-family: Ubuntu;
+        font-weight: bold;
+        font-size: 14px;
+        color: #A6A6A6;
+    }
+
+    .tableAmount {
+        font-weight: 900;
+        font-size: 1.05rem;
+    }
+
+    .invoice-main,
+    #page-content-wrapper {
+        width: 80%;
+    }
+
+    /* .navbar {
+        width: 100%;
+    } */
+
+    .invoice-container {
+        position: relative;
+        top: 3rem;
+        width: 100%;
+        /*width: 52.5vw;*/
+        margin-left: 4rem;
+        /*padding-right: 2rem!important;*/
+        background: #FFFFFF;
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        margin-bottom: 2rem;
+    }
+
+    .invoice-body {
+        position: relative;
+        width: 55.5vw;
+        width: 80%;
+    }
+
+    .invoice-table {
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+    }
+
+    .removeBorder {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: none !important;
+    }
+
+    .thickLine {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 3px solid #000 !important;
+    }
+
+    .logo-img {
+        width: 7.5rem;
+        float: right;
+    }
+
+    h1 {
+        color: #546067;
+        font-size: 4rem;
+        font-family: 'Ubuntu', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        color: #546067;
+    }
+
+    p {
+        margin-bottom: .5rem;
+    }
+
+    /* sidebar new */
+    /* ---------------------------------------------------
+            SIDEBAR STYLE
+        ----------------------------------------------------- */
+    .wrapper {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+        perspective: 1500px;
+    }
+
+    #sidebar {
+        min-width: 220px;
+        max-width: 220px;
+        background: var(--primary-color);
+        color: #fff;
+        transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+        transform-origin: bottom left;
+    }
+
+    #sidebar.active {
+        margin-left: -250px;
+        transform: rotateY(100deg);
+    }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+        background: var(--primary-color);
+    }
+
+    #sidebar ul.components {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--primary-color);
+    }
+
+    #sidebar ul p {
+        color: #fff;
+        padding: 10px;
+    }
+
+    #sidebar ul li a {
+        padding: 1.2rem 0rem;
+        padding-left: 40px;
+        font-size: 1em;
+        font-weight: 600;
+        display: block;
+        transition: 0.4;
+    }
+
+    #sidebar ul li a:hover {
+        color: #ffffff;
+        background: rgba(19, 41, 82, 1);
+    }
+
+    #sidebar ul li a img {
+        margin-top: -4px !important;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    #sidebar.active ul li a span {
+        vertical-align: text-bottom !important;
+    }
+
+    #sidebar ul li.active>a,
+    a[aria-expanded="true"] {
+        color: #fff;
+        background: rgba(19, 41, 82, 1);
+    }
+
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    ul ul a {
+        font-size: 0.9em !important;
+        padding-left: 30px !important;
+        background: rgba(19, 41, 82, 1);
+        ;
+    }
+
+    ul.CTAs {
+        padding: 20px;
+    }
+
+    ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    a.download {
+        background: #fff;
+        color: #7386D5;
+    }
+
+    a.article,
+    a.article:hover {
+        background: rgba(19, 41, 82, 1) !important;
+        color: #fff !important;
+    }
+
+    /* end sidebar new */
+
+    
+
+    /* #sidebar-wrapper {
+        min-height: 200vh;
+        width: 40vh;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+        -webkit-transition: margin .25s ease-out;
+        -moz-transition: margin .25s ease-out;
+        -o-transition: margin .25s ease-out;
+        transition: margin .25s ease-out;
+    } */
+
+    /* img {
+      width: .85rem;
+      margin-right: .5rem;
+      margin-left: 1.8rem;
+} */
+    .imgSvg {
+        padding-left: unset;
+        margin-right: .2rem;
+        margin-left: 1.8rem;
+    }
+
+    .bg-dark {
+        background: #091429 !important;
+        font-size: .75rem;
+        color: #fff;
+    }
+
+    .colorC {
+        color: #00F9FF;
+    }
+
+    .colorC2 {
+        color: #0ABAB5;
+    }
+
+    /* .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: .5rem 0;
+    } */
+
+    a.bg-dark:focus,
+    a.bg-dark:hover,
+    button.bg-dark:focus,
+    button.bg-dark:hover {
+        background-color: #c1c1c1 !important;
+    }
+
+    .list-group-item-action:focus,
+    .list-group-item-action:hover {
+        color: #091429;
+    }
+
+    .list-group-item {
+        padding: 1.275rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: #c1c1c1;
+        border: unset;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        letter-spacing: .9px;
+        font-size: 14px;
+    }
+
+    #sidebar-wrapper .sidebar-heading {
+        padding: 0.975rem 3.3rem;
+        font-size: 1.5rem;
+        font-family: 'Pacifico', cursive;
+    }
+
+    /* .dropdown-menu {
+        position: relative;
+        width: 100%;
+        min-width: unset;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        background: #212531;
+        background: linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
+        color: #fff;
+        box-shadow: none;
+    } */
+
+    .dropdown-menu.show {
+        top: 0;
+    }
+
+    /* .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: .25rem 1.5rem;
+        clear: both;
+        font-weight: 300;
+        color: #fff;
+    } */
+
+    svg {
+        padding-left: .5rem;
+        padding-bottom: .2rem;
+    }
+
+    #page-content-wrapper {
+        width: 100%;
+        /*margin-left: auto;
+  margin-right: -20%;*/
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+
+    /* new nav bar  */
+
+    /*------Nav bar---------*/
+    a,
+    a:hover,
+    a:focus {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .navbar {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-color: #fff;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 10px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-btn {
+        box-shadow: none;
+        outline: none !important;
+        border: none;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+        transition: 0.25s;
+        background-color: #ecf3ff;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px dashed #ddd;
+        margin: 40px 0;
+    }
+
+    
+
+    /* ---------------------------------------------------
+            CONTENT STYLE
+        ----------------------------------------------------- */
+    #content {
+        width: 100%;
+        min-height: 100vh;
+        transition: all 0.3s;
+    }
+
+    #sidebarCollapse {
+        width: 40px;
+        height: 40px;
+        background: #f5f5f5;
+        cursor: pointer;
+
+    }
+
+    #sidebarCollapse span {
+        width: 80%;
+        height: 2px;
+        margin: 0 auto;
+        display: block;
+        background: #555;
+        transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+        transition-delay: 0.2s;
+    }
+
+    #sidebarCollapse span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+
+    #sidebarCollapse span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    #sidebarCollapse span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+    #sidebarCollapse.active span {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+
+    .alert.alert-primary.py-0.px-2.small.m-0.pending {
+        color: #F67A06;
+        font-weight: bold;
+        background-color: rgba(201, 133, 70, 0.3);
+        border-color: rgba(201, 133, 70, 0.3);
+    }
+
+    .py-0 {
+
+        padding: 5px 15px !important;
+        border-radius: 0;
+        border: none
+    }
+
+    .alert.alert-primary.py-0.px-2.small.m-0.active {
+        color: #179615;
+        font-weight: bold;
+        background-color: #C4C4C4;
+        border-color: #C4C4C4;
+    }
+
+    .container-fluid .input-group {
+        margin-left: 400px;
+        width: 350px;
+    }
+
+    .container-fluid .mydrop-down {
+        width: 300px;
+    }
+
+
+    /* end of new navbar */
+
+    .btn-outline-dark {
+        font-family: Ubuntu;
+        font-weight: bold;
+        font-size: 14px;
+        border-color: #0ABAB5;
+    }
+
+    .btn.bg {
+        color: #fff;
+        background-color: #0ABAB5;
+    }
+
+    .btn-primary {
+        background-color: #0ABAB5;
+        border-color: #0ABAB5;
+    }
+
+    /* .toggleNav {
+        display: none;
+    }
+
+    .toggleDesktop {
+        display: inline-block;
+        display: none;
+        margin-left: 10px;
+        padding: .25rem .75rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        font-size: 1.25rem;
+        border-color: rgba(0, 0, 0, .1);
+        color: rgba(0, 0, 0, .5);
+        border-radius: .25rem;
+    } */
+
+    /*.smallcont {
+  margin-left: 8%;
+  margin-right: -200px;
+}*/
+    /* ---------------------------------------------------
+            MEDIAQUERIES
+        ----------------------------------------------------- */
+    @media (max-width: 450px) {
+        .my-link input {
+            margin-left: -30px;
+        }
+    }
+
+    @media (max-width: 533px) {
+
+        #sidebar {
+            margin-left: -220px;
+            transform: rotateY(90deg);
+        }
+
+        #sidebarCollapse {
+            width: 40px;
+            height: 40px;
+            background: #f5f5f5;
+            cursor: pointer;
+            display: block;
+        }
+
+        #sidebar.active {
+            margin-left: 0;
+            transform: none;
+        }
+
+        #sidebarCollapse span:first-of-type,
+        #sidebarCollapse span:nth-of-type(2),
+        #sidebarCollapse span:last-of-type {
+            transform: none;
+            opacity: 1;
+            margin: 5px auto;
+        }
+
+        #sidebarCollapse.active span {
+            margin: 0 auto;
+        }
+
+        #sidebarCollapse.active span:first-of-type {
+            transform: rotate(45deg) translate(2px, 2px);
+        }
+
+        #sidebarCollapse.active span:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        #sidebarCollapse.active span:last-of-type {
+            transform: rotate(-45deg) translate(1px, -1px);
+        }
+
+        .container-fluid .input-group {
+            margin-left: -100px;
+            width: 100px;
+            padding-left: -200px;
+        }
+
+        .container-fluid .mydrop-down {
+            width: 100%;
+        }
+
+        .container-fluid {
+            margin-left: -40px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        #sidebar {
+            margin-left: -220px;
+            transform: rotateY(90deg);
+        }
+
+        #sidebarCollapse {
+            width: 40px;
+            height: 40px;
+            background: #f5f5f5;
+            cursor: pointer;
+            display: block;
+        }
+
+        #sidebar.active {
+            margin-left: 0;
+            transform: none;
+        }
+
+        #sidebarCollapse span:first-of-type,
+        #sidebarCollapse span:nth-of-type(2),
+        #sidebarCollapse span:last-of-type {
+            transform: none;
+            opacity: 1;
+            margin: 5px auto;
+        }
+
+        #sidebarCollapse.active span {
+            margin: 0 auto;
+        }
+
+        #sidebarCollapse.active span:first-of-type {
+            transform: rotate(45deg) translate(2px, 2px);
+        }
+
+        #sidebarCollapse.active span:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        #sidebarCollapse.active span:last-of-type {
+            transform: rotate(-45deg) translate(1px, -1px);
+        }
+
+        #content .container-fluid {
+            margin-left: 0px;
+
+        }
+
+        .container-fluid .input-group {
+            margin-left: 60px;
+            width: 150px;
+        }
+
+        .container-fluid .mydrop-down {
+            width: 100%;
+        }
+
+        .container-fluid .mydrop-down {
+            width: 100%;
+        }
+
+        /* .table-responsive .dropdown-menu {
+            position: relative !important; 
+            white-space: nowrap;
+            transform: none
+        } */
+    }
+
+
+    @media (max-width: 992px) {
+        #sidebar-wrapper {
+            min-height: 160vh;
+        }
+
+
+
+        td,
+        th {
+            padding: 0 0 7px !important;
+        }
+
+        td:last-child,
+        th:last-child {
+            margin-right: .3rem;
+        }
+
+        thead,
+        .table-date {
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .col-6.mb-4 {
+            padding-left: 0;
+        }
+
+        .table td,
+        .table th {
+            padding: 0;
+        }
+
+        tbody,
+        .bold {
+            font-size: .82rem;
+            line-height: 1.5;
+        }
+
+        .tableAmount {
+            font-weight: 900;
+            font-size: .9rem;
+        }
+
+        .invoice-main {
+            width: 100%;
+        }
+
+        .invoice-container {
+            position: relative;
+            top: 3rem;
+            width: 54vw;
+            width: 100%;
+            margin-left: 5.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .invoice-main,
+        #page-content-wrapper {
+            width: 80%;
+        }
+
+        .invoice-body {
+            position: relative;
+            width: 55.5vw;
+            width: 80%;
+        }
+
+        .invoice-table {
+            padding-left: 0;
+        }
+
+        .thickLine {
+            border-top: 2px solid #000 !important;
+        }
+
+        /* .logo-img {
+            width: 4.5rem;
+            float: right;
+        } */
+
+        .btn-outline-dark {
+
+            font-family: Ubuntu;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        p {
+            margin-bottom: .2rem;
+            font-size: .7rem;
+        }
+
+        .footer-text {
+            font-family: Ubuntu;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1rem;
+        }
+
+        #page-content-wrapper {
+            min-width: 100%;
+        }
+
+        .toggleDesktop {
+            display: block;
+        }
+
+        /* .navbar-toggler {
+            display: block;
+        } */
+
+        @media (max-width: 991px) {
+            .nav-item.ml-3 {
+                margin-left: 0 !important;
+            }
+
+        }
+    }
+
+    @media (max-width: 768px) {
+        #sidebar-wrapper {
+            margin-left: 0;
+            height: 76vw;
+            width: 20vh;
+        }
+
+        #page-content-wrapper {
+            min-width: 0;
+            width: 100%;
+        }
+
+        /* img {
+            width: .65rem;
+            margin-right: .5rem;
+            margin-left: .2rem;
+        } */
+
+        .imgSvg {
+            margin-right: .2rem;
+            margin-left: .2rem;
+        }
+
+        .list-group-item {
+            padding: 1.275rem 1.25rem;
+            margin-bottom: -1px;
+            font-size: .7rem;
+            letter-spacing: .4px;
+        }
+
+        #sidebar-wrapper .sidebar-heading {
+            padding: 0.975rem 2.3rem;
+            font-size: 1.15rem;
+            color: #fff;
+        }
+
+        .btn-outline-dark {
+            font-size: 10px;
+            padding: .275rem .5rem;
+        }
+
+        .btn-outline-dark.ml-4 {
+            margin-left: 0rem !important;
+        }
+
+        h1 {
+            font-size: 16px;
+        }
+
+        p {
+            margin-bottom: .2rem;
+            font-size: .5rem;
+        }
+
+        /* .logo-img {
+            width: 4rem;
+        } */
+
+        thead,
+        .table-date {
+            font-size: 9px;
+            line-height: 12px;
+        }
+
+        tbody,
+        .bold {
+            font-size: .72rem;
+            line-height: 1;
+        }
+
+        td,
+        th {
+            width: 21vw;
+        }
+
+        .tableAmount {
+            font-weight: 600;
+            font-size: .75rem;
+        }
+
+        /* .navbar-light .navbar-nav .nav-link {
+            font-size: .7rem;
+        } */
+
+        /* .dropdown-item {
+            font-size: .75rem;
+        } */
+    }
+
+    @media (max-width: 576px) {
+        .invoice-body.ml-4 div {
+            /* display: none; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #page-content-wrapper {
+            min-width: 0;
+            width: 100%;
+        }
+
+        .invoice-body.ml-4 button {
+            display: block !important;
+            margin: 0.3rem 0;
+            margin-left: 0% !important;
+            width: 100%;
+        }
+
+        #sidebar-wrapper {
+            width: 25vh;
+            height: 92vw;
+        }
+
+        /* img {
+            width: .65rem;
+            margin-right: .1rem;
+            margin-left: .8rem;
+        } */
+
+        .imgSvg {
+            margin-right: .1rem;
+            margin-left: .8rem;
+        }
+
+        .list-group-item {
+            padding: 1.275rem 1rem;
+            font-size: .55rem;
+            letter-spacing: .2px;
+        }
+
+        #sidebar-wrapper .sidebar-heading {
+            padding: 0.975rem 2.1rem;
+            font-size: .9rem;
+            color: #fff;
+        }
+
+        .invoice-container {
+            width: 68vw;
+            margin-left: .9rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 14px;
+        }
+
+        .logo-img {
+            width: 4rem;
+        }
+
+        thead,
+        .table-date {
+            font-size: 8px;
+            line-height: 12px;
+        }
+
+        tbody,
+        .bold {
+            font-size: .62rem;
+            line-height: 1;
+        }
+
+        td,
+        th {
+            width: 28vw;
+        }
+
+        .tableAmount {
+            font-weight: 600;
+            font-size: .75rem;
+        }
+
+        /* .navbar-light .navbar-nav .nav-link {
+            font-size: .55rem;
+        } */
+
+        /* .dropdown-item {
+            font-size: .55rem;
+        } */
+
+
+    }
+
+    @media (max-width: 450px) {
+        #sidebar-wrapper {
+            display: none;
+        }
+
+        td,
+        th {
+            width: 38vw;
+        }
+
+        .invoice-container {
+            width: 92vw;
+            margin-left: .9rem;
+            margin-bottom: 2rem;
+        }
+
+        #page-content-wrapper {
+            min-width: 0;
+            width: 100%;
+
+        }
+
+        /* .toggleNav {
+            display: block;
+            display: inline-block;
+            margin-left: 10px;
+
+            padding: .25rem .75rem;
+            line-height: 1;
+            background-color: transparent;
+            border: 1px solid transparent;
+            font-size: 1.25rem;
+            border-color: rgba(0, 0, 0, .1);
+            color: rgba(0, 0, 0, .5);
+            ;
+            border-radius: .25rem;
+        } */
+
+        a:hover {
+            color: rgba(0, 0, 0, .5);
+            text-decoration: none;
+        }
+
+        /* .toggleDesktop {
+            display: none;
+        } */
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://lancer-app.000webhostapp.com/images/svg/Lancers.svg" height="35" width="auto"
+                    class="img img-responsive">
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="documents.html">
+                        <img src="https://lancer-app.000webhostapp.com/images/svg/home.svg" height="20" width="auto">
+                        <span> Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://lancer-app.000webhostapp.com/images/svg/customer.svg" height="20"
+                            width="auto"> <span> Client</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img
+                            src="https://lancer-app.000webhostapp.com/images/svg/lightbulb.svg" height="20"
+                            width="auto"> <span> Projects</span></a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" class="pl-4"> Status</a>
+                        </li>
+                        <li>
+                            <a href="#" class="pl-4"> Overview</a>
+                        </li>
+                        <li>
+                            <a href="#" class="pl-4 "> Collabrators</a>
+                        </li>
+                        <li>
+                            <a href="task.html" class="pl-4"> Task</a>
+                        </li>
+                        <li>
+                            <a href="#" class="pl-4">Documents</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="invoice-signing.html">
+                        <img src="https://lancer-app.000webhostapp.com/images/svg/approve-invoice.svg" height="20"
+                            width="auto"> <span> Invoice</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://lancer-app.000webhostapp.com/images/svg/policy.svg" height="20" width="auto">
+                        <span> Contract</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://lancer-app.000webhostapp.com/images/svg/approval.svg" height="20"
+                            width="auto"> <span> Proposals</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Navbar -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <form class="form-inline my-2 ml-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text border-right-0 bg-white" id="basic-addon1"><i
+                                        class="fas fa-search"></i></span>
+                            </div>
+                            <input class="form-control border border-left-0 searchBox" type="text" placeholder="Search"
+                                aria-label="Search" aria-describedby="basic-addon1">
+                        </div>
+                    </form>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link p-3" href="#"><img
+                                        src="https://lancer-app.000webhostapp.com/images/svg/help.svg" height="25"
+                                        width="auto"> <span class="d-lg-none d-xl-none"> You need help?</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border-left p-3" href="#"><img
+                                        src="https://lancer-app.000webhostapp.com/images/svg/alarm-clock.svg"
+                                        height="25" width="auto"> <span class="d-lg-none d-xl-none"> Reminder</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border-left p-3" href="#"><img
+                                        src="https://lancer-app.000webhostapp.com/images/svg/notification.svg"
+                                        height="25" width="auto"> <span class="d-lg-none d-xl-none">
+                                        Notification</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border-left p-3" href="#"><span
+                                        class="border rounded-circle p-1 font-weight-bold">AU</span> <span
+                                        class="d-lg-none d-xl-none"> Hello John</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="smallcont">
+                <section class="invoice-body ml-4">
+                    <div class="container ">
+                        <div class="row mt-5 ml-4">
+                            <button type="button" class="btn btn-outline-dark ">Print</button>
+                            <button type="button" class="btn btn-outline-dark ml-4">Download as PDF </button>
+                            <button type="button" class="btn btn-outline-dark ml-auto">Make Payment</button>
+                            <!-- <button type="button" class="btn btn-primary ml-4">Other actions</button> -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="invoice-main ">
+                    <div class="container invoice-container shadow">
+                        <section id="showcase ">
+                            <div class="row container pt-3 ">
+                                <div class="col-6 mb-4">
+                                    <h1> Invoice </h1>
+                                    <address contenteditable="">
+                                        <p> <b>Project:</b> branding and marketing</p>
+                                        <p> <b>Lancer:</b> Endurance dan-jumbo</p>
+                                        <p> <b>Email:</b> Edanjumbo@gmail.com</p>
+                                        <p> <b>Address:</b> Accra, Ghana</p>
+                                    </address>
+                                </div>
+
+                                <div class="col-6">
+                                    <img src="https://res.cloudinary.com/samtech/image/upload/v1570725037/My_Logo_-_Black.png"
+                                        class="img-fluid logo-img">
+                                </div>
+                            </div>
+                            <table class="table-responsive" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th> Bill to</th>
+                                        <th> Issue Date </th>
+                                        <th> Hourly Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span contenteditable="">John Doe</span> </td>
+                                        <td><span contenteditable=""> 18th September 2019</span></td>
+                                        <td> N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span contenteditable="">Johndoe@gmail.com</span></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span contenteditable="">Accra, Ghana</span> </td>
+                                        <th class="table-date"> Due Date</th>
+                                        <th class="table-date"> Amount Due</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><span contenteditable="">28th September 2019</span> </td>
+                                        <td><span contenteditable="" class="tableAmount">NGN 38,500</span> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <section class="invoice-description mt-4    ">
+
+                                <table class="table table-responsive container " style="width: 100%">
+                                    <thead class="thead" style="background-color: #091429; color: white;">
+                                        <tr>
+                                            <th scope="col" class="">Description</th>
+                                            <th> </th>
+                                            <th></th>
+                                            <th></th>
+                                            <th scope="col">Quantity </th>
+
+                                            <th></th>
+
+                                            <th scope="col">Rate </th>
+
+
+                                            <th></th>
+                                            <th scope="col">Amount</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="4">Sed ut perspiciatis unde omnis iste</td>
+                                            <td>1</td>
+                                            <td></td>
+                                            <td>NGN3500</td>
+                                            <td></td>
+                                            <td>NGN3500</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">Sed ut perspiciatis unde omnis iste</td>
+                                            <td>10</td>
+                                            <td></td>
+                                            <td>NGN1700</td>
+                                            <td></td>
+                                            <td>NGN17000</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">Sed ut perspiciatis unde omnis iste</td>
+
+                                            <td>15</td>
+                                            <td></td>
+                                            <td>NGN1200</td>
+                                            <td></td>
+                                            <td>NGN18000</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Total</td>
+                                            <td></td>
+                                            <td>NGN38500</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+
+                                            <td class="removeBorder" colspan="4"></td>
+                                            <td class="removeBorder"></td>
+                                            <td class="removeBorder table-date" colspan="2" style="text-align: right;">
+                                                Discount</td>
+                                            <td class="removeBorder"></td>
+                                            <td class="removeBorder bold">N/A</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="removeBorder" colspan="4"></td>
+                                            <td class="removeBorder"></td>
+                                            <td class="thickLine bold" colspan="2" style="text-align: right;">Amount Due
+                                            </td>
+                                            <td class="thickLine"></td>
+                                            <td class="thickLine bold">NGN38500</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </section>
+
+                            <section class="invoice-table" style="position: relative; top: 0rem">
+                                <section class="note">
+                                    <h5> Note</h5>
+                                    <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
+                                        laudantium, totam
+                                        rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                                </section>
+                            </section>
+                    </div>
+                </section>
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            
+            <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+</script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
+            <script>
+                $(document).ready(function () {
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').toggleClass('active');
+                        $(this).toggleClass('active');
+                    });
+
+
+
+                });
+            </script>
+</body>
+
+</html>
