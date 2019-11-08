@@ -1011,23 +1011,23 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-            });
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                    $(this).toggleClass('active');
+                });
 
-            $('#myModal').on('shown.bs.modal', function () {
-                $('#myInput').trigger('focus')
-            });
-            $('.table-responsive').on('show.bs.dropdown', function () {
-     $('.table-responsive').css( "overflow", "inherit" );
-});
+                $('#myModal').on('shown.bs.modal', function () {
+                    $('#myInput').trigger('focus')
+                });
+                $('.table-responsive').on('show.bs.dropdown', function () {
+                    $('.table-responsive').css("overflow", "inherit");
+                });
 
-$('.table-responsive').on('hide.bs.dropdown', function () {
-     $('.table-responsive').css( "overflow", "auto" );
-})
-           
-});
+                $('.table-responsive').on('hide.bs.dropdown', function () {
+                    $('.table-responsive').css("overflow", "auto");
+                })
+
+            });
 
 
     </script>
