@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Fontawesome CSS -->
+	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	    
+		<title>Track Project</title>
+        <link rel="shortcut icon" href="https://res.cloudinary.com/ddu0ww15f/image/upload/c_scale,h_16/v1571841777/icons8-home-office-24_veiqea.png" type="image/x-icon">
+        
+        <!--Internal CSS Starts -->
+
+        <style>
+
+            :root{
+				--primary-color: #091429;
+				--secondary-color: #0ABAB5;
+				--dark-color: #262626;
+				--light-color: #B1B1B1;
+			    }
+            .btn-secondary {
+                background-color: var(--secondary-color) !important;
+                color:white;
+            }
+
+            /* logo styling */
+            .logo{
+            font-size: 36px;
+            font-family: 'pacifico', Ubuntu;
+            display: block;
+            text-align: left;
+            padding-left: 40px;
+            margin-top: 20px;
+            }
+
+            .logo a{
+            text-decoration: none;
+            color:#000;
+            }
+
+            .logo span {
+            color: #0abab5;
+            }
+
+            /* styling for content  */
+
+            .box{
+                width: 50vw;
+                height: 35vh;
+                margin: 8vh auto;
+                padding: 3%;
+                background-color:#091429;
+                color:aliceblue;
+                box-shadow: 0px 2px 5px 2px #c0bcbc;
+                border-radius: 15px;
+                font-family: 'ubuntu';
+
+            }
+
+            .btn1{
+                width: 15vw;
+                height: 5vh;
+                margin-left: 14.5vw;
+                border-radius: 6px;
+                box-shadow: 0px 2px 2px #6d6b6b;
+                border:none;
+                
+            }
+
+            #plans{
+                border-radius: 6px;
+                height: 5vh;
+                width: 15vw;
+            }
+
+            
+            /*-----------footer list--------*/
+			.list-unstyled li a{
+				font-size: 17px !important;
+				transition: 0.25s !important;
+				font-style: normal;
+				font-weight: normal;
+			}
+			.list-unstyled li a:hover{
+				color: gray !important;
+				text-decoration: none;
+			}
+
+            .enter-div {
+                text-align: center;
+                color: white;
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            .enter-div > h6 {
+                font-weight: normal;
+            }
+
+            #enter-line {
+                line-height: 65px;
+            }
+
+            #lancer {
+
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'Pacifico', cursive;
+            font-size: 20px;
+            }
+
+            #btn-sub {
+                background: #0ABAB5;
+                border-radius: 4px;
+                border-width: 0px;
+                color: #FFFFFF;
+            }
+
+            #email-input {
+                background: #FFFFFF;
+                border: 1px solid #C4C4C4;
+                box-sizing: border-box;
+                border-radius: 2px;
+                color: black;
+                font-size: 0.8em;
+                padding: 5px;
+                }
+
+            .btn {
+                border: 1px solid #0ABAB5 ;
+                
+                box-sizing: border-box;
+                border-radius: 6px;
+                }
+
+            .link {
+                color: black;
+            }
+
+            .card {
+                background: #FFFFFF;
+                border: none;
+                width: 350px !important;
+                max-width: 350px !important;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            ul {
+                padding: 0% !important;
+            }
+            
+            #btn-sub:hover {
+                background-color: rgb(9, 155, 150);
+            }
+            
+            #navbarNavAltMarkup a:hover {
+                color: #0ABAB5 !important;
+            }
+
+            span.avoidwrap { display:inline-block; }
+
+            .foot{
+                border-top: 2px solid rgb(204, 198, 198);
+                margin-top: 10vh!important;
+            }
+
+            @media screen and (max-width:669px){
+                .box{
+                    height: 60vh;
+                    padding: 10%;
+                }
+
+                .btn1{
+                    margin-left: 0vw;
+                }
+            }
+
+            @media screen and (max-width: 575px){
+                .box{
+                    width: 80vw;
+                }
+                .box p{
+                    font-size: 18px;
+                }
+                .foot{
+                    margin-left: 20vw;
+                }
+                /* #plans{
+                    width: 25vw;
+                } */
+                .btn1{
+                    margin-left: 0vw;
+                    /* width: 25vw; */
+                }
+            }
+
+            @media screen and (max-width: 476px){
+                .box{
+                    height: 60vh;
+                }
+            }
+
+            @media screen and (max-width: 320px){
+                .box{
+                    height: 60vh;
+                }
+            }
+           
+
+        
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="logo"> <a href="https://lancers.app/"> Lan<span>c</span>ers </a></div><br>
+        <div class="container">
+            <div class="box border">
+                <h2>Payment For Pro Plan</h2>
+                <div class="form mt-3">
+                    <form>
+                        <fieldset>
+                            <legend></legend>
+                            <p>
+                                <label class="mr-4">Select Subscription Plan</label>
+                                <select name="subscripton Plans" id="plans">
+                                    <option value="1">1month @ $24.99</option>
+                                    <option value="">2months @ $49.98</option>
+                                    <option value="">3months @ $74.97</option>
+                                    <option value="">4months @ $99.96</option>
+                                    <option value="">5months @ $124.95</option>
+                                    <option value="">6months @ $149.94</option>
+                                    <option value="">7months @ $174.93</option>
+                                    <option value="">8months @ $199.92</option>
+                                    <option value="">9months @ $224.9</option>
+                                    <option value="">10 months @ $249.90</option>
+                                    <option value="">11months @ $279.89</option>
+                                    <option value="">12months @ $299.88</option>
+                                </select>
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
+                <button class=" btn-secondary btn1">Pay</button>
+            </div>
+        </div>
+
+
+
+
+        <footer class="bg-white pt-4 foot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                        <img src="https://lancer-app.000webhostapp.com/images/svg/logo-dark.svg" alt="" class="img img-responsive mb-2" height="30" width="auto">
+                        <ul class="list-unstyled">
+                            <li><a class="text-dark" href="pricing.html">Pricing</a></li>
+                            <li><a class="text-dark" href="signin.html">Sign in</a></li>
+                            <li><a class="text-dark" href="signup.html">Sign up</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                        <h5>Features</h5>
+                        <ul class="list-unstyled">
+                            <li><a class="text-dark" href="documents.html">Dashboard</a></li>
+                            <li><a class="text-dark" href="project.html">Projects</a></li>
+                            <li><a class="text-dark" href="invoice-view.html">Invoices</a></li>
+                            <li><a class="text-dark" href="client-information-inactive-2.html">Create a Project</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <h5>Reach us</h5>
+                        <p class="text-dark small">
+                            3 Birrel Avenue, Sabo.
+                            Yaba, Lagos State,
+                            Nigeria
+                        </p>
+                        <h5 class="">
+                            <a href="https://facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
+                            <a href="https://twitter.com" class="text-dark"><i class="fab fa-twitter-square"></i></a>
+                        </h5>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <h5>Stay up to date</h5>
+                        <p class="text-dark small">
+                            Get emails about our newest features and events you can visit. We promise not to spam.
+                        </p>
+                        <form class="form-inline">
+                            <div class="form-group mb-2 mr-2">
+                                <label for="staticEmail2" class="sr-only">Email</label>
+                                <input type="email" class="form-control" id="staticEmail2" value="" placeholder="Email Address" required>
+                            </div>
+                            <button type="submit" class="btn btn-secondary mb-2">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white text-left py-2 mt-0">
+                <div class="container">
+                    <!-- <p class="float-right">
+                    <a href="#"><i class="fas fa-arrow-up"></i></a>
+                    </p> -->
+                    <p>&copy; Lancer 2019.</p>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>
