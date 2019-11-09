@@ -30,6 +30,7 @@
                 color:white;
             }
 
+
             /* logo styling */
             .logo{
             font-size: 36px;
@@ -52,9 +53,9 @@
             /* styling for content  */
 
             .box{
-                width: 50vw;
-                height: 35vh;
-                margin: 8vh auto;
+                /* width: 50vw; */
+                height: 40vh!important;
+                margin: 5vh auto;
                 padding: 3%;
                 background-color:#091429;
                 color:aliceblue;
@@ -67,7 +68,8 @@
             .btn1{
                 width: 15vw;
                 height: 5vh;
-                margin-left: 14.5vw;
+                /* margin-left: 14.5vw; */
+                margin-top: 3vh;
                 border-radius: 6px;
                 box-shadow: 0px 2px 2px #6d6b6b;
                 border:none;
@@ -78,6 +80,15 @@
                 border-radius: 6px;
                 height: 5vh;
                 width: 15vw;
+            }
+
+            .case{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .select{
+                /* margin-left: 0px!important; */
             }
 
             
@@ -172,49 +183,93 @@
                 margin-top: 10vh!important;
             }
 
-            @media screen and (max-width:669px){
+ /* =============MEDIA QUERIES============ */
+
+            @media screen and (max-width: 360px){
                 .box{
-                    height: 60vh;
-                    padding: 10%;
+                    width: 90%!important;
+
+                }
+                    p{
+                        font-size: 24px!important;
+                        padding: 2%;
+                    }
+
+                .select{
+                    margin-left: 0px!important;
+                    padding-left: 0px!important;
+                    padding-right: 20%!important;
+
                 }
 
-                .btn1{
-                    margin-left: 0vw;
-                }
+                
             }
+
+            @media screen and (max-width: 482px){
+                .box{
+                    width: 90%!important;
+                }
+
+                p{
+                        font-size: 24px!important;
+                        padding-top: 2%;
+                    }
+
+                .select{
+                    margin-left: 0px!important;
+                    padding-left: 5px!important;
+                    /* padding-right: 5%!important; */
+                    width: 30vw!important;
+                
+
+                }
+
+                .selectPlan{
+                    margin-left: 30%!important;
+                }
+
+            }
+
+            @media screen and (max-width: 769px){
+
+                .box{
+                    width: 90%!important;
+                }
+
+                .select{
+                    margin-left: 0px!important;
+                    padding-left: 5px!important;
+                    /* padding-right: 5%!important; */
+                    width: 25vw!important;
+                
+
+                }
+
+            }
+
+            
 
             @media screen and (max-width: 575px){
-                .box{
-                    width: 80vw;
+                
+                .foot-container{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
                 }
-                .box p{
-                    font-size: 18px;
-                }
-                .foot{
-                    margin-left: 20vw;
-                }
-                /* #plans{
-                    width: 25vw;
-                } */
-                .btn1{
-                    margin-left: 0vw;
-                    /* width: 25vw; */
-                }
+               
             }
 
-            @media screen and (max-width: 476px){
-                .box{
-                    height: 60vh;
+            @media screen and (max-width: 482px){
+                
+                .foot-container{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    margin-left: 5%;
+                    margin-right: 5%;
                 }
+               
             }
 
-            @media screen and (max-width: 320px){
-                .box{
-                    height: 60vh;
-                }
-            }
-           
-
+            
         
         </style>
 
@@ -224,33 +279,39 @@
 
         <div class="logo"> <a href="https://lancers.app/"> Lan<span>c</span>ers </a></div><br>
         <div class="container">
-            <div class="box border">
-                <h2>Payment For Pro Plan</h2>
+            <div class="box w-75 h-25 border">
+                <p class=" h2 text-center">Payment For Pro Plan</p>
                 <div class="form mt-3">
                     <form>
                         <fieldset>
                             <legend></legend>
-                            <p>
-                                <label class="mr-4">Select Subscription Plan</label>
-                                <select name="subscripton Plans" id="plans">
-                                    <option value="1">1month @ $24.99</option>
-                                    <option value="">2months @ $49.98</option>
-                                    <option value="">3months @ $74.97</option>
-                                    <option value="">4months @ $99.96</option>
-                                    <option value="">5months @ $124.95</option>
-                                    <option value="">6months @ $149.94</option>
-                                    <option value="">7months @ $174.93</option>
-                                    <option value="">8months @ $199.92</option>
-                                    <option value="">9months @ $224.9</option>
-                                    <option value="">10 months @ $249.90</option>
-                                    <option value="">11months @ $279.89</option>
-                                    <option value="">12months @ $299.88</option>
-                                </select>
-                            </p>
+                            <div class="case w-75 mx-auto">
+                                <div class="select ml-3 pl-3 mr-2">Select Subscription Plan:</div>
+                                <div class="selectPlan ml-4">
+                                    <select name="subscripton Plans" id="plans">
+                                        <option value="1">1month @ $24.99</option>
+                                        <option value="">2months @ $49.98</option>
+                                        <option value="">3months @ $74.97</option>
+                                        <option value="">4months @ $99.96</option>
+                                        <option value="">5months @ $124.95</option>
+                                        <option value="">6months @ $149.94</option>
+                                        <option value="">7months @ $174.93</option>
+                                        <option value="">8months @ $199.92</option>
+                                        <option value="">9months @ $224.9</option>
+                                        <option value="">10 months @ $249.90</option>
+                                        <option value="">11months @ $279.89</option>
+                                        <option value="">12months @ $299.88</option>
+                                    </select>
+
+                                    <button class=" btn-secondary btn1">Pay</button>
+
+                                </div>
+                                
+                            </div>
                         </fieldset>
                     </form>
                 </div>
-                <button class=" btn-secondary btn1">Pay</button>
+                
             </div>
         </div>
 
@@ -258,8 +319,8 @@
 
 
         <footer class="bg-white pt-4 foot">
-            <div class="container">
-                <div class="row">
+            <div class="container ">
+                <div class="row foot-container">
                     <div class="col-xs-12 col-sm-6 col-md-2">
                         <img src="https://lancer-app.000webhostapp.com/images/svg/logo-dark.svg" alt="" class="img img-responsive mb-2" height="30" width="auto">
                         <ul class="list-unstyled">
