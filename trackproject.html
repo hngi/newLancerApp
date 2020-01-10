@@ -15,6 +15,22 @@
     <!--Internal CSS Starts -->
 
     <style>
+
+      :root{
+        --primary-color: #091429;
+        --secondary-color: #0ABAB5;
+        --dark-color: #262626;
+        --light-color: #B1B1B1;
+        }
+
+      .btn-secondary {
+      background-color: var(--secondary-color) !important;
+      color:white;
+      }
+
+
+
+
       .logo{
         font-size: 36px;
         font-family: 'pacifico', Ubuntu;
@@ -37,6 +53,7 @@
         border: 1px solid #000000;
         border-radius: 6px;
         background: #FFFFFF;
+        margin-top: 15vh!important;
       }
 
       .h1{
@@ -84,6 +101,177 @@
           color: #0ABAB5;
         }
 
+
+        /*------Navbar------------*/
+
+	.navbar-main {
+		background-color: var(--primary-color);
+	}
+
+	.navbar-main .navbar-brand,
+	.navbar-main .navbar-text {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.navbar-main .navbar-nav .nav-link {
+		font-size: 1rem;
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.navbar-main .nav-item.active .nav-link,
+	.navbar-main .nav-item:hover .nav-link {
+		color: #ffffff;
+	}
+
+	/* for navbar toggler design */
+	.icon-bar {
+		width: 22px;
+		height: 2px;
+		background-color: #B6B6B6;
+		display: block;
+		transition: all 0.2s;
+		margin-top: 4px
+	}
+
+	.navbar-toggler {
+		border: none;
+		background: transparent !important;
+	}
+
+	.navbar-toggler:focus {
+		outline: none !important;
+	}
+
+	/* navbar toggler animation*/
+
+	.navbar-toggler .top-bar {
+		transform: rotate(45deg);
+		transform-origin: 10% 10%;
+	}
+
+	.navbar-toggler .middle-bar {
+		opacity: 0;
+	}
+
+	.navbar-toggler .bottom-bar {
+		transform: rotate(-45deg);
+		transform-origin: 10% 90%;
+	}
+
+	.navbar-toggler.collapsed .top-bar {
+		transform: rotate(0);
+	}
+
+	.navbar-toggler.collapsed .middle-bar {
+		opacity: 1;
+	}
+
+	.navbar-toggler.collapsed .bottom-bar {
+		transform: rotate(0);
+	}
+
+
+
+
+
+
+
+         /*-----------footer list--------*/
+			.list-unstyled li a{
+				font-size: 17px !important;
+				transition: 0.25s !important;
+				font-style: normal;
+				font-weight: normal;
+			}
+			.list-unstyled li a:hover{
+				color: gray !important;
+				text-decoration: none;
+			}
+
+            .enter-div {
+                text-align: center;
+                color: white;
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            .enter-div > h6 {
+                font-weight: normal;
+            }
+
+            #enter-line {
+                line-height: 65px;
+            }
+
+            #lancer {
+
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'Pacifico', cursive;
+            font-size: 20px;
+            }
+
+            #btn-sub {
+                background: #0ABAB5;
+                border-radius: 4px;
+                border-width: 0px;
+                color: #FFFFFF;
+            }
+
+            #email-input {
+                background: #FFFFFF;
+                border: 1px solid #C4C4C4;
+                box-sizing: border-box;
+                border-radius: 2px;
+                color: black;
+                font-size: 0.8em;
+                padding: 5px;
+                }
+
+            .btn {
+                border: 1px solid #0ABAB5 ;
+                
+                box-sizing: border-box;
+                border-radius: 6px;
+                }
+
+            .link {
+                color: black;
+            }
+
+            .card {
+                background: #FFFFFF;
+                border: none;
+                width: 350px !important;
+                max-width: 350px !important;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            ul {
+                padding: 0% !important;
+            }
+            
+            #btn-sub:hover {
+                background-color: rgb(9, 155, 150);
+            }
+            
+            #navbarNavAltMarkup a:hover {
+                color: #0ABAB5 !important;
+            }
+
+            span.avoidwrap { display:inline-block; }
+
+            .foot{
+                border-top: 2px solid rgb(235, 218, 218);
+                margin-top: 10vh!important;
+            }
+
+
+
+
+/* ============MEDIA QUERIES============== */
+
         @media screen and (max-width: 767px){
           .box{
             width: 60vw!important;
@@ -99,6 +287,16 @@
           }
         }
 
+
+        @media screen and (max-width: 575px){
+                
+          .foot-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          }
+          
+        }
+
         @media screen and (max-width: 534px){
           .h1{
             font-size: 30px!important;
@@ -107,6 +305,7 @@
             width: 80vw!important;
           }
         }
+
         @media screen and (max-width: 342px){
           .sign{
             text-align: center!important;
@@ -128,7 +327,47 @@
 
 <body>
 
-  <div class="logo"> <a href="https://lancers.app/"> Lan<span>c</span>ers </a></div><br> 
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+          <a class="navbar-brand" href="https://dev.lancers.app">
+            <img src="https://dev.lancers.app/images/svg/logo-white.svg" class="img img-responsive" height="30" width="auto">
+          </a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+            <!-- <span class="navbar-toggler-icon"><i class="fa fa-bars fa-lg py-1 text-white"></i></span> -->
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="https://dev.lancers.app">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://dev.lancers.app/pricing">Pricing</a>
+              </li>
+                        <li class="nav-item">
+                <a class="nav-link" href="https://dev.lancers.app/guest/track">Track a Project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://dev.lancers.app/login">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://dev.lancers.app/register">Sign up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+      
+
+
+
+
+
+  <!-- <div class="logo"> <a href="https://lancers.app/"> Lan<span>c</span>ers </a></div><br>  -->
   <div class="container">
     <div class="row box w-50 h-75 m-auto">
       <div class="col box2 w-50">
@@ -153,6 +392,84 @@
       
     </div>
   </div>
+
+
+  <footer class="bg-white pt-4 foot">
+    <div class="container ">
+        <div class="row foot-container">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+                <img src="https://lancer-app.000webhostapp.com/images/svg/logo-dark.svg" alt="" class="img img-responsive mb-2" height="30" width="auto">
+                <ul class="list-unstyled">
+                    <li><a class="text-dark" href="pricing.html">Pricing</a></li>
+                    <li><a class="text-dark" href="signin.html">Sign in</a></li>
+                    <li><a class="text-dark" href="signup.html">Sign up</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2">
+                <h5>Features</h5>
+                <ul class="list-unstyled">
+                    <li><a class="text-dark" href="documents.html">Dashboard</a></li>
+                    <li><a class="text-dark" href="project.html">Projects</a></li>
+                    <li><a class="text-dark" href="invoice-view.html">Invoices</a></li>
+                    <li><a class="text-dark" href="client-information-inactive-2.html">Create a Project</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <h5>Reach us</h5>
+                <p class="text-dark small">
+                    3 Birrel Avenue, Sabo.
+                    Yaba, Lagos State,
+                    Nigeria
+                </p>
+                <h5 class="">
+                    <a href="https://facebook.com" class="text-dark mr-2"><i class="fab fa-facebook-square"></i></a> 
+                    <a href="https://twitter.com" class="text-dark"><i class="fab fa-twitter-square"></i></a>
+                </h5>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <h5>Stay up to date</h5>
+                <p class="text-dark small">
+                    Get emails about our newest features and events you can visit. We promise not to spam.
+                </p>
+                <form class="form-inline">
+                    <div class="form-group mb-2 mr-2">
+                        <label for="staticEmail2" class="sr-only">Email</label>
+                        <input type="email" class="form-control" id="staticEmail2" value="" placeholder="Email Address" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary mb-2">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white text-left py-2 mt-0">
+        <div class="container">
+            <p class="float-right">
+				
+              <a href="javascript:void(0)" onClick="window.scrollTo(0, 0)" class="btn btn-secondary mb-2" id="btn-sub">
+                <span>&#8593;</span></a>
+            </p>
+            <p>&copy; Lancer 2019.</p>
+        </div>
+    </div>
+  </footer>
+
+
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function() {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/5dc11896e4c2fa4b6bda03bf/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+
 
 
 
