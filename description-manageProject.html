@@ -42,11 +42,30 @@
             /* manage project */
 
             .article-content{
-                height: 50vh;
-                /* background-color: rgba(9, 20, 41, 0.7); */
+                height: 55vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+                
+            }
+
+            .article-content p{
+                text-align: justify;
+            
             }
             .manage-title{
                 color:#091429;
+            }
+
+            .btn-create{
+                background-color:#0ABAB5;
+                color: black;
+                border-color:#0ABAB5!important;
+            }
+
+            .a-create{
+                color: white;
             }
 
 
@@ -54,7 +73,7 @@
              footer {
                 background-color: white;
                 padding: 25px;
-                border-top: 1.5px solid rgba(209, 204, 204, 0.5);
+                border-top: 2px solid rgba(209, 204, 204, 0.5);
                 animation-duration: 3s;
                 animation-delay: 3s;
             }
@@ -160,8 +179,19 @@
         <!-- decription -->
 
         <article class="container article-content">
-            <h1 class="h1 manage-title my-4">Manage Project Description</h1>
-            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis ducimus nesciunt sint ipsa quia. Expedita, odit doloremque explicabo totam, voluptas illum dignissimos obcaecati similique veniam quas ullam vel ut.</p>
+            <div class="article-case">
+                <h1 class="h1 manage-title my-4">Manage Project Description</h1>
+                <p class="">
+                    Lancer helps you create an invoice as well as manage your project. 
+                    You can add collaborators, invite other team-players and assign tasks 
+                    easily on the platform. New collaborators will receive email invites and 
+                    notification of the project and their assigned tasks. Collaborators can also view 
+                    other collaborators, view work progress and the various stages of 
+                    the project.
+                </p>
+                <button type="button" class="btn-lg btn btn-create mt-3 mb-2"><a href="https://dev.lancers.app/guest/create/step1" class="a-create">Create Project</a></button>
+        
+            </div>
         </article>
 
 
